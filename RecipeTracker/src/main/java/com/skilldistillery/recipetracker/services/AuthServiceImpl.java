@@ -11,12 +11,15 @@ public class AuthServiceImpl implements AuthService {
 	
 	@Autowired
 	private UserRepository userRepo;
+	
+//	@Autowired
+//	private PasswordEncoder encoder;
 
 	@Override
 	public User register(User user) {
-		// TODO Auto-generated method stub
 		return null;
 	}
+	
 	@Override
 	public User findUserByName(String username) {
 		return userRepo.findByUsername(username);
