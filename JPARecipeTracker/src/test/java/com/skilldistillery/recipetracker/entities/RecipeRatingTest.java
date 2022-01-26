@@ -16,8 +16,8 @@ class RecipeRatingTest extends TestTemplate {
 	@Test
 	void test_User_entity_mapping() {
 		assertNotNull(rr);
-		assertEquals("5", rr.getRating());
-		assertEquals("I absolutely love this, so yummmy!!!", rr.getRecipe());
+		assertEquals(5, rr.getRating());
+		
 		
 		
 		
