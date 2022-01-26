@@ -348,7 +348,7 @@ CREATE TABLE IF NOT EXISTS `recipe_review` (
   `recipe_id` INT NOT NULL,
   `created_on` DATETIME NOT NULL,
   `comment` TEXT NULL DEFAULT NULL,
-  `active` TINYINT NULL DEFAULT 1,
+  `active` TINYINT NULL,
   PRIMARY KEY (`user_id`, `recipe_id`),
   INDEX `fk_user_has_recipe_recipe2_idx` (`recipe_id` ASC),
   INDEX `fk_user_has_recipe_user2_idx` (`user_id` ASC),
