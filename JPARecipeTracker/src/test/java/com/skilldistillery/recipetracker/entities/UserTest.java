@@ -26,6 +26,10 @@ class UserTest extends TestTemplate {
 	void test_User_entity_mapping() {
 		assertNotNull(user);
 		assertEquals("wolfgangPuck", user.getUsername());
+		assertEquals("wolfgangPuck@gmail.com", user.getEmail());
+		assertEquals("Wolf Gang", user.getFirstName());
+		assertEquals("Puck", user.getLastName());
+		
 	}
 
 }

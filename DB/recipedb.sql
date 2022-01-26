@@ -460,6 +460,16 @@ COMMIT;
 
 
 -- -----------------------------------------------------
+-- Data for table `dietplan_ingredient`
+-- -----------------------------------------------------
+START TRANSACTION;
+USE `recipe`;
+INSERT INTO `dietplan_ingredient` (`id`, `diet_plan_id`, `purchased`, `ingredient_id`) VALUES (1, 1, 1, 1);
+
+COMMIT;
+
+
+-- -----------------------------------------------------
 -- Data for table `category_type`
 -- -----------------------------------------------------
 START TRANSACTION;
