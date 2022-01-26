@@ -26,8 +26,7 @@ class CategoryTypeTest extends TestTemplate {
 	@Test
 	void test_CategoryType_basic_mappings() {
 		assertNotNull(categoryType);
-		assertEquals("Italian", categoryType.getEthnicity());
-		assertEquals("Savory", categoryType.getFlavors());
+
 	}
 
 }

@@ -16,14 +16,7 @@ public class CategoryType {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
-	
-	private String ethnicity;
-	private String flavors;
-	
-	@Column(name="common_allergies")
-	private String commonAllergies;
-	private String lifestyle;
-	
+	private String name;
 	
 	public CategoryType() {
 		super();
@@ -40,49 +33,19 @@ public class CategoryType {
 	}
 
 
-	public String getEthnicity() {
-		return ethnicity;
+	public String getName() {
+		return name;
 	}
 
 
-	public void setEthnicity(String ethnicity) {
-		this.ethnicity = ethnicity;
-	}
-
-
-	public String getFlavors() {
-		return flavors;
-	}
-
-
-	public void setFlavors(String flavors) {
-		this.flavors = flavors;
-	}
-
-
-	public String getCommonAllergies() {
-		return commonAllergies;
-	}
-
-
-	public void setCommonAllergies(String commonAllergies) {
-		this.commonAllergies = commonAllergies;
-	}
-
-
-	public String getLifestyle() {
-		return lifestyle;
-	}
-
-
-	public void setLifestyle(String lifestyle) {
-		this.lifestyle = lifestyle;
+	public void setName(String name) {
+		this.name = name;
 	}
 
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(commonAllergies, ethnicity, flavors, id, lifestyle);
+		return Objects.hash(id, name);
 	}
 
 
@@ -95,22 +58,13 @@ public class CategoryType {
 		if (getClass() != obj.getClass())
 			return false;
 		CategoryType other = (CategoryType) obj;
-		return Objects.equals(commonAllergies, other.commonAllergies) && Objects.equals(ethnicity, other.ethnicity)
-				&& Objects.equals(flavors, other.flavors) && id == other.id
-				&& Objects.equals(lifestyle, other.lifestyle);
+		return id == other.id && Objects.equals(name, other.name);
 	}
 
 
 	@Override
 	public String toString() {
-		return "CategoryType [id=" + id + ", ethnicity=" + ethnicity + ", flavors=" + flavors + ", commonAllergies="
-				+ commonAllergies + ", lifestyle=" + lifestyle + "]";
+		return "CategoryType [id=" + id + ", name=" + name + "]";
 	}
-	
-	
-	
-	
-	
-	
 
 }
