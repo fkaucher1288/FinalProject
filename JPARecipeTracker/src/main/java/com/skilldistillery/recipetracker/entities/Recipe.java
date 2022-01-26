@@ -1,6 +1,7 @@
 package com.skilldistillery.recipetracker.entities;
 
 import java.time.LocalDateTime;
+import java.util.Objects;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -37,10 +38,130 @@ public class Recipe {
 	private String webLink;
 	private String description;
 	
-	
+//------------------------constructor---------------------	
 	public Recipe() {
 		super();
 	}
+
+//---------------GETTERS/SETTERS---------------------------
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public LocalDateTime getDateCreated() {
+		return dateCreated;
+	}
+
+	public void setDateCreated(LocalDateTime dateCreated) {
+		this.dateCreated = dateCreated;
+	}
+
+	public boolean isActive() {
+		return active;
+	}
+
+	public void setActive(boolean active) {
+		this.active = active;
+	}
+
+	public boolean isPublic() {
+		return isPublic;
+	}
+
+	public void setPublic(boolean isPublic) {
+		this.isPublic = isPublic;
+	}
+
+	public String getPrepTime() {
+		return prepTime;
+	}
+
+	public void setPrepTime(String prepTime) {
+		this.prepTime = prepTime;
+	}
+
+	public String getInstructions() {
+		return instructions;
+	}
+
+	public void setInstructions(String instructions) {
+		this.instructions = instructions;
+	}
+
+	public String getImageURL() {
+		return imageURL;
+	}
+
+	public void setImageURL(String imageURL) {
+		this.imageURL = imageURL;
+	}
+
+	public String getWebLink() {
+		return webLink;
+	}
+
+	public void setWebLink(String webLink) {
+		this.webLink = webLink;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+//--------------------hashcode/equals-----------------
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(active, dateCreated, description, id, imageURL, instructions, isPublic, name, prepTime,
+				webLink);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Recipe other = (Recipe) obj;
+		return active == other.active && Objects.equals(dateCreated, other.dateCreated)
+				&& Objects.equals(description, other.description) && id == other.id
+				&& Objects.equals(imageURL, other.imageURL) && Objects.equals(instructions, other.instructions)
+				&& isPublic == other.isPublic && Objects.equals(name, other.name)
+				&& Objects.equals(prepTime, other.prepTime) && Objects.equals(webLink, other.webLink);
+	}
+
+//-----------------------toString---------------------------
+
+	@Override
+	public String toString() {
+		return "Recipe [id=" + id + ", name=" + name + ", dateCreated=" + dateCreated + ", active=" + active
+				+ ", isPublic=" + isPublic + ", prepTime=" + prepTime + ", instructions=" + instructions + ", imageURL="
+				+ imageURL + ", webLink=" + webLink + ", description=" + description + "]";
+	}
+	
+	
+	
+	
+	
 	
 	
 	
