@@ -1,5 +1,5 @@
-package com.skilldistillery.recipetracker.entities;
-
-public class userHasFavoriteRecipeId {
-
-}
+//package com.skilldistillery.recipetracker.entities;
+//
+//public class userHasFavoriteRecipeId {
+//
+//}

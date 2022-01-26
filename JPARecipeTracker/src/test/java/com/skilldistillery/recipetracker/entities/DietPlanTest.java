@@ -28,7 +28,7 @@ class DietPlanTest extends TestTemplate {
 	@DisplayName("Relationship Map between dietplan and dietplan ingredient")
 	void test2() {
 		assertNotNull(dietPlan);
-		assertTrue(0 > dietPlan.getDietPlanIngredients().size());
+		assertEquals(1 , dietPlan.getDietPlanIngredients().size());
 		assertEquals(true, dietPlan.getDietPlanIngredients().get(0).getPurchased());
 		
 	}
