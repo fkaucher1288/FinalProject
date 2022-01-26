@@ -25,6 +25,10 @@ public class Cookbook {
 //	@JoinTable(name = "cookbook_has_recipe", joinColumns = @JoinColumn(name = "cookbook_id"), inverseJoinColumns = @JoinColumn(name = "recipe_id"))
 //	private List<Recipe> recipes;
 	
+//	@ManyToOne
+//	@JoinColumn(name = "user_id")
+//	private User user;
+//	
 	public Cookbook() {
 		super();
 	}
