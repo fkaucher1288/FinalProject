@@ -279,12 +279,12 @@ ENGINE = InnoDB;
 DROP TABLE IF EXISTS `cookbook` ;
 
 CREATE TABLE IF NOT EXISTS `cookbook` (
-  `image_url` VARCHAR(8000) NULL DEFAULT NULL,
   `id` INT NOT NULL AUTO_INCREMENT,
+  `user_id` INT NOT NULL,
   `title` VARCHAR(100) NULL,
   `author` VARCHAR(45) NULL,
   `description` VARCHAR(5000) NULL,
-  `user_id` INT NOT NULL,
+  `image_url` VARCHAR(8000) NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   INDEX `fk_cookbook_user1_idx` (`user_id` ASC),
   CONSTRAINT `fk_cookbook_user1`
@@ -483,7 +483,7 @@ COMMIT;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `recipe`;
-INSERT INTO `dietplan_recipe` (`id`, `diet_plan_id`, `recipe_id`, `sequence_number`, `day_name`) VALUES (1, 1, 1, 1, 'MONDAY');
+INSERT INTO `dietplan_recipe` (`id`, `diet_plan_id`, `recipe_id`, `sequence_number`, `day_name`) VALUES (1, 1, 1, 1, 'Monday');
 
 COMMIT;
 
@@ -523,7 +523,7 @@ COMMIT;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `recipe`;
-INSERT INTO `cookbook` (`image_url`, `id`, `title`, `author`, `description`, `user_id`) VALUES ('https://www.pearson.com/store', 1, 'On Cooking: A Textbook of Culinary Fundamentals, 6th edition', 'Sarah R. Labensky', 'For over two decades, On Cooking: A Textbook of Culinary Fundamentals has prepared students for successful careers in the culinary arts. Clear and comprehensive, this best-selling text teaches the “hows” and “whys” of cooking and baking principles, while providing step-by-step instructions, visual guidance, and recipes to clarify techniques. The 6th edition expands its “fundamentals” approach, reflects key trends, and adds information on healthy cooking, sous-vide, curing, and smoking, plus dozens of new recipes and more than 200 new photographs.', 1);
+INSERT INTO `cookbook` (`id`, `user_id`, `title`, `author`, `description`, `image_url`) VALUES (1, 1, 'On Cooking: A Textbook of Culinary Fundamentals, 6th edition', 'Sarah R. Labensky', 'For over two decades, On Cooking: A Textbook of Culinary Fundamentals has prepared students for successful careers in the culinary arts. Clear and comprehensive, this best-selling text teaches the “hows” and “whys” of cooking and baking principles, while providing step-by-step instructions, visual guidance, and recipes to clarify techniques. The 6th edition expands its “fundamentals” approach, reflects key trends, and adds information on healthy cooking, sous-vide, curing, and smoking, plus dozens of new recipes and more than 200 new photographs.', 'https://www.pearson.com/store');
 
 COMMIT;
 
