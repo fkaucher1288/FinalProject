@@ -10,6 +10,7 @@ import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 class RecipeTest {
 
@@ -42,7 +43,16 @@ class RecipeTest {
 	@Test
 	void test_Movie_title_mappings() {
 		assertNotNull(recipe);
-		assertEquals("");
+		assertEquals("Mom's Best Lasagna", recipe.getName());
+		assertEquals("2022", recipe.getDateCreated().getYear());
+		assertEquals("1", recipe.getDateCreated().getMonthValue());
+		assertEquals(true, recipe.isActive());
+		assertEquals(true, recipe.isPublic());
+		assertEquals(0.2, recipe.getPrepTime());
+		assertEquals(1.45, recipe.getCookTime());
+		assertNotNull(recipe.getDescription());
+		assertNotNull(recipe.getInstructions());
+		assertEquals(" https://www.thewholesomedish.com/wp-content/uploads/2018/07/Best-Lasagna-550-500x375.jpg", recipe.getImageURL());
 	}
 
 

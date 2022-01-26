@@ -28,6 +28,10 @@ public class Recipe {
 	@Column(name="is_public")
 	private boolean isPublic;
 	
+	
+	@Column(name="prep_time")	
+	private String prepTime;
+	
 	@Column(name="cook_time")	
 	private String cookTime;
 	private String description;
@@ -86,6 +90,15 @@ public class Recipe {
 	public void setPublic(boolean isPublic) {
 		this.isPublic = isPublic;
 	}
+	
+
+	public String getPrepTime() {
+		return prepTime;
+	}
+
+	public void setPrepTime(String prepTime) {
+		this.prepTime = prepTime;
+	}
 
 	public String getCookTime() {
 		return cookTime;
@@ -139,7 +152,7 @@ public class Recipe {
 	@Override
 	public int hashCode() {
 		return Objects.hash(active, cookTime, dateCreated, description, id, imageURL, instructions, isPublic, name,
-				notes, webLink);
+				notes, prepTime, webLink);
 	}
 
 	@Override
@@ -156,7 +169,7 @@ public class Recipe {
 				&& id == other.id && Objects.equals(imageURL, other.imageURL)
 				&& Objects.equals(instructions, other.instructions) && isPublic == other.isPublic
 				&& Objects.equals(name, other.name) && Objects.equals(notes, other.notes)
-				&& Objects.equals(webLink, other.webLink);
+				&& Objects.equals(prepTime, other.prepTime) && Objects.equals(webLink, other.webLink);
 	}
 
 //-----------------------toString---------------------------
@@ -164,10 +177,13 @@ public class Recipe {
 	@Override
 	public String toString() {
 		return "Recipe [id=" + id + ", name=" + name + ", dateCreated=" + dateCreated + ", active=" + active
-				+ ", isPublic=" + isPublic + ", cookTime=" + cookTime + ", description=" + description
-				+ ", instructions=" + instructions + ", notes=" + notes + ", imageURL=" + imageURL + ", webLink="
-				+ webLink + "]";
+				+ ", isPublic=" + isPublic + ", prepTime=" + prepTime + ", cookTime=" + cookTime + ", description="
+				+ description + ", instructions=" + instructions + ", notes=" + notes + ", imageURL=" + imageURL
+				+ ", webLink=" + webLink + "]";
 	}
+
+
+	
 
 
 
