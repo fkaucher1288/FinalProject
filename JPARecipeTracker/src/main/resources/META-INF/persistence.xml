@@ -16,6 +16,7 @@
     <class>com.skilldistillery.recipetracker.entities.Recipe</class>
     <class>com.skilldistillery.recipetracker.entities.RecipeIngredientId</class>
     <class>com.skilldistillery.recipetracker.entities.RecipeIngredient</class>
+    <class>com.skilldistillery.recipetracker.entities.RecipeIngredientId</class>
     <class>com.skilldistillery.recipetracker.entities.RecipeRating</class>
     <class>com.skilldistillery.recipetracker.entities.RecipeReview</class>
     <class>com.skilldistillery.recipetracker.entities.User</class>
