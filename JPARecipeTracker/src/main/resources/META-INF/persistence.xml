@@ -4,10 +4,7 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd">
 	<persistence-unit name="JPARecipeTracker">
-	
-	
 	<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
-	
     <class>com.skilldistillery.recipetracker.entities.Category</class>
     <class>com.skilldistillery.recipetracker.entities.CategoryType</class>
     <class>com.skilldistillery.recipetracker.entities.Cookbook</class>
@@ -17,14 +14,15 @@
     <class>com.skilldistillery.recipetracker.entities.FavoriteRecipe</class>
     <class>com.skilldistillery.recipetracker.entities.Ingredient</class>
     <class>com.skilldistillery.recipetracker.entities.Recipe</class>
+    <class>com.skilldistillery.recipetracker.entities.RecipeIngredientId</class>
     <class>com.skilldistillery.recipetracker.entities.RecipeIngredient</class>
     <class>com.skilldistillery.recipetracker.entities.RecipeRating</class>
     <class>com.skilldistillery.recipetracker.entities.RecipeReview</class>
     <class>com.skilldistillery.recipetracker.entities.User</class>
     <class>com.skilldistillery.recipetracker.entities.UserHasFavoriteRecipeId</class>
+    <class>com.skilldistillery.recipetracker.entities.UserRecipeReviewId</class>
+    <class>com.skilldistillery.recipetracker.entities.UserHasRecipeReviewCommentId</class>
    
-
-
 		<properties>
 			<property name="javax.persistence.jdbc.url"
 				value="jdbc:mysql://localhost:3306/recipe?useSSL=false&amp;useLegacyDatetimeCode=false&amp;serverTimezone=US/Mountain" />
