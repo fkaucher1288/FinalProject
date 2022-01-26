@@ -17,6 +17,8 @@ class DietPlanTest extends TestTemplate {
 	@Test
 	void test_User_entity_mapping() {
 		assertNotNull(dietPlan);
-		assertEquals("wolfgangPuck", dietPlan.getPlanName());
+		assertEquals("Wolfgang's Cleanse", dietPlan.getPlanName());
+		assertEquals("get fit quick!", dietPlan.getDescription());
+		assertEquals(true, dietPlan.isActive());
 	}
 }
