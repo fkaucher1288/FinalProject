@@ -14,7 +14,7 @@ import javax.persistence.Table;
 public class FavoriteRecipe {
 	
 	@EmbeddedId
-	private userHasFavoriteRecipeId id;
+	private UserHasFavoriteRecipeId id;
 	
 	@Column(name="comment")
 	private String comment;
@@ -29,7 +29,7 @@ public class FavoriteRecipe {
 		super();
 			}
 
-	public FavoriteRecipe(userHasFavoriteRecipeId id, String comment, Date dateLastMade, LocalDateTime createdAt) {
+	public FavoriteRecipe(UserHasFavoriteRecipeId id, String comment, Date dateLastMade, LocalDateTime createdAt) {
 		super();
 		this.id = id;
 		this.comment = comment;
@@ -37,11 +37,11 @@ public class FavoriteRecipe {
 		this.createdAt = createdAt;
 	}
 
-	public userHasFavoriteRecipeId getId() {
+	public UserHasFavoriteRecipeId getId() {
 		return id;
 	}
 
-	public void setId(userHasFavoriteRecipeId id) {
+	public void setId(UserHasFavoriteRecipeId id) {
 		this.id = id;
 	}
 
