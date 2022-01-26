@@ -217,10 +217,7 @@ DROP TABLE IF EXISTS `category_type` ;
 
 CREATE TABLE IF NOT EXISTS `category_type` (
   `id` INT NOT NULL AUTO_INCREMENT,
-  `ethnicity` VARCHAR(45) NULL,
-  `flavors` VARCHAR(45) NULL,
-  `common_allergies` VARCHAR(45) NULL,
-  `lifestyle` VARCHAR(45) NULL,
+  `name` VARCHAR(1000) NULL,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB;
 
@@ -463,7 +460,7 @@ COMMIT;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `recipe`;
-INSERT INTO `category_type` (`id`, `ethnicity`, `flavors`, `common_allergies`, `lifestyle`) VALUES (1, 'Italian', 'Savory', NULL, NULL);
+INSERT INTO `category_type` (`id`, `name`) VALUES (1, NULL);
 
 COMMIT;
 
