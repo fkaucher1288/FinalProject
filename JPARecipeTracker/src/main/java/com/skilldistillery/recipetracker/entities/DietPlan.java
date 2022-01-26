@@ -1,5 +1,6 @@
 package com.skilldistillery.recipetracker.entities;
 
+import java.util.List;
 import java.util.Objects;
 
 import javax.persistence.Column;
@@ -7,6 +8,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -21,6 +23,9 @@ public class DietPlan {
 	
 	private String description;
 	private boolean active;
+	
+	@OneToMany(mappedBy="dietPlan")
+	private List<DietPlanIngredient> dietPlanIngredients;
 	
 	public int getId() {
 		return id;
@@ -45,6 +50,15 @@ public class DietPlan {
 	}
 	public void setActive(boolean active) {
 		this.active = active;
+	}
+	
+	
+	
+	public List<DietPlanIngredient> getDietPlanIngredients() {
+		return dietPlanIngredients;
+	}
+	public void setDietPlanIngredients(List<DietPlanIngredient> dietPlanIngredients) {
+		this.dietPlanIngredients = dietPlanIngredients;
 	}
 	public DietPlan(int id, String planName, String description, boolean active) {
 		super();

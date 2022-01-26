@@ -6,6 +6,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -16,6 +18,9 @@ public class DietPlanIngredient {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	private Boolean purchased;
+	@ManyToOne
+	@JoinColumn(name="dietplan_id")
+	private DietPlan dietPlan;
 	public int getId() {
 		return id;
 	}
@@ -31,6 +36,13 @@ public class DietPlanIngredient {
 	
 	
 	
+	
+	public DietPlan getDietPlan() {
+		return dietPlan;
+	}
+	public void setDietPlan(DietPlan dietPlan) {
+		this.dietPlan = dietPlan;
+	}
 	public DietPlanIngredient() {
 		super();
 	}
