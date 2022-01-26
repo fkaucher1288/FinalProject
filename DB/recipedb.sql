@@ -321,7 +321,7 @@ CREATE TABLE IF NOT EXISTS `recipe_rating` (
   `user_id` INT NOT NULL,
   `recipe_id` INT NOT NULL,
   `rating` INT NULL,
-  `create_on` DATETIME NULL,
+  `created_on` DATETIME NULL,
   PRIMARY KEY (`user_id`, `recipe_id`),
   INDEX `fk_user_has_recipe_recipe1_idx` (`recipe_id` ASC),
   INDEX `fk_user_has_recipe_user1_idx` (`user_id` ASC),
@@ -493,7 +493,7 @@ COMMIT;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `recipe`;
-INSERT INTO `recipe_rating` (`user_id`, `recipe_id`, `rating`, `create_on`) VALUES (1, 1, 5, '2022-01-01 00:00:00');
+INSERT INTO `recipe_rating` (`user_id`, `recipe_id`, `rating`, `created_on`) VALUES (1, 1, 5, '2022-01-01 00:00:00');
 
 COMMIT;
 
