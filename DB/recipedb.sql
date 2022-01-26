@@ -65,8 +65,8 @@ CREATE TABLE IF NOT EXISTS `recipe` (
   `active` TINYINT NOT NULL DEFAULT 1,
   `creator_id` INT NOT NULL DEFAULT 1,
   `is_public` TINYINT NOT NULL DEFAULT 1,
-  `prep_time` DOUBLE NULL DEFAULT NULL,
-  `cook time` DOUBLE NULL,
+  `prep_time` VARCHAR(45) NULL DEFAULT NULL,
+  `cook time` VARCHAR(45) NULL,
   `description` VARCHAR(1000) NULL,
   `instructions` TEXT NULL DEFAULT NULL,
   `notes` VARCHAR(1000) NULL,
@@ -368,6 +368,35 @@ CREATE TABLE IF NOT EXISTS `recipe_rating` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
+
+-- -----------------------------------------------------
+-- Table `recipe_copy1`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `recipe_copy1` ;
+
+CREATE TABLE IF NOT EXISTS `recipe_copy1` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(200) NOT NULL,
+  `date_created` DATE NOT NULL,
+  `active` TINYINT NOT NULL DEFAULT 1,
+  `creator_id` INT NOT NULL DEFAULT 1,
+  `is_public` TINYINT NOT NULL DEFAULT 1,
+  `prep_time` VARCHAR(45) NULL DEFAULT NULL,
+  `cook time` DOUBLE NULL,
+  `description` VARCHAR(1000) NULL,
+  `instructions` TEXT NULL DEFAULT NULL,
+  `notes` VARCHAR(1000) NULL,
+  `photo_link` VARCHAR(3000) NULL DEFAULT NULL,
+  `web_link` VARCHAR(3000) NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  INDEX `fk_recipe_creator_idx` (`creator_id` ASC),
+  CONSTRAINT `fk_recipe_creator0`
+    FOREIGN KEY (`creator_id`)
+    REFERENCES `user` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
 SET SQL_MODE = '';
 DROP USER IF EXISTS wolfgangpuck@localhost;
 SET SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
@@ -404,7 +433,7 @@ COMMIT;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `recipe`;
-INSERT INTO `recipe` (`id`, `name`, `date_created`, `active`, `creator_id`, `is_public`, `prep_time`, `cook time`, `description`, `instructions`, `notes`, `photo_link`, `web_link`) VALUES (1, 'Mom\'s Best Lasagna', '2022-01-01 00:00:00', 1, 1, 1, 0.20, 1.45, 'The Best Lasagna is here! Layered with a rich meat sauce and a creamy parmesan white sauce, plus the perfect amount of mozzarella cheese! NO ricotta cheese needed!', 'Meat Sauce:\nHeat oil in a large pot over medium heat, then add in the onion and carrots and cook for 8-10 minutes, or until softened. Add in the garlic and sauté for about 1 minute, until fragrant.\nAdd beef and pork (if using) and cook while breaking it up with the end of your spoon, until browned.\nPour in the Passata, crushed tomatoes, tomato paste, crushed bouillon and dried herbs. Mix well to combine and bring to a gentle simmer. Season with desired amount of salt and pepper (I use about 3/4 teaspoon each) and sugar if needed. Cover and cook for about 20-30 minutes, occasionally mixing, until the sauce has thickened slightly and meat is tender.\nAdjust salt, pepper and dried herbs to your taste.\nParmesan White Sauce:\nIn a large pot, melt butter over medium heat. Remove from hot plate; add the flour and whisk for about 30 seconds, or until well blended.\nPlace pot back onto stove, reduce heat down to low and slowly whisk in 1 cup of the milk until well combined. Once well blended, add the remaining milk in 1 cup increments, mixing well after each addition, until all the milk is used and sauce is free from lumps. If the sauce is too thick, add a little more milk until it turns into a nice and creamy consistency.\nIncrease heat to medium and continue cooking sauce while stirring occasionally until it thickens (about 6-7 minutes) and coats the back of your wooden spoon.\nAdd in the parmesan cheese and remove from heat. Season with salt and pepper and mix until the cheese is melted through.\nTo Assemble:\nPreheat oven to 350°F | 180°F.\nSpoon about 1 cup of meat sauce on the base of a 9x13-inch baking dish, then cover with lasagna sheets. (Trim sheets to fit over the meat if needed.) Layer with 2 cups of meat sauce (or enough to cover pasta), 1 cup of white sauce and half of the mozzarella cheese. Repeat layers (leaving the remaining cheese for the top).\nPour the remaining meat sauce and white sauce over the last layer of lasagna sheets and top with the remaining mozzarella cheese. Bake for 25 minutes or until golden and bubbling.\nGarnish with parsley and let stand for about 10 minutes before slicing and serving.\nENJOY!', 'Fresh lasagna pasta sheets are found in the refrigerator section of most grocery stores. We prefer fresh pasta in our lasagna, but if you can\'t find or don\'t have access to fresh, you can use dried.  No Cook or Instant Noodles can be used without pre-boiling (check the packet instructions first). You can assemble as normal. To ensure the pasta has enough liquid to cook through while the lasagna is baking, we normally add about 1/2 cup of water to our sauce when using INSTANT. Pre Boil Or Pre Cook Pasta Sheets need to be boiled first before assembly. Follow the instructions on the packet. Add a couple of tablespoons of olive oil into the water to prevent the sheets from sticking together, and stir them occasionally with a wooden spoon. Transfer each cooked lasagna sheet carefully into a large bowl or pot filled with cool water to help stop the cooking process. Leave them in there until ready to use. This helps prevent them from sticking together or drying out.', 'https://www.thewholesomedish.com/wp-content/uploads/2018/07/Best-Lasagna-550-500x375.jpg', 'https://cafedelites.com/best-lasagna/');
+INSERT INTO `recipe` (`id`, `name`, `date_created`, `active`, `creator_id`, `is_public`, `prep_time`, `cook time`, `description`, `instructions`, `notes`, `photo_link`, `web_link`) VALUES (1, 'Mom\'s Best Lasagna', '2022-01-01 00:00:00', 1, 1, 1, '0.20', '1.45', 'The Best Lasagna is here! Layered with a rich meat sauce and a creamy parmesan white sauce, plus the perfect amount of mozzarella cheese! NO ricotta cheese needed!', 'Meat Sauce:\nHeat oil in a large pot over medium heat, then add in the onion and carrots and cook for 8-10 minutes, or until softened. Add in the garlic and sauté for about 1 minute, until fragrant.\nAdd beef and pork (if using) and cook while breaking it up with the end of your spoon, until browned.\nPour in the Passata, crushed tomatoes, tomato paste, crushed bouillon and dried herbs. Mix well to combine and bring to a gentle simmer. Season with desired amount of salt and pepper (I use about 3/4 teaspoon each) and sugar if needed. Cover and cook for about 20-30 minutes, occasionally mixing, until the sauce has thickened slightly and meat is tender.\nAdjust salt, pepper and dried herbs to your taste.\nParmesan White Sauce:\nIn a large pot, melt butter over medium heat. Remove from hot plate; add the flour and whisk for about 30 seconds, or until well blended.\nPlace pot back onto stove, reduce heat down to low and slowly whisk in 1 cup of the milk until well combined. Once well blended, add the remaining milk in 1 cup increments, mixing well after each addition, until all the milk is used and sauce is free from lumps. If the sauce is too thick, add a little more milk until it turns into a nice and creamy consistency.\nIncrease heat to medium and continue cooking sauce while stirring occasionally until it thickens (about 6-7 minutes) and coats the back of your wooden spoon.\nAdd in the parmesan cheese and remove from heat. Season with salt and pepper and mix until the cheese is melted through.\nTo Assemble:\nPreheat oven to 350°F | 180°F.\nSpoon about 1 cup of meat sauce on the base of a 9x13-inch baking dish, then cover with lasagna sheets. (Trim sheets to fit over the meat if needed.) Layer with 2 cups of meat sauce (or enough to cover pasta), 1 cup of white sauce and half of the mozzarella cheese. Repeat layers (leaving the remaining cheese for the top).\nPour the remaining meat sauce and white sauce over the last layer of lasagna sheets and top with the remaining mozzarella cheese. Bake for 25 minutes or until golden and bubbling.\nGarnish with parsley and let stand for about 10 minutes before slicing and serving.\nENJOY!', 'Fresh lasagna pasta sheets are found in the refrigerator section of most grocery stores. We prefer fresh pasta in our lasagna, but if you can\'t find or don\'t have access to fresh, you can use dried.  No Cook or Instant Noodles can be used without pre-boiling (check the packet instructions first). You can assemble as normal. To ensure the pasta has enough liquid to cook through while the lasagna is baking, we normally add about 1/2 cup of water to our sauce when using INSTANT. Pre Boil Or Pre Cook Pasta Sheets need to be boiled first before assembly. Follow the instructions on the packet. Add a couple of tablespoons of olive oil into the water to prevent the sheets from sticking together, and stir them occasionally with a wooden spoon. Transfer each cooked lasagna sheet carefully into a large bowl or pot filled with cool water to help stop the cooking process. Leave them in there until ready to use. This helps prevent them from sticking together or drying out.', 'https://www.thewholesomedish.com/wp-content/uploads/2018/07/Best-Lasagna-550-500x375.jpg', 'https://cafedelites.com/best-lasagna/');
 
 COMMIT;
 
@@ -454,7 +483,7 @@ COMMIT;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `recipe`;
-INSERT INTO `dietplan_recipe` (`id`, `diet_plan_id`, `recipe_id`, `sequence_number`, `day_name`) VALUES (1, 1, 1, 1, 'Monday');
+INSERT INTO `dietplan_recipe` (`id`, `diet_plan_id`, `recipe_id`, `sequence_number`, `day_name`) VALUES (1, 1, 1, 1, 'MONDAY');
 
 COMMIT;
 
