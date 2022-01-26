@@ -16,12 +16,15 @@ public class Cookbook {
 	private int id;
 
 	private String title;
-	
 	private String author;
 	private String description;
 	@Column(name = "image_url")
 	private String url;
 
+//	@ManyToMany
+//	@JoinTable(name = "cookbook_has_recipe", joinColumns = @JoinColumn(name = "cookbook_id"), inverseJoinColumns = @JoinColumn(name = "recipe_id"))
+//	private List<Recipe> recipes;
+	
 	public Cookbook() {
 		super();
 	}
