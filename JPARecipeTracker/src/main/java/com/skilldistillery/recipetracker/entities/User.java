@@ -39,6 +39,7 @@ public class User {
 	@UpdateTimestamp
 	private LocalDateTime dateUpdated;
 
+	@Column(name="image_url")
 	private String url;
 
 	public User() {
