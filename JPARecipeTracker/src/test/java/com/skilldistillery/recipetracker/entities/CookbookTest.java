@@ -9,7 +9,6 @@ class CookbookTest extends TestTemplate {
 
 	private Cookbook cookbook;
 	
-
 	@Override
 	void setUp() throws Exception {
 		cookbook = em.find(Cookbook.class, 1);
