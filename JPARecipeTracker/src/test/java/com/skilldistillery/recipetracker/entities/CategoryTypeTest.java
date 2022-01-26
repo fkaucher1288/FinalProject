@@ -14,32 +14,13 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 
-class CategoryTypeTest {
+class CategoryTypeTest extends TestTemplate {
 
-	private static EntityManagerFactory factory;
-	protected EntityManager em;
 	private CategoryType categoryType;
 
-	@BeforeAll
-	static void setUpBeforeClass() throws Exception {
-		factory = Persistence.createEntityManagerFactory("JPARecipeTracker");
-	}
-
-	@AfterAll
-	static void tearDownAfterClass() throws Exception {
-		factory.close();
-	}
-
-	@BeforeEach
-	void setUpBase() throws Exception {
-		em = factory.createEntityManager();
+	@Override
+	void setUp() throws Exception {
 		categoryType = em.find(CategoryType.class, 1);
-		
-	}
-
-	@AfterEach
-	void tearDownBase() throws Exception {
-		em.close();
 	}
 	
 	@Test
