@@ -32,4 +32,12 @@ class DietPlanTest extends TestTemplate {
 		assertEquals(true, dietPlan.getDietPlanIngredients().get(0).getPurchased());
 		
 	}
+	@Test
+	@DisplayName("Relationship Map between dietplan and dietplan recipe")
+	void test3() {
+		assertNotNull(dietPlan);
+		assertEquals(1 , dietPlan.getDietPlanRecipes().size());
+		assertEquals(DayOfWeek.Monday, dietPlan.getDietPlanRecipes().get(0).getDayName());
+		
+	}
 }

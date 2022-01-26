@@ -9,6 +9,8 @@ import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -23,6 +25,9 @@ public class DietPlanRecipe {
 	@Column(name="day_name")
 	@Enumerated(EnumType.STRING)
 	private DayOfWeek dayName;
+	@ManyToOne
+	@JoinColumn(name="diet_plan_id")
+	private DietPlan dietPlan;
 	public int getId() {
 		return id;
 	}
@@ -40,6 +45,14 @@ public class DietPlanRecipe {
 	}
 	public void setDayName(DayOfWeek dayName) {
 		this.dayName = dayName;
+	}
+	
+	
+	public DietPlan getDietPlan() {
+		return dietPlan;
+	}
+	public void setDietPlan(DietPlan dietPlan) {
+		this.dietPlan = dietPlan;
 	}
 	@Override
 	public int hashCode() {

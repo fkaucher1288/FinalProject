@@ -23,7 +23,8 @@ public class DietPlan {
 	
 	private String description;
 	private boolean active;
-	
+	@OneToMany(mappedBy="dietPlan")
+	private List<DietPlanRecipe> dietPlanRecipes;
 	@OneToMany(mappedBy="dietPlan")
 	private List<DietPlanIngredient> dietPlanIngredients;
 	
@@ -59,6 +60,14 @@ public class DietPlan {
 	}
 	public void setDietPlanIngredients(List<DietPlanIngredient> dietPlanIngredients) {
 		this.dietPlanIngredients = dietPlanIngredients;
+	}
+	
+	
+	public List<DietPlanRecipe> getDietPlanRecipes() {
+		return dietPlanRecipes;
+	}
+	public void setDietPlanRecipes(List<DietPlanRecipe> dietPlanRecipes) {
+		this.dietPlanRecipes = dietPlanRecipes;
 	}
 	public DietPlan(int id, String planName, String description, boolean active) {
 		super();

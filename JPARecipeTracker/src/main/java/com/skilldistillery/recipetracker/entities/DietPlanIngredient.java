@@ -19,7 +19,7 @@ public class DietPlanIngredient {
 	private int id;
 	private Boolean purchased;
 	@ManyToOne
-	@JoinColumn(name="dietplan_id")
+	@JoinColumn(name="diet_plan_id")
 	private DietPlan dietPlan;
 	public int getId() {
 		return id;
