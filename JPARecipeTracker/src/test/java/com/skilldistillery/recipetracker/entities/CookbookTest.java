@@ -8,6 +8,7 @@ import org.junit.jupiter.api.Test;
 class CookbookTest extends TestTemplate {
 
 	private Cookbook cookbook;
+	
 
 	@Override
 	void setUp() throws Exception {
