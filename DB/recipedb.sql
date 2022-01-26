@@ -460,7 +460,10 @@ COMMIT;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `recipe`;
-INSERT INTO `category_type` (`id`, `name`) VALUES (1, NULL);
+INSERT INTO `category_type` (`id`, `name`) VALUES (1, 'ethnic');
+INSERT INTO `category_type` (`id`, `name`) VALUES (2, 'flavor');
+INSERT INTO `category_type` (`id`, `name`) VALUES (3, 'allergies');
+INSERT INTO `category_type` (`id`, `name`) VALUES (4, 'lifestyle');
 
 COMMIT;
 
