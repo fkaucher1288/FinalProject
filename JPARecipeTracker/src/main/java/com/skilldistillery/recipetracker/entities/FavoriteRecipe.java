@@ -1,3 +1,4 @@
+
 package com.skilldistillery.recipetracker.entities;
 
 import java.time.LocalDateTime;

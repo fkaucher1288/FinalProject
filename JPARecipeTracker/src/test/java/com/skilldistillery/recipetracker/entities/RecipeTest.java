@@ -54,6 +54,12 @@ class RecipeTest {
 		assertNotNull(recipe.getInstructions());
 		assertEquals("https://www.thewholesomedish.com/wp-content/uploads/2018/07/Best-Lasagna-550-500x375.jpg", recipe.getImageURL());
 	}
+	
+	@Test
+	void test_Recipe_to_User_mappings() {
+		assertNotNull(recipe);
+		assertEquals(1, recipe.getUser().getId());
+	}
 
 
 }

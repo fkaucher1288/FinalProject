@@ -1,6 +1,7 @@
 package com.skilldistillery.recipetracker.entities;
 
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.Objects;
 
 import javax.persistence.Column;
@@ -8,9 +9,12 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 public class User {
@@ -41,7 +45,11 @@ public class User {
 
 	@Column(name="image_url")
 	private String url;
-
+	
+	@JsonIgnore
+	@OneToMany(mappedBy="user")
+	private List <Recipe> recipes;
+	
 	public User() {
 		super();
 
@@ -133,6 +141,15 @@ public class User {
 
 	public void setRole(String role) {
 		this.role = role;
+	}
+	
+
+	public List<Recipe> getRecipes() {
+		return recipes;
+	}
+
+	public void setRecipes(List<Recipe> recipes) {
+		this.recipes = recipes;
 	}
 
 	@Override
