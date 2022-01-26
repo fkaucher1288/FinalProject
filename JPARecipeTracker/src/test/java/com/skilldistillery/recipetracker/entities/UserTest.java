@@ -27,8 +27,15 @@ class UserTest extends TestTemplate {
 		assertNotNull(user);
 		assertEquals("wolfgangPuck", user.getUsername());
 		assertEquals("wolfgangPuck@gmail.com", user.getEmail());
-		assertEquals("Wolf Gang", user.getFirstName());
+		assertEquals("Wolfgang", user.getFirstName());
 		assertEquals("Puck", user.getLastName());
+		
+	}
+	
+	@Test
+	void test_User_to_Recipe_mappings() {
+		assertNotNull(user);
+		assertNotNull(user.getRecipes().size());
 		
 	}
 
