@@ -17,15 +17,6 @@ import javax.persistence.Table;
 @Table(name="favorite_recipe")
 public class FavoriteRecipe {
 	
-	@ManyToOne
-	@JoinColumn(name="recipe_id")
-	@MapsId("recipeId")
-	private Recipe recipe;
-	
-	@ManyToOne
-	@JoinColumn(name="user_id")
-	@MapsId("userId")
-	private User user;
 	
 	@EmbeddedId
 	private UserHasFavoriteRecipeId id;
@@ -38,6 +29,16 @@ public class FavoriteRecipe {
 	
 	@Column(name="created_at")
 	private LocalDateTime createdAt;
+	
+	@ManyToOne
+	@JoinColumn(name="recipe_id")
+	@MapsId("recipeId")
+	private Recipe recipe;
+	
+	@ManyToOne
+	@JoinColumn(name="user_id")
+	@MapsId("userId")
+	private User user;
 
 	public FavoriteRecipe() {
 		super();
