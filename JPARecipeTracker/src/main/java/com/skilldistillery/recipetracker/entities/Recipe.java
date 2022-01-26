@@ -8,6 +8,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Recipe {
@@ -22,12 +25,12 @@ public class Recipe {
 	private LocalDateTime dateCreated;
 	private boolean active;
 	
-	
-	//private User user;
+	@ManyToOne
+	@JoinColumn(name="creator_id")
+	private User user;
 	
 	@Column(name="is_public")
 	private boolean isPublic;
-	
 	
 	@Column(name="prep_time")	
 	private String prepTime;
@@ -81,6 +84,15 @@ public class Recipe {
 
 	public void setActive(boolean active) {
 		this.active = active;
+	}
+
+	
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
 	}
 
 	public boolean isPublic() {
