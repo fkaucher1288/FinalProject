@@ -21,6 +21,11 @@ public class DietPlanIngredient {
 	@ManyToOne
 	@JoinColumn(name="diet_plan_id")
 	private DietPlan dietPlan;
+	
+	@ManyToOne
+	@JoinColumn(name="ingredient_id")
+	private Ingredient ingredient;
+	
 	public int getId() {
 		return id;
 	}
@@ -53,6 +58,12 @@ public class DietPlanIngredient {
 	}
 	
 	
+	public Ingredient getIngredient() {
+		return ingredient;
+	}
+	public void setIngredient(Ingredient ingredient) {
+		this.ingredient = ingredient;
+	}
 	@Override
 	public int hashCode() {
 		return Objects.hash(id);
