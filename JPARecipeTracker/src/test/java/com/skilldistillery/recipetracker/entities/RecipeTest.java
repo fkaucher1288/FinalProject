@@ -38,6 +38,12 @@ class RecipeTest {
 	void tearDownBase() throws Exception {
 		em.close();
 	}
+	
+	@Test
+	void test_Movie_title_mappings() {
+		assertNotNull(recipe);
+		assertEquals("");
+	}
 
 
 }

@@ -22,21 +22,23 @@ public class Recipe {
 	private LocalDateTime dateCreated;
 	private boolean active;
 	
+	
 	//private User user;
 	
 	@Column(name="is_public")
 	private boolean isPublic;
 	
-	@Column(name="prep_time")	
-	private String prepTime;
+	@Column(name="cook_time")	
+	private String cookTime;
+	private String description;
 	private String instructions;
+	private String notes;
 	
 	@Column(name="photo_link")
 	private String imageURL;
 	
 	@Column(name="web_link")
 	private String webLink;
-	private String description;
 	
 //------------------------constructor---------------------	
 	public Recipe() {
@@ -85,12 +87,12 @@ public class Recipe {
 		this.isPublic = isPublic;
 	}
 
-	public String getPrepTime() {
-		return prepTime;
+	public String getCookTime() {
+		return cookTime;
 	}
 
-	public void setPrepTime(String prepTime) {
-		this.prepTime = prepTime;
+	public void setCookTime(String cookTime) {
+		this.cookTime = cookTime;
 	}
 
 	public String getInstructions() {
@@ -124,13 +126,20 @@ public class Recipe {
 	public void setDescription(String description) {
 		this.description = description;
 	}
+	
+	public String getNotes() {
+		return notes;
+	}
 
+	public void setNotes(String notes) {
+		this.notes = notes;
+	}
 //--------------------hashcode/equals-----------------
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(active, dateCreated, description, id, imageURL, instructions, isPublic, name, prepTime,
-				webLink);
+		return Objects.hash(active, cookTime, dateCreated, description, id, imageURL, instructions, isPublic, name,
+				notes, webLink);
 	}
 
 	@Override
@@ -142,11 +151,12 @@ public class Recipe {
 		if (getClass() != obj.getClass())
 			return false;
 		Recipe other = (Recipe) obj;
-		return active == other.active && Objects.equals(dateCreated, other.dateCreated)
-				&& Objects.equals(description, other.description) && id == other.id
-				&& Objects.equals(imageURL, other.imageURL) && Objects.equals(instructions, other.instructions)
-				&& isPublic == other.isPublic && Objects.equals(name, other.name)
-				&& Objects.equals(prepTime, other.prepTime) && Objects.equals(webLink, other.webLink);
+		return active == other.active && Objects.equals(cookTime, other.cookTime)
+				&& Objects.equals(dateCreated, other.dateCreated) && Objects.equals(description, other.description)
+				&& id == other.id && Objects.equals(imageURL, other.imageURL)
+				&& Objects.equals(instructions, other.instructions) && isPublic == other.isPublic
+				&& Objects.equals(name, other.name) && Objects.equals(notes, other.notes)
+				&& Objects.equals(webLink, other.webLink);
 	}
 
 //-----------------------toString---------------------------
@@ -154,9 +164,21 @@ public class Recipe {
 	@Override
 	public String toString() {
 		return "Recipe [id=" + id + ", name=" + name + ", dateCreated=" + dateCreated + ", active=" + active
-				+ ", isPublic=" + isPublic + ", prepTime=" + prepTime + ", instructions=" + instructions + ", imageURL="
-				+ imageURL + ", webLink=" + webLink + ", description=" + description + "]";
+				+ ", isPublic=" + isPublic + ", cookTime=" + cookTime + ", description=" + description
+				+ ", instructions=" + instructions + ", notes=" + notes + ", imageURL=" + imageURL + ", webLink="
+				+ webLink + "]";
 	}
+
+
+
+
+	
+	
+
+
+
+
+
 	
 	
 	
