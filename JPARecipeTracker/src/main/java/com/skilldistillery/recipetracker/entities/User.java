@@ -20,8 +20,8 @@ public class User {
 	private int id;
 
 	private String username;
-	private String password;
 	private String email;
+	private String password;
 	private Boolean enabled;
 	private String role;
 
