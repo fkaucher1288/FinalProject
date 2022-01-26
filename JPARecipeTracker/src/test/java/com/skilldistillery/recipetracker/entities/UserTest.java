@@ -13,33 +13,13 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-class UserTest {
+class UserTest extends TestTemplate {
 
-	private static EntityManagerFactory emf;
-	private EntityManager em;
 	private User user;
-	
-	@BeforeAll
-	static void setUpBeforeClass() throws Exception {
-		emf = Persistence.createEntityManagerFactory("JPARecipeTracker");
-	}
 
-	@AfterAll
-	static void tearDownAfterClass() throws Exception {
-		emf.close();
-	}
-
-	@BeforeEach
+	@Override
 	void setUp() throws Exception {
-		em = emf.createEntityManager();
-		user = em.find(User.class, 1);
-		
-	}
-
-	@AfterEach
-	void tearDown() throws Exception {
-		em.close();
-		user = null;
+		user = em.find(User.class, 1);	
 	}
 
 	@Test
