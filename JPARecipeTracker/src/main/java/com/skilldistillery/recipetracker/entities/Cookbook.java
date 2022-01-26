@@ -16,7 +16,6 @@ public class Cookbook {
 	private int id;
 
 	private String title;
-	
 	private String author;
 	private String description;
 	@Column(name = "image_url")
