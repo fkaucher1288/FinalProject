@@ -137,34 +137,6 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `recipe_review`
--- -----------------------------------------------------
-DROP TABLE IF EXISTS `recipe_review` ;
-
-CREATE TABLE IF NOT EXISTS `recipe_review` (
-  `id` INT NOT NULL AUTO_INCREMENT,
-  `user_id` INT NOT NULL,
-  `recipe_id` INT NOT NULL,
-  `created_on` DATETIME NOT NULL,
-  `comment` TEXT NULL DEFAULT NULL,
-  `active` TINYINT NULL DEFAULT 1,
-  PRIMARY KEY (`id`),
-  INDEX `fk_recipe_review_recipe1_idx` (`recipe_id` ASC),
-  INDEX `fk_recipe_review_user1_idx` (`user_id` ASC),
-  CONSTRAINT `fk_recipe_review_recipe1`
-    FOREIGN KEY (`recipe_id`)
-    REFERENCES `recipe` (`id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_recipe_review_user1`
-    FOREIGN KEY (`user_id`)
-    REFERENCES `user` (`id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
-
-
--- -----------------------------------------------------
 -- Table `dietplan`
 -- -----------------------------------------------------
 DROP TABLE IF EXISTS `dietplan` ;
@@ -247,7 +219,7 @@ CREATE TABLE IF NOT EXISTS `category_type` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `ethnicity` VARCHAR(45) NULL,
   `flavors` VARCHAR(45) NULL,
-  `common alergies` VARCHAR(45) NULL,
+  `common_allergies` VARCHAR(45) NULL,
   `lifestyle` VARCHAR(45) NULL,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB;
@@ -370,29 +342,27 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `recipe_copy1`
+-- Table `recipe_review`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `recipe_copy1` ;
+DROP TABLE IF EXISTS `recipe_review` ;
 
-CREATE TABLE IF NOT EXISTS `recipe_copy1` (
-  `id` INT NOT NULL AUTO_INCREMENT,
-  `name` VARCHAR(200) NOT NULL,
-  `date_created` DATE NOT NULL,
-  `active` TINYINT NOT NULL DEFAULT 1,
-  `creator_id` INT NOT NULL DEFAULT 1,
-  `is_public` TINYINT NOT NULL DEFAULT 1,
-  `prep_time` VARCHAR(45) NULL DEFAULT NULL,
-  `cook_time` DOUBLE NULL,
-  `description` VARCHAR(1000) NULL,
-  `instructions` TEXT NULL DEFAULT NULL,
-  `notes` VARCHAR(1000) NULL,
-  `photo_link` VARCHAR(3000) NULL DEFAULT NULL,
-  `web_link` VARCHAR(3000) NULL DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  INDEX `fk_recipe_creator_idx` (`creator_id` ASC),
-  CONSTRAINT `fk_recipe_creator0`
-    FOREIGN KEY (`creator_id`)
+CREATE TABLE IF NOT EXISTS `recipe_review` (
+  `user_id` INT NOT NULL,
+  `recipe_id` INT NOT NULL,
+  `created_on` DATETIME NOT NULL,
+  `comment` TEXT NULL DEFAULT NULL,
+  `active` TINYINT NULL DEFAULT 1,
+  PRIMARY KEY (`user_id`, `recipe_id`),
+  INDEX `fk_user_has_recipe_recipe2_idx` (`recipe_id` ASC),
+  INDEX `fk_user_has_recipe_user2_idx` (`user_id` ASC),
+  CONSTRAINT `fk_user_has_recipe_user2`
+    FOREIGN KEY (`user_id`)
     REFERENCES `user` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_user_has_recipe_recipe2`
+    FOREIGN KEY (`recipe_id`)
+    REFERENCES `recipe` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
@@ -459,16 +429,6 @@ COMMIT;
 
 
 -- -----------------------------------------------------
--- Data for table `recipe_review`
--- -----------------------------------------------------
-START TRANSACTION;
-USE `recipe`;
-INSERT INTO `recipe_review` (`id`, `user_id`, `recipe_id`, `created_on`, `comment`, `active`) VALUES (1, 1, 1, '2022-01-01 00:00:00', 'This is the best lasagna!! I made it before but this time I am wanting to use fresh lasagna sheets this time. I think I have a dumb question, but do I boil them before layering according to the package instructions?? Or since they are fresh, will the sauce cook them while in the oven?? thanks so much!', 1);
-
-COMMIT;
-
-
--- -----------------------------------------------------
 -- Data for table `dietplan`
 -- -----------------------------------------------------
 START TRANSACTION;
@@ -503,7 +463,7 @@ COMMIT;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `recipe`;
-INSERT INTO `category_type` (`id`, `ethnicity`, `flavors`, `common alergies`, `lifestyle`) VALUES (1, 'Italian', 'Savory', NULL, NULL);
+INSERT INTO `category_type` (`id`, `ethnicity`, `flavors`, `common_allergies`, `lifestyle`) VALUES (1, 'Italian', 'Savory', NULL, NULL);
 
 COMMIT;
 
@@ -534,6 +494,16 @@ COMMIT;
 START TRANSACTION;
 USE `recipe`;
 INSERT INTO `recipe_rating` (`user_id`, `recipe_id`, `rating`, `create_on`) VALUES (1, 1, 5, '2022-01-01 00:00:00');
+
+COMMIT;
+
+
+-- -----------------------------------------------------
+-- Data for table `recipe_review`
+-- -----------------------------------------------------
+START TRANSACTION;
+USE `recipe`;
+INSERT INTO `recipe_review` (`user_id`, `recipe_id`, `created_on`, `comment`, `active`) VALUES (1, 1, '2022-01-01 00:00:00', 'I absolutely love this, so yummmy!!!', 1);
 
 COMMIT;
 
