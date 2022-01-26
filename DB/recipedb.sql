@@ -382,7 +382,7 @@ CREATE TABLE IF NOT EXISTS `recipe_copy1` (
   `creator_id` INT NOT NULL DEFAULT 1,
   `is_public` TINYINT NOT NULL DEFAULT 1,
   `prep_time` VARCHAR(45) NULL DEFAULT NULL,
-  `cook time` DOUBLE NULL,
+  `cook_time` DOUBLE NULL,
   `description` VARCHAR(1000) NULL,
   `instructions` TEXT NULL DEFAULT NULL,
   `notes` VARCHAR(1000) NULL,
