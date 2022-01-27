@@ -3,18 +3,14 @@ package com.skilldistillery.recipetracker.entities;
 import java.io.Serializable;
 import java.util.Objects;
 
-import javax.persistence.Column;
 import javax.persistence.Embeddable;
 
 @Embeddable
 public class DietPlanRecipeId implements Serializable {
 
 	private static final long serialVersionUID = -4577406110493852300L;
-
-	@Column(name = "diet_plan_id")
+	
 	private int planId;
-
-	@Column(name = "recipe_id")
 	private int recipeId;
 
 	public DietPlanRecipeId() {

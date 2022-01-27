@@ -10,7 +10,7 @@ class RecipeReviewTest extends AbstractTest {
 	
 	@Override
 	void setUp() throws Exception {
-		review = em.find(RecipeReview.class, new UserHasRecipeReviewCommentId(1,1));	
+		review = em.find(RecipeReview.class, new RecipeReviewId(1,1));	
 	}
 
 	@Test

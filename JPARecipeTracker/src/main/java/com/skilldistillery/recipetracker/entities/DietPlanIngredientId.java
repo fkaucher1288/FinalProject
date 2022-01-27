@@ -12,7 +12,7 @@ public class DietPlanIngredientId implements Serializable {
 
 	private int planId;
 	private int ingredientId;
-	
+
 	public DietPlanIngredientId() {
 		super();
 	}

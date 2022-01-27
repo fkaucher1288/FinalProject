@@ -19,9 +19,9 @@
     <class>com.skilldistillery.recipetracker.entities.RecipeRating</class>
     <class>com.skilldistillery.recipetracker.entities.RecipeReview</class>
     <class>com.skilldistillery.recipetracker.entities.User</class>
-    <class>com.skilldistillery.recipetracker.entities.UserHasFavoriteRecipeId</class>
-    <class>com.skilldistillery.recipetracker.entities.UserRecipeReviewId</class>
-    <class>com.skilldistillery.recipetracker.entities.UserHasRecipeReviewCommentId</class>
+    <class>com.skilldistillery.recipetracker.entities.FavoriteRecipeId</class>
+    <class>com.skilldistillery.recipetracker.entities.RecipeRatingId</class>
+    <class>com.skilldistillery.recipetracker.entities.RecipeReviewId</class>
     <class>com.skilldistillery.recipetracker.entities.DietPlanIngredientId</class>
     <class>com.skilldistillery.recipetracker.entities.DietPlanRecipeId</class>
    

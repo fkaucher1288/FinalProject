@@ -25,6 +25,7 @@ public class Recipe {
 
 	@Column(name = "date_created")
 	private LocalDateTime dateCreated;
+	
 	private boolean active;
 
 	@ManyToOne
@@ -39,6 +40,7 @@ public class Recipe {
 
 	@Column(name = "cook_time")
 	private String cookTime;
+	
 	private String description;
 	private String instructions;
 	private String notes;

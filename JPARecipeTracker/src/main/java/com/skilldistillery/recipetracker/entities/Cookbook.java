@@ -23,17 +23,17 @@ public class Cookbook {
 	private String title;
 	private String author;
 	private String description;
+
 	@Column(name = "image_url")
-	private String url;
+	private String imageURL;
 
 	@ManyToMany
 	@JoinTable(name = "cookbook_has_recipe", joinColumns = @JoinColumn(name = "cookbook_id"), inverseJoinColumns = @JoinColumn(name = "recipe_id"))
 	private List<Recipe> recipes;
-	
+
 	@ManyToOne
-	@JoinColumn(name = "user_id")
 	private User user;
-	
+
 	public Cookbook() {
 		super();
 	}
@@ -70,15 +70,13 @@ public class Cookbook {
 		this.description = description;
 	}
 
-	public String getUrl() {
-		return url;
+	public String getImageURL() {
+		return imageURL;
 	}
 
-	public void setUrl(String url) {
-		this.url = url;
+	public void setImageURL(String url) {
+		this.imageURL = url;
 	}
-	
-	
 
 	public List<Recipe> getRecipes() {
 		return recipes;
@@ -95,7 +93,7 @@ public class Cookbook {
 	public void setUser(User user) {
 		this.user = user;
 	}
-
+	
 	@Override
 	public int hashCode() {
 		return Objects.hash(id);
@@ -116,9 +114,9 @@ public class Cookbook {
 	@Override
 	public String toString() {
 		return "Cookbook [id=" + id + ", title=" + title + ", author=" + author + ", description=" + description
-				+ ", url=" + url + "]";
+				+ ", imageURL=" + imageURL + "]";
 	}
 
-
 	
+
 }

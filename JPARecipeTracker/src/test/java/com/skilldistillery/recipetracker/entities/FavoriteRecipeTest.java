@@ -12,7 +12,7 @@ class FavoriteRecipeTest extends AbstractTest {
 	
 	@Override
 	void setUp() throws Exception {
-		fr = em.find(FavoriteRecipe.class, new UserHasFavoriteRecipeId(1,1));	
+		fr = em.find(FavoriteRecipe.class, new FavoriteRecipeId(1,1));	
 	}
 
 	@Test

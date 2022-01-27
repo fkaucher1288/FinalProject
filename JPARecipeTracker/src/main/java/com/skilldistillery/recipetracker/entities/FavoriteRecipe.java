@@ -14,37 +14,36 @@ import javax.persistence.MapsId;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="favorite_recipe")
+@Table(name = "favorite_recipe")
 public class FavoriteRecipe {
-	
-	
+
 	@EmbeddedId
-	private UserHasFavoriteRecipeId id;
-	
-	@Column(name="comment")
+	private FavoriteRecipeId id;
+
+	@Column(name = "comment")
 	private String comment;
-	
-	@Column(name="date_last_made")
+
+	@Column(name = "date_last_made")
 	private LocalDate dateLastMade;
-	
-	@Column(name="created_at")
+
+	@Column(name = "created_at")
 	private LocalDateTime createdAt;
-	
+
 	@ManyToOne
-	@JoinColumn(name="recipe_id")
+	@JoinColumn(name = "recipe_id")
 	@MapsId("recipeId")
 	private Recipe recipe;
-	
+
 	@ManyToOne
-	@JoinColumn(name="user_id")
+	@JoinColumn(name = "user_id")
 	@MapsId("userId")
 	private User user;
 
 	public FavoriteRecipe() {
 		super();
-			}
+	}
 
-	public FavoriteRecipe(UserHasFavoriteRecipeId id, String comment, LocalDate dateLastMade, LocalDateTime createdAt) {
+	public FavoriteRecipe(FavoriteRecipeId id, String comment, LocalDate dateLastMade, LocalDateTime createdAt) {
 		super();
 		this.id = id;
 		this.comment = comment;
@@ -52,11 +51,11 @@ public class FavoriteRecipe {
 		this.createdAt = createdAt;
 	}
 
-	public UserHasFavoriteRecipeId getId() {
+	public FavoriteRecipeId getId() {
 		return id;
 	}
 
-	public void setId(UserHasFavoriteRecipeId id) {
+	public void setId(FavoriteRecipeId id) {
 		this.id = id;
 	}
 
@@ -83,8 +82,6 @@ public class FavoriteRecipe {
 	public void setCreatedAt(LocalDateTime createdAt) {
 		this.createdAt = createdAt;
 	}
-	
-	
 
 	public Recipe getRecipe() {
 		return recipe;
@@ -101,7 +98,7 @@ public class FavoriteRecipe {
 	public void setUser(User user) {
 		this.user = user;
 	}
-	
+
 	@Override
 	public int hashCode() {
 		return Objects.hash(id);
@@ -124,12 +121,5 @@ public class FavoriteRecipe {
 		return "FavoriteRecipe [comment=" + comment + ", dateLastMade=" + dateLastMade + ", createdAt=" + createdAt
 				+ "]";
 	}
-	
-	
-	
-	
-	
-	
-	
 
 }

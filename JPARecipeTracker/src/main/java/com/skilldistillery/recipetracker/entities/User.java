@@ -43,42 +43,39 @@ public class User {
 	@UpdateTimestamp
 	private LocalDateTime dateUpdated;
 
-	@Column(name="image_url")
-	private String url;
-	
+	@Column(name = "image_url")
+	private String imageURL;
+
 	@JsonIgnore
-	@OneToMany(mappedBy="user")
-	private List <Recipe> recipes;
-	
-	@OneToMany(mappedBy="user")
+	@OneToMany(mappedBy = "user")
+	private List<Recipe> recipes;
+
+	@OneToMany(mappedBy = "user")
 	private List<Cookbook> cookbooks;
-	
-	@OneToMany(mappedBy="user")
+
+	@OneToMany(mappedBy = "user")
 	private List<DietPlan> dietPlans;
-	
-	@OneToMany(mappedBy="user")
+
+	@OneToMany(mappedBy = "user")
 	private List<FavoriteRecipe> favoriteRecipes;
-	
-	@OneToMany(mappedBy="user")
+
+	@OneToMany(mappedBy = "user")
 	private List<RecipeReview> recipeReviews;
-	
-	@OneToMany(mappedBy="user")
+
+	@OneToMany(mappedBy = "user")
 	private List<RecipeRating> recipeRatings;
-	
-	
-	
-	
+
 	public User() {
 		super();
 
 	}
 
-	public String getUrl() {
-		return url;
+	public String getImageURL() {
+		return imageURL;
 	}
 
-	public void setUrl(String url) {
-		this.url = url;
+	public void setImageURL(String url) {
+		this.imageURL = url;
 	}
 
 	public String getFirstName() {
@@ -160,7 +157,6 @@ public class User {
 	public void setRole(String role) {
 		this.role = role;
 	}
-	
 
 	public List<Recipe> getRecipes() {
 		return recipes;

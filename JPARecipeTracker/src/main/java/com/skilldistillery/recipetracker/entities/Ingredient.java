@@ -11,14 +11,10 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
-/**
- * Entity implementation class for Entity: Ingredient
- *
- */
 @Entity
 public class Ingredient implements Serializable {
 
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = -8398104360260972646L;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -28,17 +24,17 @@ public class Ingredient implements Serializable {
 
 	private String brand;
 
-	@Column(name="measurement_unit")
+	@Column(name = "measurement_unit")
 	private String measurementUnit;
 
-
 	private String category;
-	@OneToMany(mappedBy="ingredient")
+
+	@OneToMany(mappedBy = "ingredient")
 	private List<DietPlanIngredient> dietPlanIngredients;
-	
-	@OneToMany(mappedBy="ingredient")
-	private List<RecipeIngredient> recipeIngredients; 
-	
+
+	@OneToMany(mappedBy = "ingredient")
+	private List<RecipeIngredient> recipeIngredients;
+
 	public Ingredient() {
 		super();
 	}
@@ -66,7 +62,7 @@ public class Ingredient implements Serializable {
 	public void setBrand(String brand) {
 		this.brand = brand;
 	}
-	
+
 	public String getMeasurementUnit() {
 		return measurementUnit;
 	}
@@ -83,8 +79,6 @@ public class Ingredient implements Serializable {
 	public void setCategory(String category) {
 		this.category = category;
 	}
-	
-	
 
 	public List<DietPlanIngredient> getDietPlanIngredients() {
 		return dietPlanIngredients;
@@ -121,8 +115,8 @@ public class Ingredient implements Serializable {
 
 	@Override
 	public String toString() {
-		return "Ingredient [id=" + id + ", name=" + name + ", brand=" + brand + ", amount=" + measurementUnit + ", category="
-				+ category + "]";
+		return "Ingredient [id=" + id + ", name=" + name + ", brand=" + brand + ", amount=" + measurementUnit
+				+ ", category=" + category + "]";
 	}
 
 }

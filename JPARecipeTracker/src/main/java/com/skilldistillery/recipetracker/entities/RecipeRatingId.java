@@ -7,7 +7,7 @@ import javax.persistence.Column;
 import javax.persistence.Embeddable;
 
 @Embeddable
-public class UserRecipeReviewId implements Serializable {
+public class RecipeRatingId implements Serializable {
 	
 private static final long serialVersionUID = 1L;
 	
@@ -17,12 +17,12 @@ private static final long serialVersionUID = 1L;
 	@Column(name="recipe_id")
 	private int recipeId;
 
-	public UserRecipeReviewId() {
+	public RecipeRatingId() {
 		super();
 		
 	}
 
-	public UserRecipeReviewId(int userId, int recipeId) {
+	public RecipeRatingId(int userId, int recipeId) {
 		super();
 		this.userId = userId;
 		this.recipeId = recipeId;
@@ -61,7 +61,7 @@ private static final long serialVersionUID = 1L;
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		UserRecipeReviewId other = (UserRecipeReviewId) obj;
+		RecipeRatingId other = (RecipeRatingId) obj;
 		return recipeId == other.recipeId && userId == other.userId;
 	}
 

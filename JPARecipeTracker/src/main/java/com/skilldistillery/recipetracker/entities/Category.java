@@ -13,29 +13,27 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 
-/**
- * Entity implementation class for Entity: Category
- *
- */
 @Entity
 public class Category implements Serializable {
 
+	private static final long serialVersionUID = 5113451435089359111L;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
-	
+
 	private String name;
-	
+
 	private String description;
-	
+
 	@ManyToOne
-	@JoinColumn(name="category_type_id")
+	@JoinColumn(name = "category_type_id")
 	private CategoryType type;
+
 	@ManyToMany
-	@JoinTable(name="recipe_has_category", joinColumns = @JoinColumn(name="recipe_id"), inverseJoinColumns = @JoinColumn(name="category_id"))
+	@JoinTable(name = "recipe_has_category", joinColumns = @JoinColumn(name = "recipe_id"), inverseJoinColumns = @JoinColumn(name = "category_id"))
 	private List<Recipe> recipes;
-	
+
 	public Category() {
 		super();
 	}
@@ -79,7 +77,6 @@ public class Category implements Serializable {
 	public void setRecipes(List<Recipe> recipes) {
 		this.recipes = recipes;
 	}
-	
 
 	@Override
 	public int hashCode() {
@@ -102,7 +99,5 @@ public class Category implements Serializable {
 	public String toString() {
 		return "Category [id=" + id + ", name=" + name + ", description=" + description + "]";
 	}
-	
-	
-   
+
 }
