@@ -17,6 +17,18 @@ public class RecipeIngredientId implements Serializable {
 	@Column(name = "ingredient_id")
 	private int ingredientId;
 
+	public RecipeIngredientId() {
+		super();
+	}
+	
+	public RecipeIngredientId(int recipeId, int ingredientId) {
+		super();
+		this.recipeId = recipeId;
+		this.ingredientId = ingredientId;
+	}
+
+
+
 	public int getRecipeId() {
 		return recipeId;
 	}
