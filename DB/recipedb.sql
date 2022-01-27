@@ -486,6 +486,26 @@ COMMIT;
 
 
 -- -----------------------------------------------------
+-- Data for table `recipe_has_category`
+-- -----------------------------------------------------
+START TRANSACTION;
+USE `recipe`;
+INSERT INTO `recipe_has_category` (`recipe_id`, `category_id`) VALUES (1, 1);
+
+COMMIT;
+
+
+-- -----------------------------------------------------
+-- Data for table `cookbook_has_recipe`
+-- -----------------------------------------------------
+START TRANSACTION;
+USE `recipe`;
+INSERT INTO `cookbook_has_recipe` (`cookbook_id`, `recipe_id`) VALUES (1, 1);
+
+COMMIT;
+
+
+-- -----------------------------------------------------
 -- Data for table `recipe_rating`
 -- -----------------------------------------------------
 START TRANSACTION;
