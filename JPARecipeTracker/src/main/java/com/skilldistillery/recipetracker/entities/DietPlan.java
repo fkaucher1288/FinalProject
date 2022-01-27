@@ -8,6 +8,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -27,6 +29,9 @@ public class DietPlan {
 	private List<DietPlanRecipe> dietPlanRecipes;
 	@OneToMany(mappedBy="dietPlan")
 	private List<DietPlanIngredient> dietPlanIngredients;
+	@ManyToOne
+	@JoinColumn(name="user_id")
+	private User user;
 	
 	public int getId() {
 		return id;
@@ -68,6 +73,15 @@ public class DietPlan {
 	}
 	public void setDietPlanRecipes(List<DietPlanRecipe> dietPlanRecipes) {
 		this.dietPlanRecipes = dietPlanRecipes;
+	}
+	
+	
+	
+	public User getUser() {
+		return user;
+	}
+	public void setUser(User user) {
+		this.user = user;
 	}
 	public DietPlan(int id, String planName, String description, boolean active) {
 		super();

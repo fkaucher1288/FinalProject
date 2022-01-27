@@ -39,15 +39,15 @@ public class DietPlanIngredient {
 		this.purchased = purchased;
 	}
 	
-	
-	
-	
 	public DietPlan getDietPlan() {
 		return dietPlan;
 	}
 	public void setDietPlan(DietPlan dietPlan) {
 		this.dietPlan = dietPlan;
 	}
+	
+	
+	
 	public DietPlanIngredient() {
 		super();
 	}

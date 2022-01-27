@@ -1,9 +1,15 @@
 package com.skilldistillery.recipetracker.entities;
 
 import java.io.Serializable;
+import java.util.List;
 import java.util.Objects;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 /**
  * Entity implementation class for Entity: Ingredient
@@ -21,11 +27,16 @@ public class Ingredient implements Serializable {
 	private String name;
 
 	private String brand;
-
-	private String amount;
+	@Column(name="measurement_unit")
+	private String measurement;
 
 	private String category;
-
+	@OneToMany(mappedBy="ingredient")
+	private List<DietPlanIngredient> dietPlanIngredients;
+	
+	@OneToMany(mappedBy="ingredient")
+	private List<RecipeIngredient> recipeIngredients; 
+	
 	public Ingredient() {
 		super();
 	}
@@ -54,12 +65,12 @@ public class Ingredient implements Serializable {
 		this.brand = brand;
 	}
 
-	public String getAmount() {
-		return amount;
+	public String getMeasurement() {
+		return measurement;
 	}
 
-	public void setAmount(String amount) {
-		this.amount = amount;
+	public void setMeasurement(String measurement) {
+		this.measurement = measurement;
 	}
 
 	public String getCategory() {
@@ -68,6 +79,24 @@ public class Ingredient implements Serializable {
 
 	public void setCategory(String category) {
 		this.category = category;
+	}
+	
+	
+
+	public List<DietPlanIngredient> getDietPlanIngredients() {
+		return dietPlanIngredients;
+	}
+
+	public void setDietPlanIngredients(List<DietPlanIngredient> dietPlanIngredients) {
+		this.dietPlanIngredients = dietPlanIngredients;
+	}
+
+	public List<RecipeIngredient> getRecipeIngredients() {
+		return recipeIngredients;
+	}
+
+	public void setRecipeIngredients(List<RecipeIngredient> recipeIngredients) {
+		this.recipeIngredients = recipeIngredients;
 	}
 
 	@Override
@@ -89,7 +118,7 @@ public class Ingredient implements Serializable {
 
 	@Override
 	public String toString() {
-		return "Ingredient [id=" + id + ", name=" + name + ", brand=" + brand + ", amount=" + amount + ", category="
+		return "Ingredient [id=" + id + ", name=" + name + ", brand=" + brand + ", amount=" + measurement + ", category="
 				+ category + "]";
 	}
 

@@ -1,12 +1,13 @@
 package com.skilldistillery.recipetracker.entities;
 
+import java.util.List;
 import java.util.Objects;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -17,6 +18,9 @@ public class CategoryType {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	private String name;
+	
+	@OneToMany(mappedBy="type")
+	private List<Category> category;
 	
 	public CategoryType() {
 		super();
@@ -40,6 +44,17 @@ public class CategoryType {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	
+
+	public List<Category> getCategory() {
+		return category;
+	}
+
+
+	public void setCategory(List<Category> category) {
+		this.category = category;
 	}
 
 

@@ -1,5 +1,6 @@
 package com.skilldistillery.recipetracker.entities;
 
+import java.util.List;
 import java.util.Objects;
 
 import javax.persistence.Column;
@@ -7,6 +8,10 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Cookbook {
@@ -21,14 +26,14 @@ public class Cookbook {
 	@Column(name = "image_url")
 	private String url;
 
-//	@ManyToMany
-//	@JoinTable(name = "cookbook_has_recipe", joinColumns = @JoinColumn(name = "cookbook_id"), inverseJoinColumns = @JoinColumn(name = "recipe_id"))
-//	private List<Recipe> recipes;
+	@ManyToMany
+	@JoinTable(name = "cookbook_has_recipe", joinColumns = @JoinColumn(name = "cookbook_id"), inverseJoinColumns = @JoinColumn(name = "recipe_id"))
+	private List<Recipe> recipes;
 	
-//	@ManyToOne
-//	@JoinColumn(name = "user_id")
-//	private User user;
-//	
+	@ManyToOne
+	@JoinColumn(name = "user_id")
+	private User user;
+	
 	public Cookbook() {
 		super();
 	}
@@ -71,6 +76,24 @@ public class Cookbook {
 
 	public void setUrl(String url) {
 		this.url = url;
+	}
+	
+	
+
+	public List<Recipe> getRecipes() {
+		return recipes;
+	}
+
+	public void setRecipes(List<Recipe> recipes) {
+		this.recipes = recipes;
+	}
+
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
 	}
 
 	@Override
