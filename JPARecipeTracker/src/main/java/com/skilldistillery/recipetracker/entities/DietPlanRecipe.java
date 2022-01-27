@@ -3,73 +3,87 @@ package com.skilldistillery.recipetracker.entities;
 import java.util.Objects;
 
 import javax.persistence.Column;
+import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.MapsId;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="dietplan_recipe")
+@Table(name = "dietplan_recipe")
 public class DietPlanRecipe {
-	
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id;
-	@Column(name="sequence_number")
+
+	@EmbeddedId
+	private DietPlanRecipeId id;
+
+	@Column(name = "sequence_number")
 	private int sequenceNumber;
-	@Column(name="day_name")
+
+	@Column(name = "day_name")
 	@Enumerated(EnumType.STRING)
 	private DayOfWeek dayName;
+
 	@ManyToOne
-	@JoinColumn(name="diet_plan_id")
+	@MapsId("planId")
 	private DietPlan dietPlan;
+
 	@ManyToOne
-	@JoinColumn(name="recipe_id")
+	@MapsId("recipeId")
 	private Recipe recipe;
 	
-	public int getId() {
-		return id;
+	public DietPlanRecipe() {
+		super();
 	}
-	public void setId(int id) {
+
+	public DietPlanRecipe(DietPlanRecipeId id, int sequenceNumber, DayOfWeek dayName, DietPlan dietPlan,
+			Recipe recipe) {
+		super();
 		this.id = id;
+		this.sequenceNumber = sequenceNumber;
+		this.dayName = dayName;
+		this.dietPlan = dietPlan;
+		this.recipe = recipe;
 	}
+
 	public int getSequenceNumber() {
 		return sequenceNumber;
 	}
+
 	public void setSequenceNumber(int sequenceNumber) {
 		this.sequenceNumber = sequenceNumber;
 	}
+
 	public DayOfWeek getDayName() {
 		return dayName;
 	}
+
 	public void setDayName(DayOfWeek dayName) {
 		this.dayName = dayName;
 	}
-	
+
 	public DietPlan getDietPlan() {
 		return dietPlan;
 	}
+
 	public void setDietPlan(DietPlan dietPlan) {
 		this.dietPlan = dietPlan;
 	}
-	
-	
-	
+
 	public Recipe getRecipe() {
 		return recipe;
 	}
+
 	public void setRecipe(Recipe recipe) {
 		this.recipe = recipe;
 	}
+
 	@Override
 	public int hashCode() {
 		return Objects.hash(id);
 	}
+
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -81,19 +95,10 @@ public class DietPlanRecipe {
 		DietPlanRecipe other = (DietPlanRecipe) obj;
 		return id == other.id;
 	}
-	public DietPlanRecipe(int id, int sequenceNumber, DayOfWeek dayName) {
-		super();
-		this.id = id;
-		this.sequenceNumber = sequenceNumber;
-		this.dayName = dayName;
-	}
-	public DietPlanRecipe() {
-		super();
-	}
+
 	@Override
 	public String toString() {
 		return "DietPlanRecipe [id=" + id + ", sequenceNumber=" + sequenceNumber + ", dayName=" + dayName + "]";
 	}
 
-	
 }

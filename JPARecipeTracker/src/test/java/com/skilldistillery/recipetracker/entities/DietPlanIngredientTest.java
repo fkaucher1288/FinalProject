@@ -2,31 +2,37 @@ package com.skilldistillery.recipetracker.entities;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
-import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 class DietPlanIngredientTest extends AbstractTest {
 
-	private DietPlanIngredient dietPlanIngredient;
+	private DietPlanIngredient ingredient;
 
 	@Override
 	void setUp() throws Exception {
-		dietPlanIngredient = em.find(DietPlanIngredient.class, 1);	
+		ingredient = em.find(DietPlanIngredient.class, new DietPlanIngredientId(1,1));	
 	}
 
 	@Test
-	@DisplayName("DietPlanIngredient basic mapping")
-	void test_User_entity_mapping() {
-		assertNotNull(dietPlanIngredient);
-		assertEquals(1, dietPlanIngredient.getId());
-		assertEquals(true, dietPlanIngredient.getPurchased());
+	void diet_plan_mapping() throws Exception {
+		assertNotNull(ingredient);
+		assertNotNull(ingredient.getDietPlan());
+		assertEquals(1, ingredient.getDietPlan().getId());
 	}
+	
 	@Test
-	@DisplayName("DietPlanIngredient relational mapping to ingredient")
-	void test2() {
-		assertNotNull(dietPlanIngredient.getIngredient());
-		assertEquals(1, dietPlanIngredient.getIngredient().getId());
-		
+	void ingredient_mapping() throws Exception {
+		assertNotNull(ingredient);
+		assertNotNull(ingredient.getIngredient());
+		assertEquals(1, ingredient.getIngredient().getId());
+	}
+
+	
+	@Test
+	void purchased_mapping() throws Exception {
+		assertNotNull(ingredient);
+		assertTrue(ingredient.getPurchased());
 	}
 }

@@ -2,72 +2,72 @@ package com.skilldistillery.recipetracker.entities;
 
 import java.util.Objects;
 
+import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.MapsId;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="dietplan_ingredient")
+@Table(name = "dietplan_ingredient")
 public class DietPlanIngredient {
-	
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id;
+
+	@EmbeddedId
+	private DietPlanIngredientId id;
+
+	@ManyToOne
+	@MapsId("planId")
+	@JoinColumn(name = "diet_plan_id")
+	private DietPlan dietPlan;// @JoinColumn necessary else it resolves to `dietPlan_id`
+
+	@ManyToOne
+	@MapsId("ingredientId")
+	private Ingredient ingredient; // @JoinColumn -not- necessary because it resolves to `ingredient_id`
+
 	private Boolean purchased;
-	@ManyToOne
-	@JoinColumn(name="diet_plan_id")
-	private DietPlan dietPlan;
-	
-	@ManyToOne
-	@JoinColumn(name="ingredient_id")
-	private Ingredient ingredient;
-	
-	public int getId() {
-		return id;
-	}
-	public void setId(int id) {
-		this.id = id;
-	}
-	public Boolean getPurchased() {
-		return purchased;
-	}
-	public void setPurchased(Boolean purchased) {
-		this.purchased = purchased;
-	}
-	
-	public DietPlan getDietPlan() {
-		return dietPlan;
-	}
-	public void setDietPlan(DietPlan dietPlan) {
-		this.dietPlan = dietPlan;
-	}
-	
-	
-	
+
 	public DietPlanIngredient() {
 		super();
 	}
-	public DietPlanIngredient(int id, Boolean purchased) {
+
+	public DietPlanIngredient(DietPlanIngredientId id, Boolean purchased, DietPlan dietPlan, Ingredient ingredient) {
 		super();
 		this.id = id;
 		this.purchased = purchased;
+		this.dietPlan = dietPlan;
+		this.ingredient = ingredient;
 	}
-	
-	
+
+	public Boolean getPurchased() {
+		return purchased;
+	}
+
+	public void setPurchased(Boolean purchased) {
+		this.purchased = purchased;
+	}
+
+	public DietPlan getDietPlan() {
+		return dietPlan;
+	}
+
+	public void setDietPlan(DietPlan dietPlan) {
+		this.dietPlan = dietPlan;
+	}
+
 	public Ingredient getIngredient() {
 		return ingredient;
 	}
+
 	public void setIngredient(Ingredient ingredient) {
 		this.ingredient = ingredient;
 	}
+
 	@Override
 	public int hashCode() {
 		return Objects.hash(id);
 	}
+
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -79,11 +79,10 @@ public class DietPlanIngredient {
 		DietPlanIngredient other = (DietPlanIngredient) obj;
 		return id == other.id;
 	}
+
 	@Override
 	public String toString() {
 		return "DietPlanIngredient [id=" + id + ", purchased=" + purchased + "]";
 	}
-	
-	
-	
+
 }

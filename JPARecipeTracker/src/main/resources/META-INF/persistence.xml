@@ -22,6 +22,8 @@
     <class>com.skilldistillery.recipetracker.entities.UserHasFavoriteRecipeId</class>
     <class>com.skilldistillery.recipetracker.entities.UserRecipeReviewId</class>
     <class>com.skilldistillery.recipetracker.entities.UserHasRecipeReviewCommentId</class>
+    <class>com.skilldistillery.recipetracker.entities.DietPlanIngredientId</class>
+    <class>com.skilldistillery.recipetracker.entities.DietPlanRecipeId</class>
    
 		<properties>
 			<property name="javax.persistence.jdbc.url"
