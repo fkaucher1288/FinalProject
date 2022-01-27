@@ -88,14 +88,13 @@ ENGINE = InnoDB;
 DROP TABLE IF EXISTS `recipe_ingredient` ;
 
 CREATE TABLE IF NOT EXISTS `recipe_ingredient` (
-  `id` INT NOT NULL AUTO_INCREMENT,
   `ingredient_id` INT NOT NULL,
   `recipe_id` INT NOT NULL,
   `quantity` DOUBLE NOT NULL,
   `remarks` VARCHAR(300) NULL,
-  PRIMARY KEY (`id`),
   INDEX `fk_recipe_ingredients_recipe1_idx` (`recipe_id` ASC),
   INDEX `fk_recipe_ingredients_ingredient1_idx` (`ingredient_id` ASC),
+  PRIMARY KEY (`ingredient_id`, `recipe_id`),
   CONSTRAINT `fk_recipe_ingredients_recipe1`
     FOREIGN KEY (`recipe_id`)
     REFERENCES `recipe` (`id`)
@@ -163,14 +162,13 @@ ENGINE = InnoDB;
 DROP TABLE IF EXISTS `dietplan_recipe` ;
 
 CREATE TABLE IF NOT EXISTS `dietplan_recipe` (
-  `id` INT NOT NULL AUTO_INCREMENT,
   `diet_plan_id` INT NOT NULL,
   `recipe_id` INT NOT NULL,
   `sequence_number` INT NOT NULL,
   `day_name` ENUM('Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday') NULL,
-  PRIMARY KEY (`id`),
   INDEX `fk_week_recipe1_idx` (`recipe_id` ASC),
   INDEX `fk_week_meal_plan1_idx` (`diet_plan_id` ASC),
+  PRIMARY KEY (`diet_plan_id`, `recipe_id`),
   CONSTRAINT `fk_week_recipe1`
     FOREIGN KEY (`recipe_id`)
     REFERENCES `recipe` (`id`)
@@ -190,13 +188,12 @@ ENGINE = InnoDB;
 DROP TABLE IF EXISTS `dietplan_ingredient` ;
 
 CREATE TABLE IF NOT EXISTS `dietplan_ingredient` (
-  `id` INT NOT NULL AUTO_INCREMENT,
   `diet_plan_id` INT NOT NULL,
   `purchased` TINYINT NOT NULL DEFAULT 0,
   `ingredient_id` INT NOT NULL,
-  PRIMARY KEY (`id`),
   INDEX `fk_grocery_list_meal_plan_idx` (`diet_plan_id` ASC),
   INDEX `fk_grocery_list_ingredient1_idx` (`ingredient_id` ASC),
+  PRIMARY KEY (`diet_plan_id`, `ingredient_id`),
   CONSTRAINT `fk_grocery_list_meal_plan`
     FOREIGN KEY (`diet_plan_id`)
     REFERENCES `dietplan` (`id`)
@@ -410,7 +407,7 @@ COMMIT;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `recipe`;
-INSERT INTO `recipe_ingredient` (`id`, `ingredient_id`, `recipe_id`, `quantity`, `remarks`) VALUES (1, 1, 1, 4, 'minced');
+INSERT INTO `recipe_ingredient` (`ingredient_id`, `recipe_id`, `quantity`, `remarks`) VALUES (1, 1, 4, 'minced');
 
 COMMIT;
 
@@ -440,7 +437,7 @@ COMMIT;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `recipe`;
-INSERT INTO `dietplan_recipe` (`id`, `diet_plan_id`, `recipe_id`, `sequence_number`, `day_name`) VALUES (1, 1, 1, 1, 'Monday');
+INSERT INTO `dietplan_recipe` (`diet_plan_id`, `recipe_id`, `sequence_number`, `day_name`) VALUES (1, 1, 1, 'Monday');
 
 COMMIT;
 
@@ -450,7 +447,7 @@ COMMIT;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `recipe`;
-INSERT INTO `dietplan_ingredient` (`id`, `diet_plan_id`, `purchased`, `ingredient_id`) VALUES (1, 1, 1, 1);
+INSERT INTO `dietplan_ingredient` (`diet_plan_id`, `purchased`, `ingredient_id`) VALUES (1, 1, 1);
 
 COMMIT;
 
