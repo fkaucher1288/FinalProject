@@ -11,31 +11,31 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.skilldistillery.recipetracker.entities.Category;
-import com.skilldistillery.recipetracker.services.CategoryService;
+import com.skilldistillery.recipetracker.entities.Cookbook;
+import com.skilldistillery.recipetracker.services.CookbookService;
 
 @RestController
 @RequestMapping("api")
 @CrossOrigin({"*", "http://localhost:4300"})
-public class CategoryController {
+public class CookbookController {
 	
 	@Autowired
-	private CategoryService svc;
+	private CookbookService svc;
 	
-	@GetMapping(path="category/{id}")
-	public Category getCategory(@PathVariable Integer id, HttpServletResponse rsp) {
-		Category category = svc.findById(id);
-		if (category == null) {
+	@GetMapping(path="cookbook/{id}")
+	public Cookbook getCookbook(@PathVariable Integer id, HttpServletResponse rsp) {
+		Cookbook cookbook = svc.findById(id);
+		if (cookbook == null) {
 			rsp.setStatus(404);
 		} else {
 			rsp.setStatus(201);
 		}
-		return category;
+		return cookbook;
 	}
 	
-	@GetMapping(path="category")
-	public List<Category> allCategories() {
-		return svc.showAllCategories();
+	@GetMapping(path="cookbook")
+	public List<Cookbook> allCookbook() {
+		return svc.showAllCookbooks();
 	}
 	
 
