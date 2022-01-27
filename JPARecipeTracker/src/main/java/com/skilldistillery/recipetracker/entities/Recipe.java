@@ -16,67 +16,63 @@ import javax.persistence.OneToMany;
 
 @Entity
 public class Recipe {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
-	
+
 	private String name;
-	
-	@Column(name="date_created")
+
+	@Column(name = "date_created")
 	private LocalDateTime dateCreated;
 	private boolean active;
-	
+
 	@ManyToOne
-	@JoinColumn(name="creator_id")
+	@JoinColumn(name = "creator_id")
 	private User user;
-	
-	@Column(name="is_public")
+
+	@Column(name = "is_public")
 	private boolean isPublic;
-	
-	@Column(name="prep_time")	
+
+	@Column(name = "prep_time")
 	private String prepTime;
-	
-	@Column(name="cook_time")	
+
+	@Column(name = "cook_time")
 	private String cookTime;
 	private String description;
 	private String instructions;
 	private String notes;
-	
-	@Column(name="photo_link")
-	private String imageURL;
-	
-	@Column(name="web_link")
-	private String webLink;
-	
-	@ManyToMany(mappedBy="recipes")
-	private List<Category> categories;
-	
-	@ManyToMany(mappedBy="recipes")
-	private List<Cookbook> cookbooks;
-	
-	@OneToMany(mappedBy="recipe")
-	private List<DietPlanRecipe> dietPlanRecipe;
-	
-	@OneToMany(mappedBy="recipe")
-	private List<FavoriteRecipe> favoriteRecipes;
-	
-	@OneToMany(mappedBy="recipe")
-	private List<RecipeReview> recipeReviews;
-	
-	@OneToMany(mappedBy="recipe")
-	private List<RecipeRating> recipeRatings;
-	
-	@OneToMany(mappedBy="recipe")
-	private List<RecipeIngredient> recipeIngredients;
-	
 
-//------------------------constructor---------------------	
+	@Column(name = "photo_link")
+	private String imageURL;
+
+	@Column(name = "web_link")
+	private String webLink;
+
+	@ManyToMany(mappedBy = "recipes")
+	private List<Category> categories;
+
+	@ManyToMany(mappedBy = "recipes")
+	private List<Cookbook> cookbooks;
+
+	@OneToMany(mappedBy = "recipe")
+	private List<DietPlanRecipe> dietPlanRecipe;
+
+	@OneToMany(mappedBy = "recipe")
+	private List<FavoriteRecipe> favoriteRecipes;
+
+	@OneToMany(mappedBy = "recipe")
+	private List<RecipeReview> recipeReviews;
+
+	@OneToMany(mappedBy = "recipe")
+	private List<RecipeRating> recipeRatings;
+
+	@OneToMany(mappedBy = "recipe")
+	private List<RecipeIngredient> recipeIngredients;
+
 	public Recipe() {
 		super();
 	}
-
-//---------------GETTERS/SETTERS---------------------------
 
 	public int getId() {
 		return id;
@@ -110,7 +106,6 @@ public class Recipe {
 		this.active = active;
 	}
 
-	
 	public User getUser() {
 		return user;
 	}
@@ -126,7 +121,6 @@ public class Recipe {
 	public void setPublic(boolean isPublic) {
 		this.isPublic = isPublic;
 	}
-	
 
 	public String getPrepTime() {
 		return prepTime;
@@ -175,7 +169,7 @@ public class Recipe {
 	public void setDescription(String description) {
 		this.description = description;
 	}
-	
+
 	public String getNotes() {
 		return notes;
 	}
@@ -183,69 +177,66 @@ public class Recipe {
 	public void setNotes(String notes) {
 		this.notes = notes;
 	}
-	
+
 	public List<Category> getCategories() {
 		return categories;
 	}
-	
+
 	public void setCategories(List<Category> categories) {
 		this.categories = categories;
 	}
-	
+
 	public List<Cookbook> getCookbooks() {
 		return cookbooks;
 	}
-	
+
 	public void setCookbooks(List<Cookbook> cookbooks) {
 		this.cookbooks = cookbooks;
 	}
-	
+
 	public List<DietPlanRecipe> getDietPlanRecipe() {
 		return dietPlanRecipe;
 	}
-	
+
 	public void setDietPlanRecipe(List<DietPlanRecipe> dietPlanRecipe) {
 		this.dietPlanRecipe = dietPlanRecipe;
 	}
-	
+
 	public List<FavoriteRecipe> getFavoriteRecipes() {
 		return favoriteRecipes;
 	}
-	
+
 	public void setFavoriteRecipes(List<FavoriteRecipe> favoriteRecipes) {
 		this.favoriteRecipes = favoriteRecipes;
 	}
-	
+
 	public List<RecipeReview> getRecipeReviews() {
 		return recipeReviews;
 	}
-	
+
 	public void setRecipeReviews(List<RecipeReview> recipeReviews) {
 		this.recipeReviews = recipeReviews;
 	}
-	
+
 	public List<RecipeRating> getRecipeRatings() {
 		return recipeRatings;
 	}
-	
+
 	public void setRecipeRatings(List<RecipeRating> recipeRatings) {
 		this.recipeRatings = recipeRatings;
 	}
-	
+
 	public List<RecipeIngredient> getRecipeIngredients() {
 		return recipeIngredients;
 	}
-	
+
 	public void setRecipeIngredients(List<RecipeIngredient> recipeIngredients) {
 		this.recipeIngredients = recipeIngredients;
 	}
-//--------------------hashcode/equals-----------------
-
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(active, cookTime, dateCreated, description, id, imageURL, instructions, isPublic, name,
-				notes, prepTime, webLink);
+		return Objects.hash(id);
 	}
 
 	@Override
@@ -257,15 +248,8 @@ public class Recipe {
 		if (getClass() != obj.getClass())
 			return false;
 		Recipe other = (Recipe) obj;
-		return active == other.active && Objects.equals(cookTime, other.cookTime)
-				&& Objects.equals(dateCreated, other.dateCreated) && Objects.equals(description, other.description)
-				&& id == other.id && Objects.equals(imageURL, other.imageURL)
-				&& Objects.equals(instructions, other.instructions) && isPublic == other.isPublic
-				&& Objects.equals(name, other.name) && Objects.equals(notes, other.notes)
-				&& Objects.equals(prepTime, other.prepTime) && Objects.equals(webLink, other.webLink);
+		return id == other.id;
 	}
-
-//-----------------------toString---------------------------
 
 	@Override
 	public String toString() {
@@ -274,32 +258,5 @@ public class Recipe {
 				+ description + ", instructions=" + instructions + ", notes=" + notes + ", imageURL=" + imageURL
 				+ ", webLink=" + webLink + "]";
 	}
-
-
-	
-
-
-
-
-	
-	
-
-
-
-
-
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 
 }
