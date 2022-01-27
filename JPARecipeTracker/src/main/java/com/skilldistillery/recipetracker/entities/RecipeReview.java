@@ -14,7 +14,7 @@ import javax.persistence.MapsId;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="favorite_recipe")
+@Table(name="recipe_review")
 public class RecipeReview {
 	
 	

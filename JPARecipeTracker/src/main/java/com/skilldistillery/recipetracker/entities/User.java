@@ -50,6 +50,24 @@ public class User {
 	@OneToMany(mappedBy="user")
 	private List <Recipe> recipes;
 	
+	@OneToMany(mappedBy="user")
+	private List<Cookbook> cookbooks;
+	
+	@OneToMany(mappedBy="user")
+	private List<DietPlan> dietPlans;
+	
+	@OneToMany(mappedBy="user")
+	private List<FavoriteRecipe> favoriteRecipes;
+	
+	@OneToMany(mappedBy="user")
+	private List<RecipeReview> recipeReviews;
+	
+	@OneToMany(mappedBy="user")
+	private List<RecipeRating> recipeRatings;
+	
+	
+	
+	
 	public User() {
 		super();
 
@@ -150,6 +168,46 @@ public class User {
 
 	public void setRecipes(List<Recipe> recipes) {
 		this.recipes = recipes;
+	}
+
+	public List<Cookbook> getCookbooks() {
+		return cookbooks;
+	}
+
+	public void setCookbooks(List<Cookbook> cookbooks) {
+		this.cookbooks = cookbooks;
+	}
+
+	public List<DietPlan> getDietPlans() {
+		return dietPlans;
+	}
+
+	public void setDietPlans(List<DietPlan> dietPlans) {
+		this.dietPlans = dietPlans;
+	}
+
+	public List<FavoriteRecipe> getFavoriteRecipes() {
+		return favoriteRecipes;
+	}
+
+	public void setFavoriteRecipes(List<FavoriteRecipe> favoriteRecipes) {
+		this.favoriteRecipes = favoriteRecipes;
+	}
+
+	public List<RecipeReview> getRecipeReviews() {
+		return recipeReviews;
+	}
+
+	public void setRecipeReviews(List<RecipeReview> recipeReviews) {
+		this.recipeReviews = recipeReviews;
+	}
+
+	public List<RecipeRating> getRecipeRatings() {
+		return recipeRatings;
+	}
+
+	public void setRecipeRatings(List<RecipeRating> recipeRatings) {
+		this.recipeRatings = recipeRatings;
 	}
 
 	@Override

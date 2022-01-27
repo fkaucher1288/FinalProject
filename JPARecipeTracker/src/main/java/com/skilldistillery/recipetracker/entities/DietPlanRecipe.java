@@ -28,6 +28,10 @@ public class DietPlanRecipe {
 	@ManyToOne
 	@JoinColumn(name="diet_plan_id")
 	private DietPlan dietPlan;
+	@ManyToOne
+	@JoinColumn(name="recipe_id")
+	private Recipe recipe;
+	
 	public int getId() {
 		return id;
 	}
@@ -47,12 +51,20 @@ public class DietPlanRecipe {
 		this.dayName = dayName;
 	}
 	
-	
 	public DietPlan getDietPlan() {
 		return dietPlan;
 	}
 	public void setDietPlan(DietPlan dietPlan) {
 		this.dietPlan = dietPlan;
+	}
+	
+	
+	
+	public Recipe getRecipe() {
+		return recipe;
+	}
+	public void setRecipe(Recipe recipe) {
+		this.recipe = recipe;
 	}
 	@Override
 	public int hashCode() {

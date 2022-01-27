@@ -101,7 +101,7 @@ public class FavoriteRecipe {
 	public void setUser(User user) {
 		this.user = user;
 	}
-
+	
 	@Override
 	public int hashCode() {
 		return Objects.hash(id);
