@@ -14,7 +14,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 
-class CategoryTypeTest extends TestTemplate {
+class CategoryTypeTest extends AbstractTest {
 
 	private CategoryType categoryType;
 
@@ -27,7 +27,6 @@ class CategoryTypeTest extends TestTemplate {
 	void test_CategoryType_basic_mappings() {
 		assertNotNull(categoryType);
 		assertEquals("ethnic", categoryType.getName());
-
 	}
 
 }

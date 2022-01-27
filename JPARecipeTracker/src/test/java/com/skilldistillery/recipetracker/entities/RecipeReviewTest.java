@@ -4,7 +4,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
-class RecipeReviewTest extends TestTemplate {
+class RecipeReviewTest extends AbstractTest {
 	
 	private RecipeReview review;
 	

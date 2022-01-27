@@ -6,7 +6,7 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-class DietPlanIngredientTest extends TestTemplate {
+class DietPlanIngredientTest extends AbstractTest {
 
 	private DietPlanIngredient dietPlanIngredient;
 

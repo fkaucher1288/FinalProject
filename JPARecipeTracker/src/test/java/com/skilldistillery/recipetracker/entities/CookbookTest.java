@@ -5,7 +5,7 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 import org.junit.jupiter.api.Test;
 
-class CookbookTest extends TestTemplate {
+class CookbookTest extends AbstractTest {
 
 	private Cookbook cookbook;
 	@Override
