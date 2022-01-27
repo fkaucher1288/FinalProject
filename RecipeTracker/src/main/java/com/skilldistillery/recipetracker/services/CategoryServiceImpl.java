@@ -1,7 +1,6 @@
 package com.skilldistillery.recipetracker.services;
 
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -14,20 +13,11 @@ import com.skilldistillery.recipetracker.repositories.CategoryRepository;
 public class CategoryServiceImpl implements CategoryService {
 
 	@Autowired
-	private CategoryRepository repo;
+	private CategoryRepository catRepo;
 	
 	@Override
-	public Category findCategoryById(int id) {
-		Optional<Category> op = repo.findById(id);
-		if (op.isPresent()) {
-			return op.get();
-		}
-		return null;
-	}
-
-	@Override
-	public List<Category> showAllCategories() {
-		return repo.findAll();
+	public List<Category> index() {
+		return catRepo.findAll();
 	}
 
 	@Override
