@@ -11,6 +11,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 public class Ingredient implements Serializable {
 
@@ -28,10 +30,10 @@ public class Ingredient implements Serializable {
 	private String measurementUnit;
 
 	private String category;
-
+	@JsonIgnore
 	@OneToMany(mappedBy = "ingredient")
 	private List<DietPlanIngredient> dietPlanIngredients;
-
+	@JsonIgnore
 	@OneToMany(mappedBy = "ingredient")
 	private List<RecipeIngredient> recipeIngredients;
 

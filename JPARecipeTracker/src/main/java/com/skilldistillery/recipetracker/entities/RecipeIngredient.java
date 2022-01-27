@@ -9,6 +9,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.MapsId;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table(name = "recipe_ingredient")
 public class RecipeIngredient implements Serializable {
@@ -17,11 +19,11 @@ public class RecipeIngredient implements Serializable {
 
 	@EmbeddedId
 	private RecipeIngredientId id;
-
+	@JsonIgnore
 	@ManyToOne
 	@MapsId("recipeId")
 	private Recipe recipe;
-
+	@JsonIgnore
 	@ManyToOne
 	@MapsId("ingredientId")
 	private Ingredient ingredient;

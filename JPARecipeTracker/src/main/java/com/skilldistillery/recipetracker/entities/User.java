@@ -49,19 +49,19 @@ public class User {
 	@JsonIgnore
 	@OneToMany(mappedBy = "user")
 	private List<Recipe> recipes;
-
+	@JsonIgnore
 	@OneToMany(mappedBy = "user")
 	private List<Cookbook> cookbooks;
-
+	@JsonIgnore
 	@OneToMany(mappedBy = "user")
 	private List<DietPlan> dietPlans;
-
+	@JsonIgnore
 	@OneToMany(mappedBy = "user")
 	private List<FavoriteRecipe> favorites;
-
+	@JsonIgnore
 	@OneToMany(mappedBy = "user")
 	private List<RecipeReview> reviews;
-
+	@JsonIgnore
 	@OneToMany(mappedBy = "user")
 	private List<RecipeRating> ratings;
 

@@ -14,6 +14,8 @@ import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 public class Recipe {
 
@@ -27,7 +29,7 @@ public class Recipe {
 	private LocalDateTime dateCreated;
 	
 	private boolean active;
-
+	@JsonIgnore
 	@ManyToOne
 	@JoinColumn(name = "creator_id")
 	private User user;
@@ -50,25 +52,25 @@ public class Recipe {
 
 	@Column(name = "web_link")
 	private String webLink;
-
+	@JsonIgnore
 	@ManyToMany(mappedBy = "recipes")
 	private List<Category> categories;
-
+	@JsonIgnore
 	@ManyToMany(mappedBy = "recipes")
 	private List<Cookbook> cookbooks;
-
+	@JsonIgnore
 	@OneToMany(mappedBy = "recipe")
 	private List<DietPlanRecipe> dietPlans;
-
+	@JsonIgnore
 	@OneToMany(mappedBy = "recipe")
 	private List<FavoriteRecipe> favorites;
-
+	@JsonIgnore
 	@OneToMany(mappedBy = "recipe")
 	private List<RecipeReview> reviews;
-
+	@JsonIgnore
 	@OneToMany(mappedBy = "recipe")
 	private List<RecipeRating> ratings;
-
+	@JsonIgnore
 	@OneToMany(mappedBy = "recipe")
 	private List<RecipeIngredient> ingredients;
 

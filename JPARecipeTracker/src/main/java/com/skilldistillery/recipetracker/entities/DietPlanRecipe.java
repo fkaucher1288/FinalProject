@@ -12,6 +12,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.MapsId;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table(name = "dietplan_recipe")
 public class DietPlanRecipe {
@@ -25,12 +27,12 @@ public class DietPlanRecipe {
 	@Column(name = "day_name")
 	@Enumerated(EnumType.STRING)
 	private DayOfWeek dayName;
-
+	@JsonIgnore
 	@ManyToOne
 	@MapsId("planId")
 	@JoinColumn(name="diet_plan_id")
 	private DietPlan dietPlan;
-
+	@JsonIgnore
 	@ManyToOne
 	@MapsId("recipeId")
 	private Recipe recipe;
