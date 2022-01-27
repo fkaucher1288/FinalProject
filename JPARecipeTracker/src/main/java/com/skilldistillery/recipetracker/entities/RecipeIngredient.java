@@ -32,9 +32,6 @@ public class RecipeIngredient implements Serializable {
 	
 	private double quantity;
 	
-	@Column(name="measurement_unit")
-	private String measurementUnit;
-	
 	private String remarks;
 	
 	public RecipeIngredient() {
@@ -63,14 +60,6 @@ public class RecipeIngredient implements Serializable {
 
 	public void setQuantity(double quantity) {
 		this.quantity = quantity;
-	}
-
-	public String getMeasurementUnit() {
-		return measurementUnit;
-	}
-
-	public void setMeasurementUnit(String measurementUnit) {
-		this.measurementUnit = measurementUnit;
 	}
 
 	public String getRemarks() {

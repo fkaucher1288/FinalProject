@@ -22,7 +22,7 @@ public class Ingredient implements Serializable {
 
 	private String brand;
 
-	private String amount;
+	private String measurementUnit;
 
 	private String category;
 
@@ -54,12 +54,12 @@ public class Ingredient implements Serializable {
 		this.brand = brand;
 	}
 
-	public String getAmount() {
-		return amount;
+	public String getMeasurementUnit() {
+		return measurementUnit;
 	}
 
-	public void setAmount(String amount) {
-		this.amount = amount;
+	public void setMeasurementUnit(String amount) {
+		this.measurementUnit = amount;
 	}
 
 	public String getCategory() {
@@ -89,7 +89,7 @@ public class Ingredient implements Serializable {
 
 	@Override
 	public String toString() {
-		return "Ingredient [id=" + id + ", name=" + name + ", brand=" + brand + ", amount=" + amount + ", category="
+		return "Ingredient [id=" + id + ", name=" + name + ", brand=" + brand + ", amount=" + measurementUnit + ", category="
 				+ category + "]";
 	}
 
