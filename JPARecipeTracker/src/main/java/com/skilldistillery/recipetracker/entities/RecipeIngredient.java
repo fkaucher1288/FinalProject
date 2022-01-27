@@ -69,7 +69,6 @@ public class RecipeIngredient implements Serializable {
 	public void setRemarks(String remarks) {
 		this.remarks = remarks;
 	}
-   
-	
+
 	
 }

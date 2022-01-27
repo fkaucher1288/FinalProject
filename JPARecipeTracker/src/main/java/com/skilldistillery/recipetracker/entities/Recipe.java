@@ -1,6 +1,7 @@
 package com.skilldistillery.recipetracker.entities;
 
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.Objects;
 
 import javax.persistence.Column;
@@ -9,6 +10,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
@@ -47,6 +49,28 @@ public class Recipe {
 	@Column(name="web_link")
 	private String webLink;
 	
+	@ManyToMany(mappedBy="recipes")
+	private List<Category> categories;
+	
+	@ManyToMany(mappedBy="recipes")
+	private List<Cookbook> cookbooks;
+	
+	@OneToMany(mappedBy="recipe")
+	private List<DietPlanRecipe> dietPlanRecipe;
+	
+	@OneToMany(mappedBy="recipe")
+	private List<FavoriteRecipe> favoriteRecipes;
+	
+	@OneToMany(mappedBy="recipe")
+	private List<RecipeReview> recipeReviews;
+	
+	@OneToMany(mappedBy="recipe")
+	private List<RecipeRating> recipeRatings;
+	
+	@OneToMany(mappedBy="recipe")
+	private List<RecipeIngredient> recipeIngredients;
+	
+
 //------------------------constructor---------------------	
 	public Recipe() {
 		super();
@@ -159,7 +183,64 @@ public class Recipe {
 	public void setNotes(String notes) {
 		this.notes = notes;
 	}
+	
+	public List<Category> getCategories() {
+		return categories;
+	}
+	
+	public void setCategories(List<Category> categories) {
+		this.categories = categories;
+	}
+	
+	public List<Cookbook> getCookbooks() {
+		return cookbooks;
+	}
+	
+	public void setCookbooks(List<Cookbook> cookbooks) {
+		this.cookbooks = cookbooks;
+	}
+	
+	public List<DietPlanRecipe> getDietPlanRecipe() {
+		return dietPlanRecipe;
+	}
+	
+	public void setDietPlanRecipe(List<DietPlanRecipe> dietPlanRecipe) {
+		this.dietPlanRecipe = dietPlanRecipe;
+	}
+	
+	public List<FavoriteRecipe> getFavoriteRecipes() {
+		return favoriteRecipes;
+	}
+	
+	public void setFavoriteRecipes(List<FavoriteRecipe> favoriteRecipes) {
+		this.favoriteRecipes = favoriteRecipes;
+	}
+	
+	public List<RecipeReview> getRecipeReviews() {
+		return recipeReviews;
+	}
+	
+	public void setRecipeReviews(List<RecipeReview> recipeReviews) {
+		this.recipeReviews = recipeReviews;
+	}
+	
+	public List<RecipeRating> getRecipeRatings() {
+		return recipeRatings;
+	}
+	
+	public void setRecipeRatings(List<RecipeRating> recipeRatings) {
+		this.recipeRatings = recipeRatings;
+	}
+	
+	public List<RecipeIngredient> getRecipeIngredients() {
+		return recipeIngredients;
+	}
+	
+	public void setRecipeIngredients(List<RecipeIngredient> recipeIngredients) {
+		this.recipeIngredients = recipeIngredients;
+	}
 //--------------------hashcode/equals-----------------
+
 
 	@Override
 	public int hashCode() {

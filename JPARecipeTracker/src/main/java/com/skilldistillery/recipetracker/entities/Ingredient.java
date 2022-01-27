@@ -1,9 +1,15 @@
 package com.skilldistillery.recipetracker.entities;
 
 import java.io.Serializable;
+import java.util.List;
 import java.util.Objects;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 /**
  * Entity implementation class for Entity: Ingredient
@@ -22,10 +28,17 @@ public class Ingredient implements Serializable {
 
 	private String brand;
 
+	@Column(name="measurement_unit")
 	private String measurementUnit;
 
-	private String category;
 
+	private String category;
+	@OneToMany(mappedBy="ingredient")
+	private List<DietPlanIngredient> dietPlanIngredients;
+	
+	@OneToMany(mappedBy="ingredient")
+	private List<RecipeIngredient> recipeIngredients; 
+	
 	public Ingredient() {
 		super();
 	}
@@ -53,13 +66,14 @@ public class Ingredient implements Serializable {
 	public void setBrand(String brand) {
 		this.brand = brand;
 	}
-
+	
 	public String getMeasurementUnit() {
 		return measurementUnit;
 	}
 
-	public void setMeasurementUnit(String amount) {
-		this.measurementUnit = amount;
+	public void setMeasurementUnit(String measurementUnit) {
+		this.measurementUnit = measurementUnit;
+
 	}
 
 	public String getCategory() {
@@ -68,6 +82,24 @@ public class Ingredient implements Serializable {
 
 	public void setCategory(String category) {
 		this.category = category;
+	}
+	
+	
+
+	public List<DietPlanIngredient> getDietPlanIngredients() {
+		return dietPlanIngredients;
+	}
+
+	public void setDietPlanIngredients(List<DietPlanIngredient> dietPlanIngredients) {
+		this.dietPlanIngredients = dietPlanIngredients;
+	}
+
+	public List<RecipeIngredient> getRecipeIngredients() {
+		return recipeIngredients;
+	}
+
+	public void setRecipeIngredients(List<RecipeIngredient> recipeIngredients) {
+		this.recipeIngredients = recipeIngredients;
 	}
 
 	@Override

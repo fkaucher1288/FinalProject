@@ -32,6 +32,10 @@ public class RecipeIngredientId implements Serializable {
 	public void setIngredientId(int ingredientId) {
 		this.ingredientId = ingredientId;
 	}
+	
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
 
 	@Override
 	public int hashCode() {
