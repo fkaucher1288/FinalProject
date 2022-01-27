@@ -7,6 +7,7 @@ import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.MapsId;
 import javax.persistence.Table;
@@ -27,6 +28,7 @@ public class DietPlanRecipe {
 
 	@ManyToOne
 	@MapsId("planId")
+	@JoinColumn(name="diet_plan_id")
 	private DietPlan dietPlan;
 
 	@ManyToOne
