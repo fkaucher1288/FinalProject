@@ -14,6 +14,8 @@ import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
+import org.hibernate.annotations.CreationTimestamp;
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
@@ -26,13 +28,18 @@ public class Recipe {
 	private String name;
 
 	@Column(name = "date_created")
+	@CreationTimestamp
 	private LocalDateTime dateCreated;
 	
 	private boolean active;
+	
 	@JsonIgnore
 	@ManyToOne
-	@JoinColumn(name = "creator_id")
+	@JoinColumn(name = "creator_id", updatable = false, insertable = false)
 	private User user;
+	
+	@Column(name="creator_id")
+	private int creatorId;
 
 	@Column(name = "is_public")
 	private boolean isPublic;
@@ -43,6 +50,14 @@ public class Recipe {
 	@Column(name = "cook_time")
 	private String cookTime;
 	
+	public int getCreatorId() {
+		return creatorId;
+	}
+
+	public void setCreatorId(int creatorId) {
+		this.creatorId = creatorId;
+	}
+
 	private String description;
 	private String instructions;
 	private String notes;
@@ -114,9 +129,6 @@ public class Recipe {
 		return user;
 	}
 
-	public void setUser(User user) {
-		this.user = user;
-	}
 
 	public boolean isPublic() {
 		return isPublic;
@@ -257,10 +269,12 @@ public class Recipe {
 
 	@Override
 	public String toString() {
-		return "Recipe [id=" + id + ", name=" + name + ", dateCreated=" + dateCreated + ", active=" + active
-				+ ", isPublic=" + isPublic + ", prepTime=" + prepTime + ", cookTime=" + cookTime + ", description="
-				+ description + ", instructions=" + instructions + ", notes=" + notes + ", imageURL=" + imageURL
-				+ ", webLink=" + webLink + "]";
+		return "Recipe [id=" + id + ", name=" + name + ", dateCreated=" + dateCreated + ", active=" + active + ", user="
+				+ user + ", creatorId=" + creatorId + ", isPublic=" + isPublic + ", prepTime=" + prepTime
+				+ ", cookTime=" + cookTime + ", description=" + description + ", instructions=" + instructions
+				+ ", notes=" + notes + ", imageURL=" + imageURL + ", webLink=" + webLink + ", categories=" + categories
+				+ ", cookbooks=" + cookbooks + ", dietPlans=" + dietPlans + ", favorites=" + favorites + ", reviews="
+				+ reviews + ", ratings=" + ratings + ", ingredients=" + ingredients + "]";
 	}
 
 }

@@ -3,13 +3,17 @@ package com.skilldistillery.recipetracker.services;
 import java.util.List;
 import java.util.Optional;
 
+import javax.transaction.Transactional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.skilldistillery.recipetracker.entities.Ingredient;
 import com.skilldistillery.recipetracker.entities.Recipe;
 import com.skilldistillery.recipetracker.entities.RecipeIngredient;
 import com.skilldistillery.recipetracker.repositories.RecipeRepository;
 
+@Transactional
 @Service
 public class RecipeServiceImpl implements RecipeService {
 	
@@ -39,9 +43,9 @@ public class RecipeServiceImpl implements RecipeService {
 	}
 
 	@Override
-	public Recipe updateRecipe(Recipe recipe, int recipeId) {
-		recipe.setId(recipeId);
-		if(recipeRepo.existsById(recipeId)) {
+	public Recipe updateRecipe(Recipe recipe) {
+		Recipe updatedRecipe = recipeRepo.findById(recipe.getId()).get();
+		if(updatedRecipe != null) {			
 			return recipeRepo.save(recipe);
 		}
 		return null;
@@ -70,6 +74,19 @@ public class RecipeServiceImpl implements RecipeService {
 	public List<RecipeIngredient> findRecipeIngredients(Recipe recipe) {
 		List<RecipeIngredient> ingredients = recipe.getIngredients();
 		return ingredients;
+	}
+
+	@Override
+	public List<Recipe> findByIngredients(List<Ingredient> ingredients) {
+
+			//create empty arrayList for recipes
+		//iterate over ingredients
+		//calling findby ingredients from repo
+		//recipes.addALL
+		//loop
+		//return recipe list
+		
+		return null;
 	}
 	
 	

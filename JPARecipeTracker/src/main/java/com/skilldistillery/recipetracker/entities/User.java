@@ -49,6 +49,7 @@ public class User {
 	@JsonIgnore
 	@OneToMany(mappedBy = "user")
 	private List<Recipe> recipes;
+	
 	@JsonIgnore
 	@OneToMany(mappedBy = "user")
 	private List<Cookbook> cookbooks;
