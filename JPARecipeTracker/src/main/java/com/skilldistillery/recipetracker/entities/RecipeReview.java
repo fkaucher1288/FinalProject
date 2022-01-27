@@ -1,42 +1,34 @@
 
 package com.skilldistillery.recipetracker.entities;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.Objects;
 
 import javax.persistence.Column;
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
-import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.MapsId;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="recipe_review")
+@Table(name = "recipe_review")
 public class RecipeReview {
-	
-	
+
 	@EmbeddedId
-	private UserHasRecipeReviewCommentId id;
-	
-	@Column(name="created_on")
+	private RecipeReviewId id;
+
+	@Column(name = "created_on")
 	private LocalDateTime createdOn;
-	
-	@Column(name="comment")
+
 	private String comment;
-	
-	@Column(name="active")
 	private boolean active;
-	
+
 	@ManyToOne
-	@JoinColumn(name="recipe_id")
 	@MapsId("recipeId")
 	private Recipe recipe;
-	
+
 	@ManyToOne
-	@JoinColumn(name="user_id")
 	@MapsId("userId")
 	private User user;
 
@@ -44,8 +36,8 @@ public class RecipeReview {
 		super();
 	}
 
-	public RecipeReview(UserHasRecipeReviewCommentId id, LocalDateTime createdOn, String comment, boolean active,
-			Recipe recipe, User user) {
+	public RecipeReview(RecipeReviewId id, LocalDateTime createdOn, String comment, boolean active, Recipe recipe,
+			User user) {
 		super();
 		this.id = id;
 		this.createdOn = createdOn;
@@ -55,11 +47,11 @@ public class RecipeReview {
 		this.user = user;
 	}
 
-	public UserHasRecipeReviewCommentId getId() {
+	public RecipeReviewId getId() {
 		return id;
 	}
 
-	public void setId(UserHasRecipeReviewCommentId id) {
+	public void setId(RecipeReviewId id) {
 		this.id = id;
 	}
 
@@ -125,9 +117,5 @@ public class RecipeReview {
 		return "RecipeReview [id=" + id + ", createdOn=" + createdOn + ", comment=" + comment + ", active=" + active
 				+ ", recipe=" + recipe + ", user=" + user + "]";
 	}
-	
-	
-	
-	
 
 }

@@ -43,42 +43,39 @@ public class User {
 	@UpdateTimestamp
 	private LocalDateTime dateUpdated;
 
-	@Column(name="image_url")
-	private String url;
-	
+	@Column(name = "image_url")
+	private String imageURL;
+
 	@JsonIgnore
-	@OneToMany(mappedBy="user")
-	private List <Recipe> recipes;
-	
-	@OneToMany(mappedBy="user")
+	@OneToMany(mappedBy = "user")
+	private List<Recipe> recipes;
+
+	@OneToMany(mappedBy = "user")
 	private List<Cookbook> cookbooks;
-	
-	@OneToMany(mappedBy="user")
+
+	@OneToMany(mappedBy = "user")
 	private List<DietPlan> dietPlans;
-	
-	@OneToMany(mappedBy="user")
-	private List<FavoriteRecipe> favoriteRecipes;
-	
-	@OneToMany(mappedBy="user")
-	private List<RecipeReview> recipeReviews;
-	
-	@OneToMany(mappedBy="user")
-	private List<RecipeRating> recipeRatings;
-	
-	
-	
-	
+
+	@OneToMany(mappedBy = "user")
+	private List<FavoriteRecipe> favorites;
+
+	@OneToMany(mappedBy = "user")
+	private List<RecipeReview> reviews;
+
+	@OneToMany(mappedBy = "user")
+	private List<RecipeRating> ratings;
+
 	public User() {
 		super();
 
 	}
 
-	public String getUrl() {
-		return url;
+	public String getImageURL() {
+		return imageURL;
 	}
 
-	public void setUrl(String url) {
-		this.url = url;
+	public void setImageURL(String url) {
+		this.imageURL = url;
 	}
 
 	public String getFirstName() {
@@ -160,7 +157,6 @@ public class User {
 	public void setRole(String role) {
 		this.role = role;
 	}
-	
 
 	public List<Recipe> getRecipes() {
 		return recipes;
@@ -186,28 +182,28 @@ public class User {
 		this.dietPlans = dietPlans;
 	}
 
-	public List<FavoriteRecipe> getFavoriteRecipes() {
-		return favoriteRecipes;
+	public List<FavoriteRecipe> getFavorites() {
+		return favorites;
 	}
 
-	public void setFavoriteRecipes(List<FavoriteRecipe> favoriteRecipes) {
-		this.favoriteRecipes = favoriteRecipes;
+	public void setFavorites(List<FavoriteRecipe> favoriteRecipes) {
+		this.favorites = favoriteRecipes;
 	}
 
-	public List<RecipeReview> getRecipeReviews() {
-		return recipeReviews;
+	public List<RecipeReview> getReviews() {
+		return reviews;
 	}
 
-	public void setRecipeReviews(List<RecipeReview> recipeReviews) {
-		this.recipeReviews = recipeReviews;
+	public void setReviews(List<RecipeReview> recipeReviews) {
+		this.reviews = recipeReviews;
 	}
 
-	public List<RecipeRating> getRecipeRatings() {
-		return recipeRatings;
+	public List<RecipeRating> getRatings() {
+		return ratings;
 	}
 
-	public void setRecipeRatings(List<RecipeRating> recipeRatings) {
-		this.recipeRatings = recipeRatings;
+	public void setRatings(List<RecipeRating> recipeRatings) {
+		this.ratings = recipeRatings;
 	}
 
 	@Override

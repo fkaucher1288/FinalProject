@@ -7,26 +7,32 @@ import javax.persistence.Column;
 import javax.persistence.Embeddable;
 
 @Embeddable
-public class UserHasRecipeReviewCommentId implements Serializable {
+public class FavoriteRecipeId implements Serializable {
 	
-private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 	
 	@Column(name="user_id")
 	private int userId;
 	
 	@Column(name="recipe_id")
 	private int recipeId;
+	
+	
 
-	public UserHasRecipeReviewCommentId() {
-		super();
-		
-	}
-
-	public UserHasRecipeReviewCommentId(int userId, int recipeId) {
+	public FavoriteRecipeId(int userId, int recipeId) {
 		super();
 		this.userId = userId;
 		this.recipeId = recipeId;
 	}
+
+
+
+	public FavoriteRecipeId() {
+		super();
+		
+	}
+	
+	
 
 	public int getUserId() {
 		return userId;
@@ -48,10 +54,15 @@ private static final long serialVersionUID = 1L;
 		return serialVersionUID;
 	}
 
+	
+
+
 	@Override
 	public int hashCode() {
 		return Objects.hash(recipeId, userId);
 	}
+
+
 
 	@Override
 	public boolean equals(Object obj) {
@@ -61,13 +72,15 @@ private static final long serialVersionUID = 1L;
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		UserHasRecipeReviewCommentId other = (UserHasRecipeReviewCommentId) obj;
+		FavoriteRecipeId other = (FavoriteRecipeId) obj;
 		return recipeId == other.recipeId && userId == other.userId;
 	}
 
+
+
 	@Override
 	public String toString() {
-		return "UserRecipeReviewId [userId=" + userId + ", recipeId=" + recipeId + "]";
+		return "userHasFavoriteRecipeId [userId=" + userId + ", recipeId=" + recipeId + "]";
 	}
 	
 	

@@ -1,47 +1,22 @@
 package com.skilldistillery.recipetracker.entities;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
-
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-class RecipeTest {
+class RecipeTest extends AbstractTest {
 
-	private static EntityManagerFactory factory;
-	protected EntityManager em;
 	private Recipe recipe;
 
-	@BeforeAll
-	static void setUpBeforeClass() throws Exception {
-		factory = Persistence.createEntityManagerFactory("JPARecipeTracker");
-	}
-
-	@AfterAll
-	static void tearDownAfterClass() throws Exception {
-		factory.close();
-	}
-
-	@BeforeEach
-	void setUpBase() throws Exception {
-		em = factory.createEntityManager();
+	@Override
+	void setUp() throws Exception {
 		recipe = em.find(Recipe.class, 1);
-		
 	}
 
-	@AfterEach
-	void tearDownBase() throws Exception {
-		em.close();
-	}
-	
 	@Test
-	void test_basic_Recipe_mappings() {
+	void basic_mappings() {
 		assertNotNull(recipe);
 		assertEquals("Mom's Best Lasagna", recipe.getName());
 		assertEquals(2022, recipe.getDateCreated().getYear());
@@ -52,16 +27,70 @@ class RecipeTest {
 		assertEquals("1hr45m", recipe.getCookTime());
 		assertNotNull(recipe.getDescription());
 		assertNotNull(recipe.getInstructions());
-		assertEquals("https://www.thewholesomedish.com/wp-content/uploads/2018/07/Best-Lasagna-550-500x375.jpg", recipe.getImageURL());
+		assertEquals("https://www.thewholesomedish.com/wp-content/uploads/2018/07/Best-Lasagna-550-500x375.jpg",
+				recipe.getImageURL());
 	}
-	
+
 	@Test
-	void test_Recipe_to_User_mappings() {
+	void user_mapping() {
 		assertNotNull(recipe);
+		assertNotNull(recipe.getUser());
 		assertEquals(1, recipe.getUser().getId());
 	}
 
+	@Test
+	void weblink_mapping() throws Exception {
+		assertNotNull(recipe);
+		assertEquals("https://cafedelites.com/best-lasagna/", recipe.getWebLink());
+	}
+
+	@Test
+	void categories_mapping() throws Exception {
+		assertNotNull(recipe);
+		assertNotNull(recipe.getCategories());
+		assertTrue(recipe.getCategories().size() > 0);
+	}
+
+	@Test
+	void cookbooks_mapping() throws Exception {
+		assertNotNull(recipe);
+		assertNotNull(recipe.getCookbooks());
+		assertTrue(recipe.getCookbooks().size() > 0);
+	}
+
+	@Test
+	void dietplans_mapping() throws Exception {
+		assertNotNull(recipe);
+		assertNotNull(recipe.getDietPlans());
+		assertTrue(recipe.getDietPlans().size() > 0);
+	}
+
+	@Test
+	void favorites_mapping() throws Exception {
+		assertNotNull(recipe);
+		assertNotNull(recipe.getFavorites());
+		assertTrue(recipe.getFavorites().size() > 0);
+	}
+
+	@Test
+	void reviews_mapping() throws Exception {
+		assertNotNull(recipe);
+		assertNotNull(recipe.getReviews());
+		assertTrue(recipe.getReviews().size() > 0);
+	}
+
+	@Test
+	void ratings_mapping() throws Exception {
+		assertNotNull(recipe);
+		assertNotNull(recipe.getRatings());
+		assertTrue(recipe.getRatings().size() > 0);
+	}
+
+	@Test
+	void ingredients_mapping() throws Exception {
+		assertNotNull(recipe);
+		assertNotNull(recipe.getIngredients());
+		assertTrue(recipe.getIngredients().size() > 0);
+	}
 
 }
-
-
