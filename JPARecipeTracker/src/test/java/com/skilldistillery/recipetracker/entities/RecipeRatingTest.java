@@ -5,21 +5,31 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
 
 class RecipeRatingTest extends AbstractTest {
-	
-	private RecipeRating rr;
-	
+
+	private RecipeRating rating;
+
 	@Override
 	void setUp() throws Exception {
-		rr = em.find(RecipeRating.class, new RecipeRatingId(1,1));	
+		rating = em.find(RecipeRating.class, new RecipeRatingId(1, 1));
 	}
 
 	@Test
-	void test_User_entity_mapping() {
-		assertNotNull(rr);
-		assertEquals(5, rr.getRating());
-		
-		
-		
-		
+	void rating_mapping() {
+		assertNotNull(rating);
+		assertEquals(5, rating.getRating());
+	}
+
+	@Test
+	void recipe_apping() throws Exception {
+		assertNotNull(rating);
+		assertNotNull(rating.getRecipe());
+		assertEquals(1, rating.getRecipe().getId());
+	}
+
+	@Test
+	void user_mapping() throws Exception {
+		assertNotNull(rating);
+		assertNotNull(rating.getUser());
+		assertEquals(1, rating.getUser().getId());
 	}
 }

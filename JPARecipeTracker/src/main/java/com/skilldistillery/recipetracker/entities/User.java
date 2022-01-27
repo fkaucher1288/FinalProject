@@ -57,13 +57,13 @@ public class User {
 	private List<DietPlan> dietPlans;
 
 	@OneToMany(mappedBy = "user")
-	private List<FavoriteRecipe> favoriteRecipes;
+	private List<FavoriteRecipe> favorites;
 
 	@OneToMany(mappedBy = "user")
-	private List<RecipeReview> recipeReviews;
+	private List<RecipeReview> reviews;
 
 	@OneToMany(mappedBy = "user")
-	private List<RecipeRating> recipeRatings;
+	private List<RecipeRating> ratings;
 
 	public User() {
 		super();
@@ -182,28 +182,28 @@ public class User {
 		this.dietPlans = dietPlans;
 	}
 
-	public List<FavoriteRecipe> getFavoriteRecipes() {
-		return favoriteRecipes;
+	public List<FavoriteRecipe> getFavorites() {
+		return favorites;
 	}
 
-	public void setFavoriteRecipes(List<FavoriteRecipe> favoriteRecipes) {
-		this.favoriteRecipes = favoriteRecipes;
+	public void setFavorites(List<FavoriteRecipe> favoriteRecipes) {
+		this.favorites = favoriteRecipes;
 	}
 
-	public List<RecipeReview> getRecipeReviews() {
-		return recipeReviews;
+	public List<RecipeReview> getReviews() {
+		return reviews;
 	}
 
-	public void setRecipeReviews(List<RecipeReview> recipeReviews) {
-		this.recipeReviews = recipeReviews;
+	public void setReviews(List<RecipeReview> recipeReviews) {
+		this.reviews = recipeReviews;
 	}
 
-	public List<RecipeRating> getRecipeRatings() {
-		return recipeRatings;
+	public List<RecipeRating> getRatings() {
+		return ratings;
 	}
 
-	public void setRecipeRatings(List<RecipeRating> recipeRatings) {
-		this.recipeRatings = recipeRatings;
+	public void setRatings(List<RecipeRating> recipeRatings) {
+		this.ratings = recipeRatings;
 	}
 
 	@Override

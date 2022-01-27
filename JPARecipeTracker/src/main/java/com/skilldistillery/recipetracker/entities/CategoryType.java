@@ -20,7 +20,7 @@ public class CategoryType {
 	private String name;
 
 	@OneToMany(mappedBy = "type")
-	private List<Category> category;
+	private List<Category> categories;
 
 	public CategoryType() {
 		super();
@@ -42,12 +42,12 @@ public class CategoryType {
 		this.name = name;
 	}
 
-	public List<Category> getCategory() {
-		return category;
+	public List<Category> getCategories() {
+		return categories;
 	}
 
-	public void setCategory(List<Category> category) {
-		this.category = category;
+	public void setCategories(List<Category> category) {
+		this.categories = category;
 	}
 
 	@Override

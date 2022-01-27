@@ -58,19 +58,19 @@ public class Recipe {
 	private List<Cookbook> cookbooks;
 
 	@OneToMany(mappedBy = "recipe")
-	private List<DietPlanRecipe> dietPlanRecipe;
+	private List<DietPlanRecipe> dietPlans;
 
 	@OneToMany(mappedBy = "recipe")
-	private List<FavoriteRecipe> favoriteRecipes;
+	private List<FavoriteRecipe> favorites;
 
 	@OneToMany(mappedBy = "recipe")
-	private List<RecipeReview> recipeReviews;
+	private List<RecipeReview> reviews;
 
 	@OneToMany(mappedBy = "recipe")
-	private List<RecipeRating> recipeRatings;
+	private List<RecipeRating> ratings;
 
 	@OneToMany(mappedBy = "recipe")
-	private List<RecipeIngredient> recipeIngredients;
+	private List<RecipeIngredient> ingredients;
 
 	public Recipe() {
 		super();
@@ -196,44 +196,44 @@ public class Recipe {
 		this.cookbooks = cookbooks;
 	}
 
-	public List<DietPlanRecipe> getDietPlanRecipe() {
-		return dietPlanRecipe;
+	public List<DietPlanRecipe> getDietPlans() {
+		return dietPlans;
 	}
 
-	public void setDietPlanRecipe(List<DietPlanRecipe> dietPlanRecipe) {
-		this.dietPlanRecipe = dietPlanRecipe;
+	public void setDietPlans(List<DietPlanRecipe> dietPlanRecipe) {
+		this.dietPlans = dietPlanRecipe;
 	}
 
-	public List<FavoriteRecipe> getFavoriteRecipes() {
-		return favoriteRecipes;
+	public List<FavoriteRecipe> getFavorites() {
+		return favorites;
 	}
 
-	public void setFavoriteRecipes(List<FavoriteRecipe> favoriteRecipes) {
-		this.favoriteRecipes = favoriteRecipes;
+	public void setFavorites(List<FavoriteRecipe> favoriteRecipes) {
+		this.favorites = favoriteRecipes;
 	}
 
-	public List<RecipeReview> getRecipeReviews() {
-		return recipeReviews;
+	public List<RecipeReview> getReviews() {
+		return reviews;
 	}
 
-	public void setRecipeReviews(List<RecipeReview> recipeReviews) {
-		this.recipeReviews = recipeReviews;
+	public void setReviews(List<RecipeReview> recipeReviews) {
+		this.reviews = recipeReviews;
 	}
 
-	public List<RecipeRating> getRecipeRatings() {
-		return recipeRatings;
+	public List<RecipeRating> getRatings() {
+		return ratings;
 	}
 
-	public void setRecipeRatings(List<RecipeRating> recipeRatings) {
-		this.recipeRatings = recipeRatings;
+	public void setRatings(List<RecipeRating> recipeRatings) {
+		this.ratings = recipeRatings;
 	}
 
-	public List<RecipeIngredient> getRecipeIngredients() {
-		return recipeIngredients;
+	public List<RecipeIngredient> getIngredients() {
+		return ingredients;
 	}
 
-	public void setRecipeIngredients(List<RecipeIngredient> recipeIngredients) {
-		this.recipeIngredients = recipeIngredients;
+	public void setIngredients(List<RecipeIngredient> recipeIngredients) {
+		this.ingredients = recipeIngredients;
 	}
 
 	@Override
