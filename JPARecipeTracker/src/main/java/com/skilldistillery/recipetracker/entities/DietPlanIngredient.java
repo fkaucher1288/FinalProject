@@ -9,18 +9,20 @@ import javax.persistence.ManyToOne;
 import javax.persistence.MapsId;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table(name = "dietplan_ingredient")
 public class DietPlanIngredient {
 
 	@EmbeddedId
 	private DietPlanIngredientId id;
-
+	@JsonIgnore
 	@ManyToOne
 	@MapsId("planId")
 	@JoinColumn(name = "diet_plan_id")
 	private DietPlan dietPlan;// @JoinColumn necessary else it resolves to `dietPlan_id`
-
+	@JsonIgnore
 	@ManyToOne
 	@MapsId("ingredientId")
 	private Ingredient ingredient; // @JoinColumn -not- necessary because it resolves to `ingredient_id`

@@ -13,6 +13,8 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 public class Cookbook {
 
@@ -26,11 +28,11 @@ public class Cookbook {
 
 	@Column(name = "image_url")
 	private String imageURL;
-
+	@JsonIgnore
 	@ManyToMany
 	@JoinTable(name = "cookbook_has_recipe", joinColumns = @JoinColumn(name = "cookbook_id"), inverseJoinColumns = @JoinColumn(name = "recipe_id"))
 	private List<Recipe> recipes;
-
+	@JsonIgnore
 	@ManyToOne
 	private User user;
 

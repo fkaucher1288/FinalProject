@@ -13,6 +13,8 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 public class Category implements Serializable {
 
@@ -25,11 +27,11 @@ public class Category implements Serializable {
 	private String name;
 
 	private String description;
-
+	@JsonIgnore
 	@ManyToOne
 	@JoinColumn(name = "category_type_id")
 	private CategoryType type;
-
+	@JsonIgnore
 	@ManyToMany
 	@JoinTable(name = "recipe_has_category", joinColumns = @JoinColumn(name = "recipe_id"), inverseJoinColumns = @JoinColumn(name = "category_id"))
 	private List<Recipe> recipes;

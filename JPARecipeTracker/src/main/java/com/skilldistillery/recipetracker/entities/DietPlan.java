@@ -13,6 +13,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table(name = "dietplan")
 public class DietPlan {
@@ -26,13 +28,13 @@ public class DietPlan {
 
 	private String description;
 	private boolean active;
-
+	@JsonIgnore
 	@OneToMany(mappedBy = "dietPlan")
 	private List<DietPlanRecipe> dietPlanRecipes;
-
+	@JsonIgnore
 	@OneToMany(mappedBy = "dietPlan")
 	private List<DietPlanIngredient> dietPlanIngredients;
-
+	@JsonIgnore
 	@ManyToOne
 	@JoinColumn(name = "user_id")
 	private User user;
