@@ -56,14 +56,22 @@ public class RecipeController {
 	}
 	
 	@PutMapping("recipes/{recipeId}")
-	public Recipe updateMovie(@RequestBody Recipe recipe, @PathVariable Integer recipeId) {
+	public Recipe updateMovie(@RequestBody Recipe recipe, @PathVariable Integer recipeId, HttpServletResponse res) {
 		Recipe updatedRecipe = recipeServ.updateRecipe(recipe);
+		if(recipe == null) {
+			res.setStatus(404);
+		}
+		
 		return updatedRecipe;
 	}
 	
-	@GetMapping("recipes/search/{keyword")
-	public List<Recipe> getRecipesByKeyword(@RequestBody String keyword){
+	@GetMapping("recipes/search/{keyword}")
+	public List<Recipe> getRecipesByKeyword(@PathVariable String keyword, HttpServletResponse res){
 		List<Recipe> recipes = recipeServ.findRecipeByKeyword(keyword);
+		if(recipes == null) {
+			res.setStatus(404);
+			return null;
+		}		
 		return recipes;
 	}
 	
