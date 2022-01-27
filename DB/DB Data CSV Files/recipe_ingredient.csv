@@ -1,0 +1,10 @@
+ingredient_id,recipe_id,quantity,remarks
+1,1,4,minced
+2,1,6,Melted
+3,2,5,Shredded
+4,1,1,Chopped
+5,1,1,crumbled
+6,2,8,chopped
+1,2,8,minced
+2,2,5,Melted
+3,1,4,Shredded
