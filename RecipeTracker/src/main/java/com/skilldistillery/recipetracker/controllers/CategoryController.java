@@ -1,5 +1,6 @@
 package com.skilldistillery.recipetracker.controllers;
 
+import java.security.Principal;
 import java.util.List;
 
 import javax.servlet.http.HttpServletResponse;
@@ -12,31 +13,26 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.skilldistillery.recipetracker.entities.Category;
+import com.skilldistillery.recipetracker.entities.CategoryType;
 import com.skilldistillery.recipetracker.services.CategoryService;
 
 @RestController
 @RequestMapping("api")
-@CrossOrigin({"*", "http://localhost:4301"})
+@CrossOrigin({"*", "http://localhost:4300"})
 public class CategoryController {
 	
 	@Autowired
-	private CategoryService svc;
-	
-	@GetMapping(path="category/{id}")
-	public Category getCategory(@PathVariable Integer id, HttpServletResponse rsp) {
-		Category category = svc.findById(id);
-		if (category == null) {
-			rsp.setStatus(404);
-		} else {
-			rsp.setStatus(201);
-		}
-		return category;
-	}
-	
-	@GetMapping(path="category")
-	public List<Category> allCategories() {
-		return svc.showAllCategories();
-	}
+	private CategoryService catSvc;
 	
 
+	@GetMapping(path="category")
+	public List<Category> index() {
+		return catSvc.index();
+	}
+	
+//	@GetMapping("category/{categoryId}/category_type")
+//	public CategoryType getCategoryTypes(@PathVariable int categoryId, HttpServletResponse res, Principal principal){
+//		Category category = catSvc.findCategoryTypeByCategoryId(categoryId);
+//		return category.getType();
+//	}
 }

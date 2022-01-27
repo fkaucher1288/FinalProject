@@ -39,8 +39,8 @@ public class DietPlanServiceImpl implements DietPlanService {
 	}
 
 	@Override
-	public DietPlan updateDietPlan(int dietPlanId, DietPlan dietPlan) {
-		if(dPlanRepo.existsById(dietPlanId)) {
+	public DietPlan updateDietPlan(DietPlan dietPlan) {
+		if(dPlanRepo.existsById(dietPlan.getId())) {
 			return dPlanRepo.save(dietPlan);
 		}
 		return null;
@@ -56,16 +56,5 @@ public class DietPlanServiceImpl implements DietPlanService {
 		return deleted;
 	}
 
-	@Override
-	public List<DietPlanRecipe> findDietPlanRecipeByDietPlanId(int dietPlanId) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public List<DietPlanIngredient> findDietPlanIngredientByDietPlanId(int dietPlanId) {
-		// TODO Auto-generated method stub
-		return null;
-	}
 
 }

@@ -29,8 +29,8 @@ class DietPlanTest extends AbstractTest {
 	@DisplayName("Relationship Map between dietplan and dietplan ingredient")
 	void test2() {
 		assertNotNull(plan);
-		assertEquals(1, plan.getDietPlanIngredients().size());
-		assertEquals(true, plan.getDietPlanIngredients().get(0).getPurchased());
+		assertEquals(1, plan.getIngredients().size());
+		assertEquals(true, plan.getIngredients().get(0).getPurchased());
 
 	}
 
@@ -38,8 +38,8 @@ class DietPlanTest extends AbstractTest {
 	@DisplayName("Relationship Map between dietplan and dietplan recipe")
 	void test3() {
 		assertNotNull(plan);
-		assertEquals(1, plan.getDietPlanRecipes().size());
-		assertEquals(DayOfWeek.Monday, plan.getDietPlanRecipes().get(0).getDayName());
+		assertEquals(1, plan.getRecipes().size());
+		assertEquals(DayOfWeek.Monday, plan.getRecipes().get(0).getDayName());
 
 	}
 }

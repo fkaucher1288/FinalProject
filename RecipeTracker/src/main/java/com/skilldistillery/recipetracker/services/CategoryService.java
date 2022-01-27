@@ -3,10 +3,11 @@ package com.skilldistillery.recipetracker.services;
 import java.util.List;
 
 import com.skilldistillery.recipetracker.entities.Category;
+import com.skilldistillery.recipetracker.entities.CategoryType;
 
 public interface CategoryService {
 	
-	public Category findById (int id);
-	public List<Category> showAllCategories();
+	public List<Category> index();
+//	public List<CategoryType> typeIndex();
 
 }
