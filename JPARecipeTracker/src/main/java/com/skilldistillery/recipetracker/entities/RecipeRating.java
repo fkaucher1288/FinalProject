@@ -10,6 +10,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.MapsId;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table(name = "recipe_rating")
 public class RecipeRating {
@@ -22,11 +24,11 @@ public class RecipeRating {
 
 	@Column(name = "created_on")
 	private LocalDateTime createdOn;
-
+	@JsonIgnore
 	@ManyToOne
 	@MapsId("recipeId")
 	private Recipe recipe;
-
+	@JsonIgnore
 	@ManyToOne
 	@MapsId("userId")
 	private User user;

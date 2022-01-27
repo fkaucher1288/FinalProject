@@ -13,6 +13,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.MapsId;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table(name = "favorite_recipe")
 public class FavoriteRecipe {
@@ -28,12 +30,12 @@ public class FavoriteRecipe {
 
 	@Column(name = "created_at")
 	private LocalDateTime createdAt;
-
+	@JsonIgnore
 	@ManyToOne
 	@JoinColumn(name = "recipe_id")
 	@MapsId("recipeId")
 	private Recipe recipe;
-
+	@JsonIgnore
 	@ManyToOne
 	@JoinColumn(name = "user_id")
 	@MapsId("userId")

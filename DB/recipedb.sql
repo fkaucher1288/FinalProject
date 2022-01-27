@@ -377,7 +377,7 @@ SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `recipe`;
-INSERT INTO `user` (`id`, `username`, `email`, `password`, `first_name`, `last_name`, `enabled`, `role`, `date_created`, `date_updated`, `image_url`) VALUES (1, 'wolfgangPuck', 'wolfgangPuck@gmail.com', 'wolfgangPuck', 'Wolfgang', 'Puck', 1, 'admin', '2022-01-01 00:00:00', '2022-01-01 00:00:00', NULL);
+INSERT INTO `user` (`id`, `username`, `email`, `password`, `first_name`, `last_name`, `enabled`, `role`, `date_created`, `date_updated`, `image_url`) VALUES (1, 'wolfgangPuck', 'wolfgangPuck@gmail.com', '$2a$10$Ofg7vwo1bEe09oxtQDA2geVpiibBWkcPZZpoRBuSOI0fId.MRzOBa', 'Wolfgang', 'Puck', 1, 'admin', '2022-01-01 00:00:00', '2022-01-01 00:00:00', NULL);
 
 COMMIT;
 

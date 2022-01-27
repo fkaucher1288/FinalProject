@@ -11,6 +11,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.MapsId;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table(name = "recipe_review")
 public class RecipeReview {
@@ -23,11 +25,11 @@ public class RecipeReview {
 
 	private String comment;
 	private boolean active;
-
+	@JsonIgnore
 	@ManyToOne
 	@MapsId("recipeId")
 	private Recipe recipe;
-
+	@JsonIgnore
 	@ManyToOne
 	@MapsId("userId")
 	private User user;
