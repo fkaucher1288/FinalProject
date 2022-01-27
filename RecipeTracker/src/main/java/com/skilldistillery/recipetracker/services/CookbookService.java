@@ -6,8 +6,11 @@ import com.skilldistillery.recipetracker.entities.Cookbook;
 
 public interface CookbookService {
 
-	public Cookbook findById (int id);
-	public List<Cookbook> showAllCookbooks();
+	List<Cookbook> index();
+	Cookbook findCookbookById (int cookbookId);
+	Cookbook createCookbook(Cookbook cookbook);
+	Cookbook updateCookbook(int cookbookId, Cookbook cookbook);
+	boolean deleteCookbook(int cookbookId);
 
 	
 }

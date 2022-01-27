@@ -12,21 +12,46 @@ import com.skilldistillery.recipetracker.repositories.CookbookRepository;
 @Service
 public class CookbookServiceImpl implements CookbookService {
 
+
 	@Autowired
-	private CookbookRepository repo;
+	private CookbookRepository cookRepo;
 	
 	@Override
-	public Cookbook findById(int id) {
-		Optional<Cookbook> op = repo.findById(id);
-		if (op.isPresent()) {
+	public List<Cookbook> index() {
+		
+		return cookRepo.findAll();
+	}
+
+	@Override
+	public Cookbook findCookbookById(int cookbookId) {
+		Optional<Cookbook> op = cookRepo.findById(cookbookId);
+		if(op.isPresent()) {
 			return op.get();
 		}
 		return null;
 	}
 
 	@Override
-	public List<Cookbook> showAllCookbooks() {
-		return repo.findAll();
+	public Cookbook createCookbook(Cookbook cookbook) {
+		
+		return cookRepo.saveAndFlush(cookbook);
 	}
 
+	@Override
+	public Cookbook updateCookbook(int cookbookId, Cookbook cookbook) {
+		if(cookRepo.existsById(cookbookId)) {
+			return cookRepo.save(cookbook);
+		}
+		return null;
+	}
+
+	@Override
+	public boolean deleteCookbook(int cookbookId) {
+		boolean deleted = false;
+		cookRepo.deleteById(cookbookId);
+		if(cookRepo.findById(cookbookId) == null) {
+			deleted = true;
+		}
+		return deleted;
+	}
 }

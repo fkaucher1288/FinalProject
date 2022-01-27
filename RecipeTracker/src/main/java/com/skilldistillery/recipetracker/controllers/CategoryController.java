@@ -22,9 +22,9 @@ public class CategoryController {
 	@Autowired
 	private CategoryService svc;
 	
-	@GetMapping(path="category/{id}")
-	public Category getCategory(@PathVariable Integer id, HttpServletResponse rsp) {
-		Category category = svc.findById(id);
+	@GetMapping(path="category/{categoryId}")
+	public Category getCategory(@PathVariable Integer categoryId, HttpServletResponse rsp) {
+		Category category = svc.findCategoryById(categoryId);
 		if (category == null) {
 			rsp.setStatus(404);
 		} else {

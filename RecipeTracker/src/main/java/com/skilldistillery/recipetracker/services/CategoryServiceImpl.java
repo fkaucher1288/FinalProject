@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.skilldistillery.recipetracker.entities.Category;
+import com.skilldistillery.recipetracker.entities.CategoryType;
 import com.skilldistillery.recipetracker.repositories.CategoryRepository;
 
 @Service
@@ -16,7 +17,7 @@ public class CategoryServiceImpl implements CategoryService {
 	private CategoryRepository repo;
 	
 	@Override
-	public Category findById(int id) {
+	public Category findCategoryById(int id) {
 		Optional<Category> op = repo.findById(id);
 		if (op.isPresent()) {
 			return op.get();
@@ -27,6 +28,12 @@ public class CategoryServiceImpl implements CategoryService {
 	@Override
 	public List<Category> showAllCategories() {
 		return repo.findAll();
+	}
+
+	@Override
+	public List<CategoryType> findCategoryTypeByCategoryId(int categoryId) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }
