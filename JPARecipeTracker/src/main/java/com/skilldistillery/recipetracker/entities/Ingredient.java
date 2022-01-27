@@ -27,8 +27,10 @@ public class Ingredient implements Serializable {
 	private String name;
 
 	private String brand;
+
 	@Column(name="measurement_unit")
-	private String measurement;
+	private String measurementUnit;
+
 
 	private String category;
 	@OneToMany(mappedBy="ingredient")
@@ -64,13 +66,14 @@ public class Ingredient implements Serializable {
 	public void setBrand(String brand) {
 		this.brand = brand;
 	}
-
-	public String getMeasurement() {
-		return measurement;
+	
+	public String getMeasurementUnit() {
+		return measurementUnit;
 	}
 
-	public void setMeasurement(String measurement) {
-		this.measurement = measurement;
+	public void setMeasurementUnit(String measurementUnit) {
+		this.measurementUnit = measurementUnit;
+
 	}
 
 	public String getCategory() {
@@ -118,7 +121,7 @@ public class Ingredient implements Serializable {
 
 	@Override
 	public String toString() {
-		return "Ingredient [id=" + id + ", name=" + name + ", brand=" + brand + ", amount=" + measurement + ", category="
+		return "Ingredient [id=" + id + ", name=" + name + ", brand=" + brand + ", amount=" + measurementUnit + ", category="
 				+ category + "]";
 	}
 
