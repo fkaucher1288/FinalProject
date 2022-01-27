@@ -9,7 +9,7 @@ public interface CookbookService {
 	List<Cookbook> index();
 	Cookbook findCookbookById (int cookbookId);
 	Cookbook createCookbook(Cookbook cookbook);
-	Cookbook updateCookbook(int cookbookId, Cookbook cookbook);
+	Cookbook updateCookbook(Cookbook cookbook);
 	boolean deleteCookbook(int cookbookId);
 
 	

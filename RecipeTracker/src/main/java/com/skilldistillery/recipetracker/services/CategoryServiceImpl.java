@@ -20,10 +20,9 @@ public class CategoryServiceImpl implements CategoryService {
 		return catRepo.findAll();
 	}
 
-	@Override
-	public List<CategoryType> findCategoryTypeByCategoryId(int categoryId) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+//	@Override
+//	public List<CategoryType> typeIndex() {
+//		return catRepo.findAll();
+//	}
 
 }

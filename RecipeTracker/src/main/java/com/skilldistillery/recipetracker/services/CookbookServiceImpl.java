@@ -38,8 +38,8 @@ public class CookbookServiceImpl implements CookbookService {
 	}
 
 	@Override
-	public Cookbook updateCookbook(int cookbookId, Cookbook cookbook) {
-		if(cookRepo.existsById(cookbookId)) {
+	public Cookbook updateCookbook(Cookbook cookbook) {
+		if(cookRepo.existsById(cookbook.getId())) {
 			return cookRepo.save(cookbook);
 		}
 		return null;
