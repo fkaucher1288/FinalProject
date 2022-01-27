@@ -1,5 +1,9 @@
 package com.skilldistillery.recipetracker.repositories;
 
-public interface CookbookRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.skilldistillery.recipetracker.entities.Cookbook;
+
+public interface CookbookRepository extends JpaRepository<Cookbook, Integer>  {
 
 }
