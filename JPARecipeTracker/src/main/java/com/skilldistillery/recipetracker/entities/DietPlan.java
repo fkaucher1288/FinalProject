@@ -30,10 +30,10 @@ public class DietPlan {
 	private boolean active;
 	@JsonIgnore
 	@OneToMany(mappedBy = "dietPlan")
-	private List<DietPlanRecipe> dietPlanRecipes;
+	private List<DietPlanRecipe> recipes;
 	@JsonIgnore
 	@OneToMany(mappedBy = "dietPlan")
-	private List<DietPlanIngredient> dietPlanIngredients;
+	private List<DietPlanIngredient> ingredients;
 	@JsonIgnore
 	@ManyToOne
 	@JoinColumn(name = "user_id")
@@ -71,20 +71,20 @@ public class DietPlan {
 		this.active = active;
 	}
 
-	public List<DietPlanIngredient> getDietPlanIngredients() {
-		return dietPlanIngredients;
+	public List<DietPlanIngredient> getIngredients() {
+		return ingredients;
 	}
 
-	public void setDietPlanIngredients(List<DietPlanIngredient> dietPlanIngredients) {
-		this.dietPlanIngredients = dietPlanIngredients;
+	public void setIngredients(List<DietPlanIngredient> dietPlanIngredients) {
+		this.ingredients = dietPlanIngredients;
 	}
 
-	public List<DietPlanRecipe> getDietPlanRecipes() {
-		return dietPlanRecipes;
+	public List<DietPlanRecipe> getRecipes() {
+		return recipes;
 	}
 
-	public void setDietPlanRecipes(List<DietPlanRecipe> dietPlanRecipes) {
-		this.dietPlanRecipes = dietPlanRecipes;
+	public void setRecipes(List<DietPlanRecipe> dietPlanRecipes) {
+		this.recipes = dietPlanRecipes;
 	}
 
 	public User getUser() {

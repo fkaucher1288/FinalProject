@@ -10,8 +10,6 @@ public interface DietPlanService {
 	List<DietPlan> index();
 	DietPlan findDietPlanById(int dietPlanId);
 	DietPlan createDietPlan(DietPlan dietPlan);
-	DietPlan updateDietPlan(int dietPlanId, DietPlan dietPlan);
+	DietPlan updateDietPlan(DietPlan dietPlan);
 	boolean deleteDietPlan(int dietPlanId);
-	List<DietPlanRecipe> findDietPlanRecipeByDietPlanId(int dietPlanId);
-	List<DietPlanIngredient> findDietPlanIngredientByDietPlanId(int dietPlanId);
 }
