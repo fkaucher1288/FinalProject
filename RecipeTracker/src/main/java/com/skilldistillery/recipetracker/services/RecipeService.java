@@ -5,6 +5,7 @@ import java.util.Set;
 
 import com.skilldistillery.recipetracker.entities.Ingredient;
 import com.skilldistillery.recipetracker.entities.Recipe;
+import com.skilldistillery.recipetracker.entities.RecipeRating;
 
 public interface RecipeService {
 
@@ -21,6 +22,9 @@ public interface RecipeService {
 	List<Recipe> findRecipeByKeyword(String keyword);
 
 	List<Recipe> findAllByIngredientsIn(Set<Ingredient> ingredients);
+	
+//	Recipe addRating(Recipe recipe, RecipeRating recipeRating);
+	List<RecipeRating> getAllRatings(Recipe recipe);
 	
 
 }

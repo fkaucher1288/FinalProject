@@ -242,6 +242,7 @@ public class Recipe {
 		this.ratings = recipeRatings;
 	}
 
+
 	public List<RecipeIngredient> getIngredients() {
 		return ingredients;
 	}

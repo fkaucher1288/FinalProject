@@ -1,5 +1,6 @@
 package com.skilldistillery.recipetracker.services;
 
+import java.security.Principal;
 import java.util.List;
 import java.util.Optional;
 import java.util.Set;
@@ -12,6 +13,8 @@ import org.springframework.stereotype.Service;
 import com.skilldistillery.recipetracker.entities.Ingredient;
 import com.skilldistillery.recipetracker.entities.Recipe;
 import com.skilldistillery.recipetracker.repositories.RecipeIngredientRepository;
+import com.skilldistillery.recipetracker.entities.RecipeIngredient;
+import com.skilldistillery.recipetracker.entities.RecipeRating;
 import com.skilldistillery.recipetracker.repositories.RecipeRepository;
 
 @Transactional
@@ -24,6 +27,12 @@ public class RecipeServiceImpl implements RecipeService {
 	@Autowired
 	private RecipeIngredientRepository ingredients;
 
+	@Autowired
+	private RecipeRepository recipeRepo;
+	
+	@Autowired
+	private AuthService authServ;
+	
 	@Override
 	public List<Recipe> getAllRecipes() {
 		return recipes.findAll();
@@ -75,4 +84,8 @@ public class RecipeServiceImpl implements RecipeService {
 		return recipes.findAllByIngredientsIn(ingredients, ingredients.size());
 	}
 
+	@Override
+	public List<RecipeRating> getAllRatings(Recipe recipe) {
+		return recipe.getRatings();
+	}
 }

@@ -17,9 +17,11 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.skilldistillery.recipetracker.entities.Ingredient;
 import com.skilldistillery.recipetracker.entities.Recipe;
+import com.skilldistillery.recipetracker.entities.RecipeReview;
 import com.skilldistillery.recipetracker.repositories.RecipeIngredientRepository;
 import com.skilldistillery.recipetracker.repositories.RecipeRepository;
 import com.skilldistillery.recipetracker.services.IngredientService;
+import com.skilldistillery.recipetracker.services.RecipeReviewService;
 import com.skilldistillery.recipetracker.services.RecipeService;
 
 @RestController
@@ -38,7 +40,10 @@ public class RecipeController {
 
 	@Autowired
 	private RecipeRepository recipes;
-
+	
+	@Autowired
+	private RecipeReviewService rrServ;
+	
 	@GetMapping("recipes")
 	public List<Recipe> allRecipes() {
 		return recipeServ.getAllRecipes();
@@ -70,20 +75,44 @@ public class RecipeController {
 	}
 
 	@PutMapping("recipes/{recipeId}")
-	public Recipe updateMovie(@RequestBody Recipe recipe, @PathVariable Integer recipeId) {
+	public Recipe updateMovie(@RequestBody Recipe recipe, @PathVariable Integer recipeId, HttpServletResponse res) {
 		Recipe updatedRecipe = recipeServ.updateRecipe(recipe);
+		if(recipe == null) {
+			res.setStatus(404);
+		}
+		
 		return updatedRecipe;
 	}
 
 	@GetMapping("recipes/search/{keyword}")
-	public List<Recipe> getRecipesByKeyword(@RequestBody String keyword) {
+	public List<Recipe> getRecipesByKeyword(@PathVariable String keyword, HttpServletResponse res){
 		List<Recipe> recipes = recipeServ.findRecipeByKeyword(keyword);
+		if(recipes == null) {
+			res.setStatus(404);
+			return null;
+		}		
 		return recipes;
 	}
 
 	@GetMapping("recipes/containing")
 	public List<Recipe> containing(@RequestBody Set<Ingredient> ingredients) {
 		return recipeServ.findAllByIngredientsIn(ingredients);
+	}
+	
+	@PostMapping("recipes/reviews")
+	public RecipeReview createNewRecipeReview(@RequestBody RecipeReview rr) throws Exception{
+		 return rrServ.createRecipeReview(rr);
+		
+	}
+	
+	@PutMapping("recipes/reviews")
+	public RecipeReview updateRecipeReview(@RequestBody RecipeReview rr) throws Exception {
+		return rrServ.updateRecipeReview(rr);
+	}
+	
+	@GetMapping("recipes/reviews")
+	public List<RecipeReview> getAllRecipeReviews() {
+		return rrServ.getAllRecipeReviews();
 	}
 
 }
