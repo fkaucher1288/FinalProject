@@ -23,7 +23,7 @@ getHttpOptions()  {
   let options = {
   headers: {
     'Authorization': 'Basic ' + this.auth.getCredentials(),
-    'X-Reuested-With': 'XMLHttpRequest'
+    'X-Requested-With': 'XMLHttpRequest'
   }
 };
   return options;
