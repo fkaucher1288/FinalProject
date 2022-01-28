@@ -12,6 +12,13 @@ export class AuthService {
 
   constructor(private http: HttpClient) {}
 
+  getHeaders() {
+    return {
+      Authorization: `Basic ${this.getCredentials()}`,
+      "X-Requested-With": "XMLHttpRequest"
+    }
+  }
+
   login(username: string, password: string) {
     // Make credentials
     const credentials = this.generateBasicAuthCredentials(username, password);
