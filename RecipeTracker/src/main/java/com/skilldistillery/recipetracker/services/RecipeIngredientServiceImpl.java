@@ -3,10 +3,12 @@ package com.skilldistillery.recipetracker.services;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.skilldistillery.recipetracker.entities.RecipeIngredient;
 import com.skilldistillery.recipetracker.repositories.RecipeIngredientRepository;
 
+@Service
 public class RecipeIngredientServiceImpl implements RecipeIngredientService {
 	@Autowired
 	private RecipeIngredientRepository riRepo;

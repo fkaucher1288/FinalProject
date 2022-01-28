@@ -33,9 +33,6 @@ public class RecipeController {
 
 	@Autowired
 	private RecipeService recipeServ;
-
-	@Autowired
-	private IngredientService ingredientService;
 	
 	@Autowired
 	private RecipeReviewService rrServ;
