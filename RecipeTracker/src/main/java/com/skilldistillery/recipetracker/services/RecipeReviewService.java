@@ -12,6 +12,4 @@ public interface RecipeReviewService {
 
 	List<RecipeReview> getAllRecipeReviews();
 	
-	
-
 }

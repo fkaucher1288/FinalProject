@@ -15,7 +15,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.skilldistillery.recipetracker.entities.Recipe;
+import com.skilldistillery.recipetracker.entities.RecipeRating;
 import com.skilldistillery.recipetracker.entities.RecipeReview;
+import com.skilldistillery.recipetracker.services.RecipeRatingService;
 import com.skilldistillery.recipetracker.services.RecipeReviewService;
 import com.skilldistillery.recipetracker.services.RecipeService;
 
@@ -29,6 +31,9 @@ public class RecipeController {
 	
 	@Autowired
 	private RecipeReviewService rrServ;
+	
+	@Autowired
+	private RecipeRatingService ratingServ;
 	
 	@GetMapping("recipes")
 	public List<Recipe> allRecipes(){
@@ -84,8 +89,7 @@ public class RecipeController {
 	public RecipeReview createNewRecipeReview(@RequestBody RecipeReview rr) throws Exception{
 		
 		 return rrServ.createRecipeReview(rr);
-		
-		
+				
 	}
 	
 	@PutMapping("recipes/reviews")
@@ -97,6 +101,27 @@ public class RecipeController {
 	public List<RecipeReview> getAllRecipeReviews() {
 		return rrServ.getAllRecipeReviews();
 	}
+
+	
+	@GetMapping("recipes/ratings")
+	public List<RecipeRating> getAllRecipeRatings() {
+		return ratingServ.getAllRecipeRatings();
+	}
+	
+	
+	
+	@PostMapping("recipes/ratings")
+	public RecipeRating addNewRecipeRating(@RequestBody RecipeRating rating) {
+		return ratingServ.createRecipeRating(rating);
+	}
+	
+	
+	@PutMapping("recipes/ratings")
+	public RecipeRating updateRecipeRating(@RequestBody RecipeRating rating) {
+		return ratingServ.updateRecipeRating(rating);
+	}
+	
+	
 	
 
 }
