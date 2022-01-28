@@ -1,10 +1,15 @@
-<h1>Recipes</h1>
+<h1>Recipes Results</h1>
 
 <div id="recipeList" *ngIf="!selected">
-<ul *ngFor="let recipe of recipes">
-<li>{{recipe.name}}</li>
-</ul>
 
-
+  <table>
+<tbody *ngFor="let recipe of recipes">
+  <tr >
+    <td><img [src]="recipe.imageURL" style="display: block; max-height: 150px; max-width: 150px; width: auto; height: auto"></td>
+    <td>{{recipe.name}}</td>
+    <!-- <td>Prep Time: {{recipe.prepTime}} & Cook Time: {{recipe.cookTime}}</td> -->
+</tbody>
+  </table>
 
 </div>
+

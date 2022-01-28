@@ -6,6 +6,7 @@ let rec ={
 
 export interface Recipe {
     id?: number;
+    imageURL?: string;
     dateCreated?: Date;
     active?:boolean;
     creatorId?:number;
