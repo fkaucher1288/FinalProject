@@ -11,7 +11,5 @@ import com.skilldistillery.recipetracker.entities.RecipeIngredientId;
 
 public interface RecipeIngredientRepository extends JpaRepository<RecipeIngredient, RecipeIngredientId>{
 	
-	@Query("SELECT i FROM RecipeIngredient i WHERE i.ingredient.id IN :ids")
-	public List<RecipeIngredient> findAllByIngredientIdIn(@Param("ids") int[] ids);
 
 }
