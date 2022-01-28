@@ -87,8 +87,7 @@ public class RecipeIngredient implements Serializable {
 
 	@Override
 	public String toString() {
-		return "RecipeIngredient [id=" + id + ", recipe=" + recipe + ", ingredient=" + ingredient + ", quantity="
-				+ quantity + ", remarks=" + remarks + "]";
+		return "RecipeIngredient [id=" + id + ", quantity=" + quantity + ", remarks=" + remarks + "]";
 	}
 
 }

@@ -1,6 +1,7 @@
 package com.skilldistillery.recipetracker.controllers;
 
 import java.util.List;
+import java.util.Set;
 
 import javax.servlet.http.HttpServletResponse;
 
@@ -14,20 +15,33 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.skilldistillery.recipetracker.entities.Ingredient;
 import com.skilldistillery.recipetracker.entities.Recipe;
 import com.skilldistillery.recipetracker.entities.RecipeRating;
 import com.skilldistillery.recipetracker.entities.RecipeReview;
 import com.skilldistillery.recipetracker.services.RecipeRatingService;
+import com.skilldistillery.recipetracker.repositories.RecipeIngredientRepository;
+import com.skilldistillery.recipetracker.repositories.RecipeRepository;
+import com.skilldistillery.recipetracker.services.IngredientService;
 import com.skilldistillery.recipetracker.services.RecipeReviewService;
 import com.skilldistillery.recipetracker.services.RecipeService;
 
 @RestController
 @RequestMapping("api")
-@CrossOrigin({"*", "http://localhost:4300"})
+@CrossOrigin({ "*", "http://localhost:4300" })
 public class RecipeController {
-	
+
 	@Autowired
 	private RecipeService recipeServ;
+
+	@Autowired
+	private IngredientService ingredientService;
+
+	@Autowired
+	private RecipeIngredientRepository recipeIngredients;
+
+	@Autowired
+	private RecipeRepository recipes;
 	
 	@Autowired
 	private RecipeReviewService rrServ;
@@ -36,15 +50,15 @@ public class RecipeController {
 	private RecipeRatingService ratingServ;
 	
 	@GetMapping("recipes")
-	public List<Recipe> allRecipes(){
+	public List<Recipe> allRecipes() {
 		return recipeServ.getAllRecipes();
 	}
-	
+
 	@PostMapping("recipes")
 	public Recipe addNewRecipe(@RequestBody Recipe recipe, HttpServletResponse res) {
 		try {
 			Recipe newRecipe = recipeServ.addNewRecipe(recipe);
-			if(newRecipe != null) {
+			if (newRecipe != null) {
 				res.setStatus(201);
 				return newRecipe;
 			}
@@ -54,17 +68,17 @@ public class RecipeController {
 		}
 		return null;
 	}
-	
+
 	@GetMapping("recipes/{recipeId}")
 	public Recipe getRecipeById(@PathVariable Integer recipeId, HttpServletResponse res) {
 		Recipe recipe = recipeServ.getById(recipeId);
-		if(recipe == null) {
+		if (recipe == null) {
 			res.setStatus(404);
 			return null;
 		}
 		return recipe;
 	}
-	
+
 	@PutMapping("recipes/{recipeId}")
 	public Recipe updateMovie(@RequestBody Recipe recipe, @PathVariable Integer recipeId, HttpServletResponse res) {
 		Recipe updatedRecipe = recipeServ.updateRecipe(recipe);
@@ -74,7 +88,7 @@ public class RecipeController {
 		
 		return updatedRecipe;
 	}
-	
+
 	@GetMapping("recipes/search/{keyword}")
 	public List<Recipe> getRecipesByKeyword(@PathVariable String keyword, HttpServletResponse res){
 		List<Recipe> recipes = recipeServ.findRecipeByKeyword(keyword);
@@ -84,12 +98,16 @@ public class RecipeController {
 		}		
 		return recipes;
 	}
+
+	@GetMapping("recipes/containing")
+	public List<Recipe> containing(@RequestBody Set<Ingredient> ingredients) {
+		return recipeServ.findAllByIngredientsIn(ingredients);
+	}
 	
 	@PostMapping("recipes/reviews")
 	public RecipeReview createNewRecipeReview(@RequestBody RecipeReview rr) throws Exception{
-		
 		 return rrServ.createRecipeReview(rr);
-				
+
 	}
 	
 	@PutMapping("recipes/reviews")
@@ -101,6 +119,7 @@ public class RecipeController {
 	public List<RecipeReview> getAllRecipeReviews() {
 		return rrServ.getAllRecipeReviews();
 	}
+
 
 	
 	@GetMapping("recipes/ratings")
@@ -122,7 +141,6 @@ public class RecipeController {
 	}
 	
 	
-	
+
 
 }
-                    

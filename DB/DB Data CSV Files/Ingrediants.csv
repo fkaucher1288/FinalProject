@@ -1,12 +1,12 @@
 Id,name,Brand,Amount,Category
 2,Butter,Tablespoon,,Diary
 3,Garlic,Clove,,Vegetables
-4,Shredded cheese,Cup,,dairy
+4,Cheddar Cheese,Cup,,Dairy
 5,Parsley,Bunch,,Vegetables
 6,Bread,Slice,,Grain
 7,Apples,Ounce,,Fruit
-8,Chicken,Ounce,,Meat
-9,honey,Tablespoon,,Sugar
+8,Chicken Thighs,Pounds,,Meat
+9,Honey,Tablespoon,,Sugar
 10,Bacon,Ounce,,Meat
 11,Egg,Unit,,Dairy
 12,Lemon Juice,Cup,,Fruit
@@ -14,9 +14,54 @@ Id,name,Brand,Amount,Category
 14,Water,Cup,,Liquid
 15,Lemon juice,Cup,,Liquid
 16,Yogurt,Cup,,Dairy
-17,Olive oil,Tablespoon,,Oils
+17,Olive Oil,Tablespoon,,Oils
 18,Red pepper flakes,Teaspoon,,Seasoning
 19,Salt,Teaspoon,,Seasoning
-20,Crushed Tomatos,Ounce,,Vegetables
-21,Spaghetti sauce,Ounce,,
-22,Noodles,Ounce,,Pasta
+20,Crushed Tomatoes,Ounce,,Vegetables
+21,Marinara Sauce,Ounce,,Sauce
+22,Spaghetti,Ounce,,Pasta
+23,Flaky Pie Crust,Unit,,Pie Crust
+25,Whole Milk,Cup,,Dairy
+26,Heavy Cream,Cup,,Dairy
+27,Pepper,Teaspoon,,Seasoning
+28,Feta Cheese,Cup,,Dairy
+29,Salmon,Ounce,,Fish
+30,Smoked Paprika,Teaspoon,,Seasoning
+31,Blackening Seasoning,Teaspoon,,Seasoning
+32,Soy Sauce,Tablespoon,,Sauce
+33,Sriracha Sauce,Tablespoon,,Sauce
+34,Beef Chuck,Pounds,,Meat
+35,Onion,Cup,,Vegetables
+36,Carrot,Cup,,Vegetables
+37,Celery,Cup,,Vegetables
+39,Tomato Paste,Tablespoon,,Vegetables
+40,Beef Bouillon,Tablespoon,,Seasoning
+41,Red Wine,Cup,,Liquid
+42,Fresh Time,Sprigs,,Seasoning
+43,Bay Leaves,Leaves,,Seasoning
+44,Pappardelle,Ounces,,Pasta
+45,Paremsan,Cup,,Dairy
+46,Vegetable Oil,Tablespoon,,Oils
+47,Cornstarch,Tablespoon,,Seasoning
+48,Flour,Tablespoon,,Seasoning
+49,Garlic Salt,Tablespoon,,Seasoning
+50,Paprika,Tablespoon,,Seasoning
+51,Chicken Breast,Pounds,,Meat
+52,Sesame Oil,Tablespoon,,Oils
+53,Rice Vinegar,Tablespoon,,Liquid
+54,Sweet Chili Sauce,Tablespoon,,Sauce
+55,Ketchup,Tablespoon,,Sauce
+56,Brown Sugar,Tablespoon,,Seasoning
+57,Rice Noodles,Ounce,,Pasta
+58,Shrimp,Ounce,,Fish
+59,Bean Sprouts,Cup,,Vegetables
+60,Red Bell Pepper,Cup,,Vegetables
+61,Green Onions,Cup,,Vegetables
+62,Peanuts,Cup,,Legume
+63,Lime Juice,Cup,,Liquid
+64,Ciltantro,Cup,,Vegetables
+65,Fish Sauce,Tablespoon,,Sauce
+66,Peanut Butter,Tablespoon,,Sauce
+67,Granulated Suger,Teaspoon,,Seasoning
+68,Vanilla Extract,Tablespoon,,Seasoning
+69,Lemon Zest,Tablespoon,,Seasoning

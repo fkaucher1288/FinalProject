@@ -6,4 +6,5 @@ import com.skilldistillery.recipetracker.entities.Ingredient;
 
 public interface IngredientService {
 	List<Ingredient> getAll();
+	List<Ingredient> get(int...ids);
 }
