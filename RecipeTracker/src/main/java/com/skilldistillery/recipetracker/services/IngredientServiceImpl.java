@@ -21,5 +21,10 @@ public class IngredientServiceImpl implements IngredientService {
 	public List<Ingredient> getAll() {
 		return repo.findAll();
 	}
+	
+	@Override
+	public List<Ingredient> get(int... ids) {
+		return repo.findByIdIn(ids);
+	}
 
 }
