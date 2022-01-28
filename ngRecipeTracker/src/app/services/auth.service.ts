@@ -73,6 +73,8 @@ export class AuthService {
   }
 
   getCredentials() {
-    return localStorage.getItem('credentials');
+    //return localStorage.getItem('credentials');
+    //make sure to get rid of this hard coded line outta here!
+    return 'd29sZmdhbmdQdWNrOndvbGZnYW5nUHVjaw==';
   }
 }

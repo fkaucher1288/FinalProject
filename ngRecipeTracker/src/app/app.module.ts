@@ -11,6 +11,7 @@ import { RecipeDetailsComponent } from './components/recipe-details/recipe-detai
 import { RecipeSearchComponent } from './components/recipe-search/recipe-search.component';
 import { NavigatorComponent } from './components/navigator/navigator.component';
 import { FormsModule } from '@angular/forms';
+import { RecipeListComponent } from './components/recipe-list/recipe-list.component';
 // import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
@@ -21,6 +22,7 @@ import { FormsModule } from '@angular/forms';
     RecipeDetailsComponent,
     RecipeSearchComponent,
     NavigatorComponent,
+    RecipeListComponent,
   ],
   imports: [
     BrowserModule,
