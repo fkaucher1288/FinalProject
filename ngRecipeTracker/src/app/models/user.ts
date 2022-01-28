@@ -1,3 +1,9 @@
+let user = {
+    username: 'default',
+    email: 'default email',
+    password: 'default password'
+}
+
 export interface User {
     id?: number;
     username: string;
