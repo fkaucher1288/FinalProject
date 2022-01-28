@@ -15,6 +15,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.skilldistillery.recipetracker.entities.Recipe;
+import com.skilldistillery.recipetracker.entities.RecipeReview;
+import com.skilldistillery.recipetracker.services.RecipeReviewService;
 import com.skilldistillery.recipetracker.services.RecipeService;
 
 @RestController
@@ -24,6 +26,9 @@ public class RecipeController {
 	
 	@Autowired
 	private RecipeService recipeServ;
+	
+	@Autowired
+	private RecipeReviewService rrServ;
 	
 	@GetMapping("recipes")
 	public List<Recipe> allRecipes(){
@@ -61,12 +66,29 @@ public class RecipeController {
 		return updatedRecipe;
 	}
 	
-	@GetMapping("recipes/search/{keyword")
+	@GetMapping("recipes/search/{keyword}")
 	public List<Recipe> getRecipesByKeyword(@RequestBody String keyword){
 		List<Recipe> recipes = recipeServ.findRecipeByKeyword(keyword);
 		return recipes;
 	}
 	
+	@PostMapping("recipes/reviews")
+	public RecipeReview createNewRecipeReview(@RequestBody RecipeReview rr) throws Exception{
+		
+		 return rrServ.createRecipeReview(rr);
+		
+		
+	}
+	
+	@PutMapping("recipes/reviews")
+	public RecipeReview updateRecipeReview(@RequestBody RecipeReview rr) throws Exception {
+		return rrServ.updateRecipeReview(rr);
+	}
+	
+	@GetMapping("recipes/reviews")
+	public List<RecipeReview> getAllRecipeReviews() {
+		return rrServ.getAllRecipeReviews();
+	}
 	
 
 }

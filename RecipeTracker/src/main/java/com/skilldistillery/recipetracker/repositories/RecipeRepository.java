@@ -13,6 +13,7 @@ public interface RecipeRepository extends JpaRepository<Recipe, Integer>{
 	List<Recipe> findByNameLike(String keyword);
 //  List<Recipe> findByIngredients_NameLike(Ingredient ingredient);
 //	List<Recipe> findByIngredients_NameLike(Set<Ingredients> ingredients);
-	List<Recipe> findByIngredient(Ingredient ingredient);
+//	List<Recipe> findByIngredient(Ingredient ingredients);
+	
 
 }
