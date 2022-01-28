@@ -9,6 +9,9 @@ import { HomeComponent } from './components/home/home.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { RecipeDetailsComponent } from './components/recipe-details/recipe-details.component';
 import { RecipeSearchComponent } from './components/recipe-search/recipe-search.component';
+import { NavigatorComponent } from './components/navigator/navigator.component';
+import { FormsModule } from '@angular/forms';
+// import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -17,11 +20,14 @@ import { RecipeSearchComponent } from './components/recipe-search/recipe-search.
     ProfileComponent,
     RecipeDetailsComponent,
     RecipeSearchComponent,
+    NavigatorComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    // FormsModule,
+    // NgbModule,
   ],
   providers: [AuthService],
   bootstrap: [AppComponent],
