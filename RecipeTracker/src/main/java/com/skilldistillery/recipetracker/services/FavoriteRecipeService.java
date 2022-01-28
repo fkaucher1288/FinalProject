@@ -6,9 +6,9 @@ import com.skilldistillery.recipetracker.entities.FavoriteRecipe;
 
 public interface FavoriteRecipeService {
 	
-	FavoriteRecipe createRecipeReview(FavoriteRecipe fr);
+	FavoriteRecipe createRecipeFavorite(FavoriteRecipe fr);
 	
-	FavoriteRecipe updateRecipeReview(FavoriteRecipe fr);
+	FavoriteRecipe updateRecipeFavorite(FavoriteRecipe fr);
 
-	List<FavoriteRecipe> getAllRecipeReviews();
+	List<FavoriteRecipe> getAllRecipeFavorites();
 }

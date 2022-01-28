@@ -13,17 +13,17 @@ public class FavoriteRecipeServiceImpl implements FavoriteRecipeService {
 	private FavoriteRecipeRepository frRepo;
 	
 	@Override
-	public FavoriteRecipe createRecipeReview(FavoriteRecipe fr) {
+	public FavoriteRecipe createRecipeFavorite(FavoriteRecipe fr) {
 		return frRepo.saveAndFlush(fr);
 	}
 
 	@Override
-	public FavoriteRecipe updateRecipeReview(FavoriteRecipe fr) {
+	public FavoriteRecipe updateRecipeFavorite(FavoriteRecipe fr) {
 		return frRepo.saveAndFlush(fr);
 	}
 
 	@Override
-	public List<FavoriteRecipe> getAllRecipeReviews() {
+	public List<FavoriteRecipe> getAllRecipeFavorites() {
 		return frRepo.findAll();
 	}
 

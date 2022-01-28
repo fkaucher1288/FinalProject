@@ -17,12 +17,12 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.skilldistillery.recipetracker.entities.Ingredient;
 import com.skilldistillery.recipetracker.entities.Recipe;
+import com.skilldistillery.recipetracker.entities.RecipeIngredient;
 import com.skilldistillery.recipetracker.entities.RecipeRating;
 import com.skilldistillery.recipetracker.entities.RecipeReview;
-import com.skilldistillery.recipetracker.services.RecipeRatingService;
-import com.skilldistillery.recipetracker.repositories.RecipeIngredientRepository;
-import com.skilldistillery.recipetracker.repositories.RecipeRepository;
 import com.skilldistillery.recipetracker.services.IngredientService;
+import com.skilldistillery.recipetracker.services.RecipeIngredientService;
+import com.skilldistillery.recipetracker.services.RecipeRatingService;
 import com.skilldistillery.recipetracker.services.RecipeReviewService;
 import com.skilldistillery.recipetracker.services.RecipeService;
 
@@ -36,18 +36,15 @@ public class RecipeController {
 
 	@Autowired
 	private IngredientService ingredientService;
-
-	@Autowired
-	private RecipeIngredientRepository recipeIngredients;
-
-	@Autowired
-	private RecipeRepository recipes;
 	
 	@Autowired
 	private RecipeReviewService rrServ;
 	
 	@Autowired
 	private RecipeRatingService ratingServ;
+	
+	@Autowired
+	private RecipeIngredientService rIngredientSvc;
 	
 	@GetMapping("recipes")
 	public List<Recipe> allRecipes() {
@@ -140,6 +137,20 @@ public class RecipeController {
 		return ratingServ.updateRecipeRating(rating);
 	}
 	
+	@GetMapping("recipes/ingredients")
+	public List<RecipeIngredient> indexRIngredients(@RequestBody RecipeIngredient ingredient) {
+		return rIngredientSvc.getAllRecipeIngredient();
+	}
+	
+	@PostMapping("recipes/ingredients")
+	public RecipeIngredient addRecipeIngredient(@RequestBody RecipeIngredient ingredient) {
+		return rIngredientSvc.createRecipeIngredient(ingredient);
+	}
+	
+	@PutMapping("recipes/ingredients")
+	public RecipeIngredient updateRecipeIngredient(@RequestBody RecipeIngredient ingredient) {
+		return rIngredientSvc.updateRecipeIngredient(ingredient);
+	}
 	
 
 

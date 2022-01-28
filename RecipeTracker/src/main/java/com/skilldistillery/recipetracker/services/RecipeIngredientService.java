@@ -6,9 +6,9 @@ import com.skilldistillery.recipetracker.entities.RecipeIngredient;
 
 public interface RecipeIngredientService {
 
-	RecipeIngredient createRecipeReview(RecipeIngredient ri);
+	RecipeIngredient createRecipeIngredient(RecipeIngredient ri);
 	
-	RecipeIngredient updateRecipeReview(RecipeIngredient ri);
+	RecipeIngredient updateRecipeIngredient(RecipeIngredient ri);
 
-	List<RecipeIngredient> getAllRecipeReviews();
+	List<RecipeIngredient> getAllRecipeIngredient();
 }

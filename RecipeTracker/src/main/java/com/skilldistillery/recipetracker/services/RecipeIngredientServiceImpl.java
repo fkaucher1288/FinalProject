@@ -12,18 +12,18 @@ public class RecipeIngredientServiceImpl implements RecipeIngredientService {
 	private RecipeIngredientRepository riRepo;
 
 	@Override
-	public RecipeIngredient createRecipeReview(RecipeIngredient ri) {
+	public RecipeIngredient createRecipeIngredient(RecipeIngredient ri) {
 		return riRepo.saveAndFlush(ri);
 	}
 
 	@Override
-	public RecipeIngredient updateRecipeReview(RecipeIngredient ri) {
+	public RecipeIngredient updateRecipeIngredient(RecipeIngredient ri) {
 		
 		return riRepo.saveAndFlush(ri);
 	}
 
 	@Override
-	public List<RecipeIngredient> getAllRecipeReviews() {
+	public List<RecipeIngredient> getAllRecipeIngredient() {
 		return riRepo.findAll();
 	}
 
