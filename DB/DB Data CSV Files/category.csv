@@ -1,4 +1,5 @@
 id,name,Description,category_type_id
+1,Italian,,1
 2,Albanian,,1
 3,Algerian,,1
 4,Armenian,,1
@@ -22,7 +23,6 @@ id,name,Description,category_type_id
 22,Indian,,1
 23,Indonesian,,1
 24,Irish,,1
-25,Italian,,1
 26,Jamaican,,1
 27,Korean,,1
 28,Latin American,,1
@@ -53,3 +53,32 @@ id,name,Description,category_type_id
 53,Tunisian,,1
 54,Turkish,,1
 55,Vietnamese,,1
+56,Sweet,,2
+57,Spicy,,2
+58,Savory,,2
+59,Sour,,2
+60,Bitter,,2
+83,Umami,,2
+61,Salty,,2
+62,Dairy,,3
+63,Eggs,,3
+64,Peanuts,,3
+65,Nuts,,3
+66,Soy,,3
+67,Wheat,,3
+68,Tree Nuts,,3
+69,Fish,,3
+70,Shellfish,,3
+71,Sesame,,3
+72,Sulphites,,3
+73,Celery,,3
+74,Gluten Free,,4
+75,Vegan,,4
+76,Paleo,,4
+77,Weight Watchers,,4
+78,South Beach,,4
+79,Raw,,4
+80,Atkins,,4
+81,Zone,,4
+82,Mediterranean,,4
+84,,,
