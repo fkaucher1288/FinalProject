@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Recipe } from 'src/app/models/recipe';
+import { RecipeIngredient, RecipeIngredientId } from 'src/app/models/recipe-ingredient';
 import { RecipeService } from 'src/app/services/recipe.service';
 
 @Component({
@@ -14,6 +15,20 @@ export class RecipeDetailsComponent implements OnInit {
     prepTime: '',
     cookTime: '',
   };
+
+
+
+  // id: RecipeIngredientId ={
+  //   ingredientId: 0
+  // }
+
+  // ingredient: RecipeIngredient = {
+  //   id: this.id,
+  //   quantity: 0,
+  //   remarks: ''
+  // };
+
+  ingredients: RecipeIngredient[] = [];
 
   constructor(
     private recipeService: RecipeService,
