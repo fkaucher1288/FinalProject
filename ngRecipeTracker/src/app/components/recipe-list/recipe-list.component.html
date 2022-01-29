@@ -2,11 +2,11 @@
 
 <div id="recipeList" *ngIf="!selected">
 
-  <table>
+  <table class="table table-borderless">
 <tbody *ngFor="let recipe of recipes">
   <tr >
-    <td><img [src]="recipe.imageURL" style="display: block; max-height: 150px; max-width: 150px; width: auto; height: auto"></td>
-    <td>{{recipe.name}}</td>
+    <td (click)="router.navigator(['/recipedetail'])"><img [src]="recipe.imageURL" style="display: block; max-height: 150px; max-width: 150px; width: auto; height: auto"></td>
+    <td (click)="router.navigator(['/recipedetail'])">{{recipe.name}}</td>
     <!-- <td>Prep Time: {{recipe.prepTime}} & Cook Time: {{recipe.cookTime}}</td> -->
 </tbody>
   </table>

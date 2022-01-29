@@ -52,5 +52,9 @@ export class RecipeListComponent implements OnInit {
     });
     }
 
+    showRecipe(){
+      this.selected = null;
+    }
+
 }
 
