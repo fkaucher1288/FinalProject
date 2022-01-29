@@ -8,7 +8,7 @@ import { RecipeSearchComponent } from './components/recipe-search/recipe-search.
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
-  { path: 'recipedetail', component: RecipeDetailsComponent },
+  { path: 'recipedetail/:id', component: RecipeDetailsComponent },
   { path: 'recipes', component: RecipeListComponent },
   { path: 'search', component: RecipeSearchComponent },
   { path: 'profile', component: ProfileComponent },

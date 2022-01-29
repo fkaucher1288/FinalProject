@@ -1,12 +1,13 @@
 <h1>Recipes Results</h1>
 
-<div id="recipeList" *ngIf="!selected">
+<div id="recipeList" >
 
   <table class="table table-borderless">
 <tbody *ngFor="let recipe of recipes">
   <tr>
+
     <td [routerLink]="['/recipedetail']"><img [src]="recipe.imageURL" class="ratio ratio-1x1"></td>
-    <td [routerLink]="['/recipedetail']">{{recipe.name}}</td>
+    <td [routerLink]="['/recipedetail', recipe.id]">{{recipe.name}} {{recipe.id}}</td>
     <!-- <td>Prep Time: {{recipe.prepTime}} & Cook Time: {{recipe.cookTime}}</td> -->
 </tbody>
   </table>

@@ -1,8 +1,4 @@
-let rec ={
-    name: 'default',
-    prepTime: 'Default Prep time',
-    cookTime: 'Default Cook time',
-}
+
 
 export interface Recipe {
     id?: number;
