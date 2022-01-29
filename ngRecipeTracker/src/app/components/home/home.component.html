@@ -1,16 +1,46 @@
 <header class="masthead">
     <div class="container d-flex h-100 align-items-center">
-      <div class="mx-auto text-center">
-        <h1 class="mx-auto my-0 text-uppercase">Recipe Generator</h1>
-        <h2 class="mx-auto my-0 text-uppercase">
-          what you want, what you need, we got your favorite recipe
-        </h2>
-        <br />
-        <a [routerLink]="['/recipe']" class="btn btn-outline-light js-scroll-trigger">See all the recipes</a>
-        <br /><br />
-        <a [routerLink]="['/login']" class="btn btn-outline-light js-scroll-trigger" *ngIf="!userLogInCheck()">Login</a>
-        <br /><br />
-        <a [routerLink]="['/register']" class="btn btn-outline-light js-scroll-trigger" *ngIf="!userLogInCheck()">Register</a>
-      </div>
+        <div class="mx-auto text-center">
+            <h1 class="mx-auto my-0 text-uppercase">Recipe Generator</h1>
+            <h2 class="mx-auto my-0 text-uppercase">
+                what you want, what you need, we got your favorite recipe
+            </h2>
+            <br />
+            <a [routerLink]="['/recipe']" class="btn btn-outline-primary js-scroll-trigger">See all the recipes</a>
+            <br /><br />
+            <a class="btn btn-outline-primary js-scroll-trigger" *ngIf="!userLogInCheck()" (click)="onClickLogin()">Login</a>
+            <br /><br />
+            <a [routerLink]="['/register']" class="btn btn-outline-primary js-scroll-trigger" *ngIf="!userLogInCheck()">Register</a>
+        </div>
     </div>
-  </header>
+</header>
+
+<ng-template #loginModalTemplate let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title" id="modal-basic-title">Login</h4>
+        <button type="button" class="close btn btn-danger" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true">&times;</span>
+          </button>
+    </div>
+    <div class="modal-body">
+        <form>
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input class="form-control mb-3" [(ngModel)]="creds.username" name="username" id="username" type="text" placeholder="Username">
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input class="form-control mb-3" [(ngModel)]="creds.password" name="password" id="password" type="password">
+            </div>
+            <div class="form-group" *ngIf="creds.registering">
+                <label for="passwordc">Password Confirm:</label>
+                <input class="form-control mb-3" [(ngModel)]="creds.passwordc" name="passwordc" id="passwordc" type="password">
+            </div>
+            <div class="form-group d-flex">
+                <button *ngIf="creds.registering" class="btn btn-outline-primary mx-auto" (click)="creds.registering=false">Cancel</button>
+                <button class="btn btn-primary mx-auto" (click)="onUserRegisterClick(modal)">Register</button>
+                <button *ngIf="!creds.registering" class="btn btn-primary mx-auto" (click)="modal.close('login')">Login</button>
+            </div>
+        </form>
+    </div>
+</ng-template>
