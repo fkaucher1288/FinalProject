@@ -1,4 +1,5 @@
 Id,name,Brand,Amount,Category
+1,Garlic,Clove,,Vegetables
 2,Butter,Tablespoon,,Diary
 3,Garlic,Clove,,Vegetables
 4,Cheddar Cheese,Cup,,Dairy
@@ -65,3 +66,4 @@ Id,name,Brand,Amount,Category
 67,Granulated Suger,Teaspoon,,Seasoning
 68,Vanilla Extract,Tablespoon,,Seasoning
 69,Lemon Zest,Tablespoon,,Seasoning
+70,Potatoes,Pound,,Vegetables
