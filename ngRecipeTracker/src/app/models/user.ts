@@ -7,7 +7,7 @@ let user = {
 export interface User {
     id?: number;
     username: string;
-    email: string;
+    email?: string;
     password: string;
     enabled?: boolean;
     role?: string;

@@ -8,7 +8,7 @@ import { User } from '../models/user';
   providedIn: 'root',
 })
 export class AuthService {
-  private url = environment.baseUrl + 'api/todos';
+  private url = environment.baseUrl;
 
   constructor(private http: HttpClient) {}
 
@@ -31,7 +31,7 @@ export class AuthService {
     };
 
     // create request to authenticate credentials
-    return this.http.get(this.url + 'authenticate', httpOptions).pipe(
+    return this.http.get(this.url + 'auth', httpOptions).pipe(
       tap((res) => {
         localStorage.setItem('credentials', credentials);
         return res;
