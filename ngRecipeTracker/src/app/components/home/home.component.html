@@ -6,11 +6,11 @@
                 what you want, what you need, we got your favorite recipe
             </h2>
             <br />
-            <a [routerLink]="['/recipe']" class="btn btn-outline-primary js-scroll-trigger">See all the recipes</a>
+            <a [routerLink]="['/recipes']" class="btn btn-success js-scroll-trigger">See all the recipes</a>
             <br /><br />
-            <a class="btn btn-outline-primary js-scroll-trigger" *ngIf="!userLogInCheck()" (click)="onClickLogin()">Login</a>
+            <a class="btn btn-success js-scroll-trigger" *ngIf="!userLogInCheck()" (click)="onClickLogin()">Login</a>
             <br /><br />
-            <a [routerLink]="['/register']" class="btn btn-outline-primary js-scroll-trigger" *ngIf="!userLogInCheck()">Register</a>
+            <a [routerLink]="['/register']" class="btn btn-success js-scroll-trigger" *ngIf="!userLogInCheck()" (click)="onClickLogin()">Register</a>
         </div>
     </div>
 </header>
