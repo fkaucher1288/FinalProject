@@ -1,0 +1,15 @@
+.keyword-container {
+    max-height: 25vh;
+    background: rgba(0, 0, 0, 0.1);
+    overflow: scroll;
+    border-radius: 1em;
+    padding: 0.5em;
+}
+
+.result-container {
+    min-height: 25vh;
+    max-height: 50vh;
+    background: rgba(0, 0, 0, 0.1);
+    overflow: scroll;
+    border-radius: 1em;
+}

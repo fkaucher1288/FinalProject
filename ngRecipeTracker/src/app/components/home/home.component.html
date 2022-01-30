@@ -17,7 +17,8 @@
 
 <ng-template #loginModalTemplate let-modal>
     <div class="modal-header">
-        <h4 class="modal-title" id="modal-basic-title">Login</h4>
+        <h4 *ngIf="!creds.registering" class="modal-title" id="modal-basic-title">Login</h4>
+        <h4 *ngIf="creds.registering" class="modal-title" id="modal-basic-title">Register</h4>
         <button type="button" class="close btn btn-danger" aria-label="Close" (click)="modal.dismiss('Cross click')">
             <span aria-hidden="true">&times;</span>
           </button>
