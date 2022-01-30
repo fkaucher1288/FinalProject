@@ -7,9 +7,20 @@
 }
 
 .result-container {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
     min-height: 25vh;
     max-height: 50vh;
-    background: rgba(0, 0, 0, 0.1);
+    background: rgba(0, 0, 0, 0.2);
     overflow: scroll;
-    border-radius: 1em;
+    border-radius: 0.5em;
+    padding: 1em;
+}
+
+.recipe-image {
+    aspect-ratio: 1;
+    object-fit: cover;
+    width: 128px;
+    height: 128px;
 }

@@ -23,7 +23,6 @@ public class RecipeIngredient implements Serializable {
 	@ManyToOne
 	@MapsId("recipeId")
 	private Recipe recipe;
-	@JsonIgnore
 	@ManyToOne
 	@MapsId("ingredientId")
 	private Ingredient ingredient;

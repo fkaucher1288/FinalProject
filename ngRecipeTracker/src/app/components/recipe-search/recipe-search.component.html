@@ -3,14 +3,25 @@
         <h4 class="col-12">Search</h4>
         <div class="col-12">
             <div class="result-container">
-                <!-- Put results here -->
+                <div *ngIf="recipes.length === 0" class="d-flex justify-content-center w-100 align-self-center">
+                    <div class="spinner-border" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                </div>
+                <div class="card d-flex flex-row p-1 m-1" *ngFor="let recipe of recipes | recipeFilter: { ingredients: filterIngredients, categories: filterCategories, dummy: dummy}">
+                    <div class="col-2"><img class="recipe-image" src="{{recipe.imageURL}}"></div>
+                    <div class="col-10">
+                        <h4>{{recipe.name}}</h4> <span>{{recipe.description}}</span></div>
+                </div>
             </div>
         </div>
     </div>
     <div class="row">
         <div class="col-12">Filter by</div>
         <div class="col-12">
-            <!-- Put selected keywords here -->
+            <span class="badge rounded-pill bg-primary m-1" *ngFor="let ingredient of filterIngredients" (click)="removeFilter(ingredient)">{{ ingredient.name }}</span>
+            <span class="badge rounded-pill bg-success m-1" *ngFor="let category of filterCategories | categoryTypeFilter:{ isNot: 'allergies', dummy: dummy }" (click)="removeFilter(category)">{{ category.name }}</span>
+            <span class="badge rounded-pill bg-warning m-1" *ngFor="let category of filterCategories | categoryTypeFilter:{ is: 'allergies', dummy:dummy }" (click)="removeFilter(category)">{{ category.name }}</span>
         </div>
     </div>
     <div class="row">
@@ -18,12 +29,20 @@
             <input type="text" name="filter" id="filter" class="form-control" [(ngModel)]="filter" placeholder="Search for keywords...">
         </div>
     </div>
-    <div class="row g-0">
+    <div class="row g-1">
+        <div class="col-12 col-md">
+            <div class="col-12">Ingredient</div>
+            <div class="col-12">
+                <div class="keyword-container">
+                    <span class="badge rounded-pill bg-primary m-1" *ngFor="let ingredient of ingredients | ingredientFilter: filter" (click)="addFilter(ingredient)">{{ ingredient.name }}</span>
+                </div>
+            </div>
+        </div>
         <div class="col-12 col-md">
             <div class="col-12">Ethnicity</div>
             <div class="col-12">
                 <div class="keyword-container">
-                    <span class="badge rounded-pill bg-primary m-1" *ngFor="let category of categories| categoryFilter: {name: 'ethnic', filter: filter}">{{ category.name }}</span>
+                    <span class="badge rounded-pill bg-success m-1" *ngFor="let category of categories| categoryFilter: {name: 'ethnic', filter: filter}" (click)="addFilter(category)">{{ category.name }}</span>
                 </div>
             </div>
         </div>
@@ -31,15 +50,7 @@
             <div class="col-12">Lifestyle</div>
             <div class="col-12">
                 <div class="keyword-container">
-                    <span class="badge rounded-pill bg-primary m-1" *ngFor="let category of categories| categoryFilter:{name: 'lifestyle', filter: filter}">{{ category.name }}</span>
-                </div>
-            </div>
-        </div>
-        <div class="col-12 col-md">
-            <div class="col-12">Ingredient</div>
-            <div class="col-12">
-                <div class="keyword-container">
-                    <span class="badge rounded-pill bg-primary m-1" *ngFor="let ingredient of ingredients | ingredientFilter: filter">{{ ingredient.name }}</span>
+                    <span class="badge rounded-pill bg-success m-1" *ngFor="let category of categories| categoryFilter:{name: 'lifestyle', filter: filter}" (click)="addFilter(category)">{{ category.name }}</span>
                 </div>
             </div>
         </div>
@@ -47,15 +58,15 @@
             <div class="col-12">Flavor</div>
             <div class="col-12">
                 <div class="keyword-container">
-                    <span class="badge rounded-pill bg-primary m-1" *ngFor="let category of categories| categoryFilter:{name:'flavor', filter: filter}">{{ category.name }}</span>
+                    <span class="badge rounded-pill bg-success m-1" *ngFor="let category of categories| categoryFilter:{name:'flavor', filter: filter}" (click)="addFilter(category)">{{ category.name }}</span>
                 </div>
             </div>
         </div>
         <div class="col-12 col-md">
-            <div class="col-12">Allergy</div>
+            <div class="col-12">Allergy (Excludes)</div>
             <div class="col-12">
                 <div class="keyword-container">
-                    <span class="badge rounded-pill bg-primary m-1" *ngFor="let category of categories| categoryFilter:{name:'allergies', filter:filter}">{{ category.name }}</span>
+                    <span class="badge rounded-pill bg-warning m-1" *ngFor="let category of categories| categoryFilter:{name:'allergies', filter:filter}" (click)="addFilter(category)">{{ category.name }}</span>
                 </div>
             </div>
         </div>

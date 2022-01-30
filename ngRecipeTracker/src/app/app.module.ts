@@ -14,7 +14,9 @@ import { FormsModule } from '@angular/forms';
 import { RecipeListComponent } from './components/recipe-list/recipe-list.component';
 import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
 import { CategoryFilterPipe } from './pipes/category-filter.pipe';
-import { IngredientFilterPipe } from './pipes/ingredient-filter.pipe'
+import { IngredientFilterPipe } from './pipes/ingredient-filter.pipe';
+import { RecipeFilterPipe } from './pipes/recipe-filter.pipe';
+import { CategoryTypeFilterPipe } from './pipes/category-type-filter.pipe'
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,6 +28,8 @@ import { IngredientFilterPipe } from './pipes/ingredient-filter.pipe'
     RecipeListComponent,
     CategoryFilterPipe,
     IngredientFilterPipe,
+    RecipeFilterPipe,
+    CategoryTypeFilterPipe,
   ],
   imports: [
     BrowserModule,

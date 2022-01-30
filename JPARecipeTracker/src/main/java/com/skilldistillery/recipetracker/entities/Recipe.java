@@ -85,7 +85,6 @@ public class Recipe {
 	@JsonIgnore
 	@OneToMany(mappedBy = "recipe")
 	private List<RecipeRating> ratings;
-	@JsonIgnore
 	@OneToMany(mappedBy = "recipe")
 	private List<RecipeIngredient> ingredients;
 
