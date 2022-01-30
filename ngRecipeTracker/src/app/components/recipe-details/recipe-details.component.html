@@ -1,1 +1,32 @@
-<h1>{{selected}}</h1>
+<div id="recipeDetailHeader">
+  <h1>{{ recipe.name }}</h1>
+</div>
+<div class="container">
+  <div class="row">
+      <div class="col-6">
+      <p>Rating: </p>
+    </div>
+    <div class="col-6">
+<p>Prep Time: {{recipe.prepTime}}</p>
+<p>Prep Time: {{recipe.cookTime}}</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-6 col-md-4">
+      <img [src]="recipe.imageURL" class="ratio ratio-1x1"><br><br>
+      <p>Ingredients</p>
+
+      <ul>
+        <li *ngFor="let ingredient of ingredients">{{ingredient.name}}</li>
+      </ul>
+
+    </div>
+
+    <div class="col-6">
+      <p>Instructions</p>
+      <p>{{recipe.instructions}}</p>
+
+    </div>
+
+  </div>
+  </div>

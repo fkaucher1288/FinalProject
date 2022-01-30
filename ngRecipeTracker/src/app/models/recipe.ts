@@ -1,17 +1,18 @@
-let rec ={
-    name: 'default',
-    prepTime: 'Default Prep time',
-    cookTime: 'Default Cook time',
-}
+import { RecipeIngredient } from "./recipe-ingredient";
+
 
 export interface Recipe {
     id?: number;
+    name: string;
     imageURL?: string;
     dateCreated?: Date;
     active?:boolean;
     creatorId?:number;
     isPublic?:boolean;
-    name: string;
     prepTime: string;
     cookTime: string;
+    description?: string;
+    instructions?: string;
+    notes?: string;
+    ingredient?: RecipeIngredient;
 }

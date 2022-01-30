@@ -1,1 +1,43 @@
-/* You can add global styles to this file, and also import other style files */
+.title{
+  text-align: center;
+  background-color: rgb(124, 242, 165, 0.5);
+  padding: 25px 50px 25px 50px;
+}
+
+#rr{
+  background-color:rgb(227, 255, 237, 0.2);
+  font-family: sans-serif;
+  font-weight: 900;
+  font-size: 25px
+
+}
+
+#tableRecipeName{
+  padding: 60px 0px 25px 0px;
+}
+
+#tableRecipeName:hover{
+  color: rgb(189, 9, 63);
+}
+
+
+
+body {
+  background: url("assets/backgroundIMG.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+
+
+#recipeDetailalHeader{
+  text-align: center;
+}
+
+#navbar{
+  background-color: dark grey;
+}
+
+
