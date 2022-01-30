@@ -11,7 +11,7 @@ import { AuthService } from './auth.service';
 })
 export class IngredientService {
 
-  private url = environment.baseUrl + 'api/recipes/ingredients/';
+  private url = environment.baseUrl + 'api/ingredients/';
 
   constructor(
     private http: HttpClient,
@@ -19,7 +19,9 @@ export class IngredientService {
   ) { }
 
   index(): Observable<Ingredient[]> {
-    return this.http.get<Ingredient[]>(this.url).pipe(
+    return this.http.get<Ingredient[]>(this.url, {
+      headers: this.auth.getHeaders()
+    }).pipe(
       catchError((err: any) => {
         console.log(err);
         return throwError(

@@ -27,7 +27,6 @@ public class Category implements Serializable {
 	private String name;
 
 	private String description;
-	@JsonIgnore
 	@ManyToOne
 	@JoinColumn(name = "category_type_id")
 	private CategoryType type;

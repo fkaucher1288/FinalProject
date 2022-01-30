@@ -1,3 +1,51 @@
 <div class="card container">
+  <div class="row">Results List</div>
+  <div class="row">Keyword List</div>
+  <div class="row">
+    <div class="form-group">
 
+      <input type="text" name="filter" id="filter" class="form-control" [(ngModel)]="filter">
+
+
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <ul>
+        <li *ngFor="let category of categories| categoryFilter: {name: 'ethnic', filter: filter}">
+          {{ category.name }}
+        </li>
+      </ul>
+
+
+    </div>
+    <div class="col">
+      <ul>
+        <li *ngFor="let category of categories| categoryFilter:{name: 'lifestyle', filter: filter}">
+          {{ category.name }}
+        </li>
+      </ul>
+    </div>
+    <div class="col">
+      <ul>
+        <li *ngFor="let ingredient of ingredients | ingredientFilter: filter">
+          {{ ingredient.name }}
+        </li>
+      </ul>
+    </div>
+    <div class="col">
+      <ul>
+        <li *ngFor="let category of categories| categoryFilter:{name:'flavor', filter: filter}">
+          {{ category.name }}
+        </li>
+      </ul>
+    </div>
+    <div class="col">
+      <ul>
+        <li *ngFor="let category of categories| categoryFilter:{name:'allergies', filter:filter}">
+          {{ category.name }}
+        </li>
+      </ul>
+    </div>
+  </div>
 </div>

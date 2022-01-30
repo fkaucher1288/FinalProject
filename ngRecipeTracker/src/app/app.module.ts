@@ -12,7 +12,9 @@ import { RecipeSearchComponent } from './components/recipe-search/recipe-search.
 import { NavigatorComponent } from './components/navigator/navigator.component';
 import { FormsModule } from '@angular/forms';
 import { RecipeListComponent } from './components/recipe-list/recipe-list.component';
-import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap'
+import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
+import { CategoryFilterPipe } from './pipes/category-filter.pipe';
+import { IngredientFilterPipe } from './pipes/ingredient-filter.pipe'
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,6 +24,8 @@ import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap'
     RecipeSearchComponent,
     NavigatorComponent,
     RecipeListComponent,
+    CategoryFilterPipe,
+    IngredientFilterPipe,
   ],
   imports: [
     BrowserModule,
