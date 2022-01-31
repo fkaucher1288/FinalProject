@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.skilldistillery.recipetracker.entities.User;
+import com.skilldistillery.recipetracker.repositories.RecipeRatingRepository;
 import com.skilldistillery.recipetracker.repositories.UserRepository;
 
 @Transactional
@@ -17,6 +18,9 @@ public class UserServiceImpl implements UserService {
 	
 	@Autowired
 	private UserRepository userRepo;
+	
+	@Autowired
+	private RecipeRatingRepository ratingRepo;
 
 	@Override
 	public List<User> getAllUsers() {
@@ -43,6 +47,11 @@ public class UserServiceImpl implements UserService {
 		return user;
 		
 	
+	}
+
+	@Override
+	public double getAvgRating(int userId) {
+		return ratingRepo.getAvgRatingByRecipe_User_Id(userId);
 	}
 
 	}

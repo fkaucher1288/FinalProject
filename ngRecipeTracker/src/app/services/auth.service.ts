@@ -92,4 +92,17 @@ export class AuthService {
       })
     )
   }
+
+  getAvgRating(userId: number) {
+    return this.http.get<number>(this.url + 'api/users/' + userId+"/rating", {
+      headers: this.getHeaders()
+    }).pipe(
+      catchError((err: any) =>  {
+        console.log(err);
+        return throwError(() => {
+          'error retrieving user by username ' + err;
+        });
+      })
+    )
+  }
 }
