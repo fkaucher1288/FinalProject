@@ -30,12 +30,12 @@ public class UserController {
 	@Autowired
 	private FavoriteRecipeService favorSvc;
 	
-	@GetMapping("users")
+	@GetMapping("/users")
 	public List<User> index() {
 		return userSvc.getAllUsers();
 	}
 	
-	@GetMapping("users/{id}")
+	@GetMapping("/users/{id}")
 	public User getUserById(HttpServletResponse response, @PathVariable int id) {
 		User user = userSvc.getUserById(id);
 		if(user == null) {
@@ -43,7 +43,7 @@ public class UserController {
 		} return user;
 	}
 	
-	@GetMapping("users/{id}/favorites")
+	@GetMapping("/users/{id}/favorites")
 	public List<FavoriteRecipe> getFavoriteRecipes(@PathVariable int userId, HttpServletResponse response) {
 		List<FavoriteRecipe> favoriteReps = favorSvc.getAllRecipeFavorites();
 		if(favoriteReps == null) {
@@ -52,7 +52,7 @@ public class UserController {
 		return favoriteReps;
 	}
 	
-	@PutMapping("users/{id}/favorites")
+	@PutMapping("/users/{id}/favorites")
 	public FavoriteRecipe updateFavoriteRecipe(@RequestBody FavoriteRecipe favoriteRecipe, HttpServletResponse response) {
 		FavoriteRecipe  updatedFavoriteRecipe = favorSvc.createRecipeFavorite(favoriteRecipe);
 		if(updatedFavoriteRecipe == null) {
@@ -61,13 +61,19 @@ public class UserController {
 		return updatedFavoriteRecipe;
 	}
 	
-	@PostMapping("users/{id}/favorites")
+	@PostMapping("/users/{id}/favorites")
 	public FavoriteRecipe addFavoriteRecipe(@RequestBody FavoriteRecipe favoriteRecipe, HttpServletResponse response) {
 		FavoriteRecipe created = favorSvc.createRecipeFavorite(favoriteRecipe);
 		if(created == null) {
 			response.setStatus(404);
 		}
 		return created;
+	}
+	
+	@GetMapping("/users/{id}/rating")
+	public double getAvgRating(@PathVariable int id, HttpServletResponse response ) {
+		
+		return userSvc.getAvgRating(id);
 	}
 	
 }

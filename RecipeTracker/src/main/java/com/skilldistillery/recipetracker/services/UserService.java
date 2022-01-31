@@ -12,6 +12,7 @@ public interface UserService {
 	
 	User saveUser(User user);
 	
+	double getAvgRating(int userId);
 	
 
 }

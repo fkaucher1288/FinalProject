@@ -24,13 +24,15 @@ export class RecipeDetailsComponent implements OnInit {
   //   ingredientId: 0
   // }
 
-  // ingredient: RecipeIngredient = {
+  // ingredients: RecipeIngredient = {
   //   id: this.id,
   //   quantity: 0,
-  //   remarks: ''
+  //   remarks: '',
+  //   name: ''
   // };
 
-  ingredients: RecipeIngredient[] = [];
+ingredients: RecipeIngredient[] = [];
+
 
   constructor(
     private recipeService: RecipeService,
