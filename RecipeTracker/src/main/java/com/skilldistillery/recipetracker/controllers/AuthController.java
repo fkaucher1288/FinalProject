@@ -24,8 +24,8 @@ public class AuthController {
 	private AuthService authSvc;
 
 	// TEMPORARY, DELETE LATER
-	@GetMapping("usertest")
-	public User getUserByUsernamew(@PathVariable String Username) {
+	@GetMapping("usertest{username}")
+	public User getUserByUsernamew(@PathVariable String username) {
 		return authSvc.findUserByName("Username");
 	}
 
