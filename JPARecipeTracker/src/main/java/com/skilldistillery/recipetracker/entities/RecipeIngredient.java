@@ -3,16 +3,20 @@ package com.skilldistillery.recipetracker.entities;
 import java.io.Serializable;
 import java.util.Objects;
 
+import javax.persistence.Column;
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 import javax.persistence.MapsId;
+import javax.persistence.PrimaryKeyJoinColumn;
+import javax.persistence.SecondaryTable;
 import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 @Table(name = "recipe_ingredient")
+//@SecondaryTable(name="ingredient", pkJoinColumns = @PrimaryKeyJoinColumn(name="ingredient_id"))
 public class RecipeIngredient implements Serializable {
 
 	private static final long serialVersionUID = 8909455029739107935L;
@@ -30,6 +34,11 @@ public class RecipeIngredient implements Serializable {
 	private double quantity;
 
 	private String remarks;
+	
+//	@Column(name="name", table="ingredient")
+//	private String name;
+	
+	
 
 	public RecipeIngredient() {
 		super();
@@ -66,6 +75,16 @@ public class RecipeIngredient implements Serializable {
 	public void setRemarks(String remarks) {
 		this.remarks = remarks;
 	}
+	
+	
+
+//	public String getName() {
+//		return name;
+//	}
+//
+//	public void setName(String name) {
+//		this.name = name;
+//	}
 
 	@Override
 	public int hashCode() {

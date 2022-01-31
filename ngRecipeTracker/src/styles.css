@@ -1,6 +1,6 @@
 .title{
   text-align: center;
-  background-color: rgb(124, 242, 165, 0.5);
+  background-color:rgb(227, 255, 237, 0.5);
   padding: 25px 50px 25px 50px;
 }
 
@@ -8,16 +8,25 @@
   background-color:rgb(227, 255, 237, 0.2);
   font-family: sans-serif;
   font-weight: 900;
-  font-size: 25px
+  font-size: 25px;
+  text-align: center;
 
+}
+
+#rd{
+  background-color:rgb(227, 255, 237, 0.2);
+  font-family: sans-serif;
+  font-weight: 600;
+  font-size: 15px
 }
 
 #tableRecipeName{
   padding: 60px 0px 25px 0px;
+
 }
 
 #tableRecipeName:hover{
-  color: rgb(189, 9, 63);
+  color: rgb(9, 189, 54);
 }
 
 
@@ -30,14 +39,60 @@ body {
   background-size: cover;
 }
 
-
-
-#recipeDetailalHeader{
+#recipeDetailHeader{
   text-align: center;
+  border-style: round solid;
+  border-color: black transparent;
+  border-width: 5px;
+  background-color:rgb(227, 255, 237, 0.5);
+  padding: 10px 50px 8px 50px;
+  text-decoration: underline;
+
 }
 
 #navbar{
   background-color: dark grey;
 }
 
+#instructionsHEADER{
+  font-weight: bold;
+  font-size: 20px;
+}
+
+#instructionsBox{
+  border: solid rgb(0, 0, 0, .2);
+  border-radius: 25px;
+  border-width: 5px;
+  background-color:rgb(227, 255, 237, 0.5);
+  padding: 15px 10px 10px 20px;
+}
+
+#ingredientsBox{
+  border: solid rgb(0, 0, 0, .2);
+  border-radius: 25px;
+  border-width: 5px;
+  background-color:rgb(227, 255, 237, 0.5);
+  padding: 15px 10px 10px 15px;
+}
+
+#ingredientsHeader{
+  font-weight: bold;
+  font-size: 15px;
+}
+
+img{
+  border: solid rgb(0, 0, 0, .2);
+  border-radius: 100% 0% 100% 0% / 100% 100% 100% 100%  ;
+  border-width: 5px;
+}
+
+#time{
+  background-color:rgba(143, 216, 168, 0.507);
+  border-radius: 5%;
+  border: solid rgb(0, 0, 0, .2);
+   text-align: center;
+   padding: 10px 0px 0px 0px;
+   font-weight: bold;
+   font-size: 15px;
+}
 
