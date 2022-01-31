@@ -4,26 +4,27 @@
   padding: 25px 50px 25px 50px;
 }
 
-#rr{
+#tableRow{
   background-color:rgb(227, 255, 237, 0.2);
-  font-family: sans-serif;
-  font-weight: 900;
-  font-size: 25px;
-  text-align: center;
-
 }
 
-#rd{
-  background-color:rgb(227, 255, 237, 0.2);
+#tableRecipeDescription{
   font-family: sans-serif;
-  font-weight: 600;
-  font-size: 15px
+  font-weight: 500;
+  font-size: 15px;
+  text-align: center;
+  padding: 20px 0px 0px 0px;
+
 }
 
 #tableRecipeName{
-  padding: 60px 0px 25px 0px;
-
+  font-family: sans-serif;
+  font-weight: 900;
+  font-size: 20px;
+  padding: 20px 0px 0px 0px;
+  text-align: center;
 }
+
 
 #tableRecipeName:hover{
   color: rgb(9, 189, 54);
