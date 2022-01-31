@@ -6,6 +6,7 @@
 
 #tableRow{
   background-color:rgb(227, 255, 237, 0.2);
+  border-bottom: 1px solid rgba(22, 59, 35, 0.5);
 }
 
 #tableRecipeDescription{
@@ -13,7 +14,8 @@
   font-weight: 500;
   font-size: 15px;
   text-align: center;
-  padding: 20px 0px 0px 0px;
+  padding: 20px 0px 0px 40px;
+  text-align: left;
 
 }
 
