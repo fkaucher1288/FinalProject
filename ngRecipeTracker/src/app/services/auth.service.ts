@@ -34,6 +34,7 @@ export class AuthService {
     return this.http.get(this.url + 'auth', httpOptions).pipe(
       tap((res) => {
         localStorage.setItem('credentials', credentials);
+        localStorage.setItem('username', username);
         return res;
       }),
       catchError((err: any) => {
@@ -76,5 +77,19 @@ export class AuthService {
     //return localStorage.getItem('credentials');
     //make sure to get rid of this hard coded line outta here!
     return 'd29sZmdhbmdQdWNrOndvbGZnYW5nUHVjaw==';
+  }
+
+  getUserByUserName(username: string) {
+    return this.http.get<User>(this.url + 'api/usertest/' + username, {
+      headers: this.getHeaders()
+    }).pipe(
+      catchError((err: any) =>  {
+        console.log(err);
+        return throwError(() => {
+          'error retrieving user by username ' + err;
+        });
+
+      })
+    )
   }
 }

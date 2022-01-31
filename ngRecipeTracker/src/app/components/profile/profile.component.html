@@ -1,26 +1,57 @@
 <header class="masthead">
-  <div class="container d-flex h-100 align-items-center">
-    <div class="mx-auto text-center">
-      <a
-        class="btn btn-success js-scroll-trigger"
-        *ngIf="!addRecipe"
-        (click)="onClickAddRecipe()"
-        >Add Recipe</a
-      >
+
+</header>
+<div class='container'>
+<div class='row'>
+  <div class='col'>
+    <div class='row'>
+     <h3>{{user?.username}}</h3>
+      <img [src]="user?.imageURL" style="width: 150px; height: 150px; object-fit: cover;">
+
+    </div>
+    <div class='row'>
+      Total Average Rating
+    </div>
+    <div class='row'>
+      Edit Page
     </div>
   </div>
-</header>
+  <div class='col-8'>
+    <div class='row'>
+      Users Added Recipes
+    </div>
+    <div class='row'>
+      Users Favorite Recipes
+    </div>
+    <div class='row'>
+
+
+          <a
+            class="btn btn-success js-scroll-trigger"
+            (click)="onClickAddRecipe()"
+            >Add Recipe</a
+          >
+
+
+    </div>
+  </div>
+  <div class='col-1'>
+
+  </div>
+</div>
+
+</div>
 
 <ng-template #recipeModalTemplate let-modal>
   <div class="modal-header">
-    <h4 *ngIf="addRecipe" class="modal-title" id="modal-basic-title">
+    <h4 class="modal-title" id="modal-basic-title">
       Add Recipe
     </h4>
     <button
       type="button"
       class="close btn btn-danger"
       aria-label="Close"
-      (click)="modal.create('Cross click')"
+      (click)="modal.close('Cross click')"
     >
       <span aria-hidden="true">&times;</span>
     </button>
@@ -100,14 +131,8 @@
       </div>
 
       <div class="form-group d-flex">
-        <button
-          *ngIf="addRecipe"
-          class="btn btn-outline-primary mx-auto"
-          (click)="addRecipe = false"
-        >
-          Cancel
-        </button>
-        <button class="btn btn-primary mx-auto" (click)="onClickAddRecipe()">
+
+        <button class="btn btn-primary mx-auto" (click)="modal.close('add recipe')">
           Add Recipe
         </button>
       </div>

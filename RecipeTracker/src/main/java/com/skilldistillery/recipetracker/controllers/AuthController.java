@@ -17,13 +17,13 @@ import com.skilldistillery.recipetracker.entities.User;
 import com.skilldistillery.recipetracker.services.AuthService;
 
 @RestController
-@CrossOrigin({"*", "http://localhost:4300"})
+@CrossOrigin({"*", "http://localhost"})
 public class AuthController {
 
 	@Autowired
 	private AuthService authSvc;
 
-	@GetMapping("usertest/{username}")
+	@GetMapping("api/usertest/{username}")
 	public User getUserByUsernamew(@PathVariable String username) {
 		return authSvc.findUserByName(username);
 	}
@@ -37,7 +37,7 @@ public class AuthController {
 		return authSvc.register(user);
 	}
 
-	@GetMapping("/authenticate")
+	@GetMapping("/auth")
 	public User authenticate(Principal principal) {
 		return authSvc.findUserByName(principal.getName());
 	}
