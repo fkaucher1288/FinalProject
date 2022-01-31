@@ -22,7 +22,7 @@ export class ProfileComponent implements OnInit {
   addRecipe: boolean = false;
 
   user?: User;
-
+  rating?: number;
   recipe: Recipe = {
 
     id: 0,
@@ -48,9 +48,14 @@ export class ProfileComponent implements OnInit {
     this.authService.getUserByUserName(localStorage.getItem('username')!).subscribe(
       (result) => {
         this.user = result;
-
+        this.authService.getAvgRating(this.user?.id!).subscribe(
+          (result) => {
+            this.rating = result;
+          })
       }
     )
+
+
   }
 
   onClickAddRecipe() {
