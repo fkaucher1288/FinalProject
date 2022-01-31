@@ -1,0 +1,40 @@
+user_id,recipe_id,created_on,comment,active
+1,1,2022-01-01 00:00:00,Italian food is all about ingredients and it's not fussy and it's not fancy.,1
+1,2,2022-01-01 00:00:00,"I absolutely love this, so yummmy!!!",1
+1,3,2022-01-01 00:00:00,This is an all-time favorite of mine!,1
+1,4,2022-01-01 00:00:00,This is an all-time favorite of mine!,1
+1,5,2022-01-01 00:00:00,This is an all-time favorite of mine!,1
+1,6,2022-01-01 00:00:00,This is an all-time favorite of mine!,1
+1,7,2022-01-01 00:00:00,"I absolutely love this, so yummmy!!!",1
+1,8,2022-01-01 00:00:00,This is an all-time favorite of mine!,1
+1,9,2022-01-01 00:00:00,This is an all-time favorite of mine!,1
+1,10,2022-01-01 00:00:00,This is an all-time favorite of mine!,1
+1,11,2022-01-01 00:00:00,"I absolutely love this, so yummmy!!!",1
+1,12,2022-01-01 00:00:00,This is an all-time favorite of mine!,1
+1,13,2022-01-01 00:00:00,"I absolutely love this, so yummmy!!!",1
+2,1,2022-01-01 00:00:00,"Martha just loves this, so great!",1
+2,2,2022-01-01 00:00:00,"When I was in jail, I missed this the most, have it once a week!",1
+2,3,2022-01-01 00:00:00,"When I was in jail, I missed this the most, have it once a week!",1
+2,4,2022-01-01 00:00:00,"When I was in jail, I missed this the most, have it once a week!",1
+2,5,2022-01-01 00:00:00,"When I was in jail, I missed this the most, have it once a week!",1
+2,6,2022-01-01 00:00:00,"When I was in jail, I missed this the most, have it once a week!",1
+2,7,2022-01-01 00:00:00,"When I was in jail, I missed this the most, have it once a week!",1
+2,8,2022-01-01 00:00:00,"When I was in jail, I missed this the most, have it once a week!",1
+2,9,2022-01-01 00:00:00,"Just love it, so gooooooood!",1
+2,10,2022-01-01 00:00:00,"Just love it, so gooooooood!",1
+2,11,2022-01-01 00:00:00,"Just love it, so gooooooood!",1
+2,12,2022-01-01 00:00:00,"Just love it, so gooooooood!",1
+2,13,2022-01-01 00:00:00,"Just love it, so gooooooood!",1
+3,1,2022-01-01 00:00:00,"“This is the shizzzzznet dogg, you gotta try it!”",1
+3,2,2022-01-01 00:00:00,"“This is the shizzzzznet dogg, you gotta try it!”",1
+3,3,2022-01-01 00:00:00,"“This is the shizzzzznet dogg, you gotta try it!”",1
+3,4,2022-01-01 00:00:00,"“This is the shizzzzznet dogg, you gotta try it!”",1
+3,5,2022-01-01 00:00:00,"“This is the shizzzzznet dogg, you gotta try it!”",1
+3,6,2022-01-01 00:00:00,"“This is the shizzzzznet dogg, you gotta try it!”",1
+3,7,2022-01-01 00:00:00,"“This is the shizzzzznet dogg, you gotta try it!”",1
+3,8,2022-01-01 00:00:00,"“This is the shizzzzznet dogg, you gotta try it!”",1
+3,9,2022-01-01 00:00:00,"“This is the shizzzzznet dogg, you gotta try it!”",1
+3,10,2022-01-01 00:00:00,"“This is the shizzzzznet dogg, you gotta try it!”",1
+3,11,2022-01-01 00:00:00,"“This is the shizzzzznet dogg, you gotta try it!”",1
+3,12,2022-01-01 00:00:00,"“This is the shizzzzznet dogg, you gotta try it!”",1
+3,13,2022-01-01 00:00:00,"“This is the shizzzzznet dogg, you gotta try it!”",1
