@@ -1,7 +1,11 @@
+<div class="container">
+<a [routerLink]="['/recipes']" class="btn btn-outline-success js-scroll-trigger">Back To Recipes</a><br><br>
+</div>
+
 <div id="recipeDetailHeader">
   <h1>{{ recipe.name }}</h1>
 </div>
-<br />
+<br/>
 
 <div class="container">
   <div class="row">
@@ -24,6 +28,7 @@
           <li *ngFor="let ingredient of recipe.ingredients">
             {{ ingredient.quantity }}
             {{ ingredient.ingredient.measurementUnit }}
+            {{ ingredient.remarks }}
             {{ ingredient.ingredient.name }}
           </li>
         </ul>
@@ -36,3 +41,4 @@
     </div>
   </div>
 </div>
+
