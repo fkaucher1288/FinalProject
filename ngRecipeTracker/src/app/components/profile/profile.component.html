@@ -1,1 +1,116 @@
-<p>profile works!</p>
+<header class="masthead">
+  <div class="container d-flex h-100 align-items-center">
+    <div class="mx-auto text-center">
+      <a
+        class="btn btn-success js-scroll-trigger"
+        *ngIf="!addRecipe"
+        (click)="onClickAddRecipe()"
+        >Add Recipe</a
+      >
+    </div>
+  </div>
+</header>
+
+<ng-template #recipeModalTemplate let-modal>
+  <div class="modal-header">
+    <h4 *ngIf="addRecipe" class="modal-title" id="modal-basic-title">
+      Add Recipe
+    </h4>
+    <button
+      type="button"
+      class="close btn btn-danger"
+      aria-label="Close"
+      (click)="modal.create('Cross click')"
+    >
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form>
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input
+          class="form-control mb-3"
+          [(ngModel)]="recipe.name"
+          name="name"
+          id="name"
+          type="text"
+          placeholder="Name"
+        />
+      </div>
+      <div class="form-group">
+        <label for="imageURL">imageURL:</label>
+        <input
+          class="form-control mb-3"
+          [(ngModel)]="recipe.imageURL"
+          name="imageURL"
+          id="imageURL"
+          type="imageURL"
+        />
+      </div>
+      <div class="form-group">
+        <label for="prepTime">Prep Time:</label>
+        <input
+          class="form-control mb-3"
+          [(ngModel)]="recipe.prepTime"
+          name="prepTime"
+          id="prepTime"
+          type="prepTime"
+        />
+      </div>
+      <div class="form-group">
+        <label for="cookTime">Cook Time:</label>
+        <input
+          class="form-control mb-3"
+          [(ngModel)]="recipe.cookTime"
+          name="cookTime"
+          id="cookTime"
+          type="cookTime"
+        />
+      </div>
+      <div class="form-group">
+        <label for="description">Description:</label>
+        <input
+          class="form-control mb-3"
+          [(ngModel)]="recipe.description"
+          name="description"
+          id="description"
+          type="description"
+        />
+      </div>
+      <div class="form-group" >
+        <label for="instructions">Instructions:</label>
+        <input
+          class="form-control mb-3"
+          [(ngModel)]="recipe.instructions"
+          name="instructions"
+          id="instructions"
+          type="instructions"
+        />
+      </div>
+      <div class="form-group">
+        <label for="notes">Notes:</label>
+        <input
+          class="form-control mb-3"
+          [(ngModel)]="recipe.notes"
+          name="notes"
+          id="notes"
+          type="notes"
+        />
+      </div>
+
+      <div class="form-group d-flex">
+        <button
+          *ngIf="addRecipe"
+          class="btn btn-outline-primary mx-auto"
+          (click)="addRecipe = false"
+        >
+          Cancel
+        </button>
+        <button class="btn btn-primary mx-auto" (click)="onClickAddRecipe()">
+          Add Recipe
+        </button>
+      </div>
+    </form>
+  </div>
+</ng-template>
