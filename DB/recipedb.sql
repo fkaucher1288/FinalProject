@@ -377,9 +377,9 @@ SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `recipe`;
-INSERT INTO `user` (`id`, `username`, `email`, `password`, `first_name`, `last_name`, `enabled`, `role`, `date_created`, `date_updated`, `image_url`) VALUES (1, 'wolfgangPuck', 'wolfgangPuck@gmail.com', '$2a$10$Ofg7vwo1bEe09oxtQDA2geVpiibBWkcPZZpoRBuSOI0fId.MRzOBa', 'Wolfgang', 'Puck', 1, 'admin', '2022-01-01 00:00:00', '2022-01-01 00:00:00', 'https://www.google.com/imgres?imgurl=https%3A%2F%2Fca-times.brightspotcdn.com%2Fdims4%2Fdefault%2F7a3aab8%2F2147483647%2Fstrip%2Ftrue%2Fcrop%2F2048x1365%2B0%2B0%2Fresize%2F840x560!%2Fquality%2F90%2F%3Furl%3Dhttps%253A%252F%252Fcalifornia-times-brightspot.s3.amazonaws.com%252F57%252Ff9%252Fb6c6b4fa3bf51a6d6392fffd344f%252Fla-1502236730-gfe5yvzfho-snap-image&imgrefurl=https%3A%2F%2Fwww.latimes.com%2Ffood%2Fstory%2F2020-05-17%2Fwolfgang-puck-coronavirus-restaurant-industry-spago&tbnid=VF7hSHk3j5hCuM&vet=12ahUKEwiDyJLj7tf1AhVLZM0KHeVKCzMQMygPegUIARDyAQ..i&docid=HQDf4cMD4_zjHM&w=840&h=560&q=wolfgang&ved=2ahUKEwiDyJLj7tf1AhVLZM0KHeVKCzMQMygPegUIARDyAQ');
-INSERT INTO `user` (`id`, `username`, `email`, `password`, `first_name`, `last_name`, `enabled`, `role`, `date_created`, `date_updated`, `image_url`) VALUES (2, 'marthaStewart', 'marthaStewart@gmail.com', 'marthaStewart', 'Martha', 'Stewart', 1, 'user', '2022-01-27 00:00:00', '2022-01-27 00:00:00', 'https://www.google.com/imgres?imgurl=https%3A%2F%2Fakns-images.eonline.com%2Feol_images%2FEntire_Site%2F202105%2Frs_1200x1200-210105175944-1200-martha-stewart.ct.jpg%3Ffit%3Daround%257C1080%3A1080%26output-quality%3D90%26crop%3D1080%3A1080%3Bcenter%2Ctop&imgrefurl=https%3A%2F%2Fwww.eonline.com%2Fnews%2F1247256%2Fwhy-women-everywhere-know-martha-stewart-products-are-a-very-good-thing&tbnid=CHwQPnY7qrHFyM&vet=12ahUKEwis5JDM6tf1AhWIU80KHXniB3UQMygJegUIARDpAQ..i&docid=HKTVLTdlCRX2-M&w=1080&h=1080&q=martha%20stewart&ved=2ahUKEwis5JDM6tf1AhWIU80KHXniB3UQMygJegUIARDpAQ');
-INSERT INTO `user` (`id`, `username`, `email`, `password`, `first_name`, `last_name`, `enabled`, `role`, `date_created`, `date_updated`, `image_url`) VALUES (3, 'snoopDogg', 'snoopDogg@gmail.com', 'snoopDogg', 'Snoop', 'Dog', 1, 'user', '2022-01-27 00:00:00', '2022-01-27 00:00:00', 'https://www.google.com/imgres?imgurl=https%3A%2F%2Fapi.time.com%2Fwp-content%2Fuploads%2F2015%2F04%2Fsnoop-dogg.jpg%3Fw%3D824%26quality%3D70&imgrefurl=https%3A%2F%2Ftime.com%2F3821236%2Fsnoop-dogg-eaze-marijuana-delivery%2F&tbnid=jGfyaxQxn8v09M&vet=12ahUKEwjQqtu56tf1AhWUGc0KHRkeCeQQMygdegUIARCYAg..i&docid=V2LyHgL-A8KlQM&w=824&h=975&q=snoop%20dogg&ved=2ahUKEwjQqtu56tf1AhWUGc0KHRkeCeQQMygdegUIARCYAg');
+INSERT INTO `user` (`id`, `username`, `email`, `password`, `first_name`, `last_name`, `enabled`, `role`, `date_created`, `date_updated`, `image_url`) VALUES (1, 'wolfgangPuck', 'wolfgangPuck@gmail.com', '$2a$10$Ofg7vwo1bEe09oxtQDA2geVpiibBWkcPZZpoRBuSOI0fId.MRzOBa', 'Wolfgang', 'Puck', 1, 'admin', '2022-01-01 00:00:00', '2022-01-01 00:00:00', 'https://ca-times.brightspotcdn.com/dims4/default/7a3aab8/2147483647/strip/true/crop/2048x1365+0+0/resize/840x560!/quality/90/?url=https%3A%2F%2Fcalifornia-times-brightspot.s3.amazonaws.com%2F57%2Ff9%2Fb6c6b4fa3bf51a6d6392fffd344f%2Fla-1502236730-gfe5yvzfho-snap-image');
+INSERT INTO `user` (`id`, `username`, `email`, `password`, `first_name`, `last_name`, `enabled`, `role`, `date_created`, `date_updated`, `image_url`) VALUES (2, 'marthaStewart', 'marthaStewart@gmail.com', 'marthaStewart', 'Martha', 'Stewart', 1, 'user', '2022-01-27 00:00:00', '2022-01-27 00:00:00', 'https://akns-images.eonline.com/eol_images/Entire_Site/202105/rs_1200x1200-210105175944-1200-martha-stewart.ct.jpg?fit=around%7C1080:1080&output-quality=90&crop=1080:1080;center,top');
+INSERT INTO `user` (`id`, `username`, `email`, `password`, `first_name`, `last_name`, `enabled`, `role`, `date_created`, `date_updated`, `image_url`) VALUES (3, 'snoopDogg', 'snoopDogg@gmail.com', 'snoopDogg', 'Snoop', 'Dog', 1, 'user', '2022-01-27 00:00:00', '2022-01-27 00:00:00', 'https://api.time.com/wp-content/uploads/2015/04/snoop-dogg.jpg?w=824&quality=70');
 
 COMMIT;
 
@@ -389,83 +389,83 @@ COMMIT;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `recipe`;
-INSERT INTO `ingredient` (`id`, `name`, `measurement_unit`, `brand`, `category`) VALUES (1, 'Garlic', 'Clove', '', 'Vegetables');
-INSERT INTO `ingredient` (`id`, `name`, `measurement_unit`, `brand`, `category`) VALUES (2, 'Butter', 'Tablespoon', '', 'Diary');
-INSERT INTO `ingredient` (`id`, `name`, `measurement_unit`, `brand`, `category`) VALUES (3, 'Garlic Salt', 'Tablespoon', '', 'Seasoning');
-INSERT INTO `ingredient` (`id`, `name`, `measurement_unit`, `brand`, `category`) VALUES (4, 'Cheddar Cheese', 'Cup', '', 'Dairy');
-INSERT INTO `ingredient` (`id`, `name`, `measurement_unit`, `brand`, `category`) VALUES (5, 'Parsley', 'Tablespoon', '', 'Vegetables');
-INSERT INTO `ingredient` (`id`, `name`, `measurement_unit`, `brand`, `category`) VALUES (6, 'Bread', 'Slice', '', 'Grain');
-INSERT INTO `ingredient` (`id`, `name`, `measurement_unit`, `brand`, `category`) VALUES (7, 'Apples', 'Ounce', '', 'Fruit');
+INSERT INTO `ingredient` (`id`, `name`, `measurement_unit`, `brand`, `category`) VALUES (1, 'Garlic', 'Cloves', '', 'Vegetables');
+INSERT INTO `ingredient` (`id`, `name`, `measurement_unit`, `brand`, `category`) VALUES (2, 'Butter', 'Tablespoons', '', 'Diary');
+INSERT INTO `ingredient` (`id`, `name`, `measurement_unit`, `brand`, `category`) VALUES (3, 'Garlic Salt', 'Tablespoons', '', 'Seasoning');
+INSERT INTO `ingredient` (`id`, `name`, `measurement_unit`, `brand`, `category`) VALUES (4, 'Cheddar Cheese', 'Cups', '', 'Dairy');
+INSERT INTO `ingredient` (`id`, `name`, `measurement_unit`, `brand`, `category`) VALUES (5, 'Parsley', 'Tablespoons', '', 'Vegetables');
+INSERT INTO `ingredient` (`id`, `name`, `measurement_unit`, `brand`, `category`) VALUES (6, 'Bread', 'Slices', '', 'Grain');
+INSERT INTO `ingredient` (`id`, `name`, `measurement_unit`, `brand`, `category`) VALUES (7, 'Apples', 'Ounces', '', 'Fruit');
 INSERT INTO `ingredient` (`id`, `name`, `measurement_unit`, `brand`, `category`) VALUES (8, 'Chicken Thighs', 'Pounds', '', 'Meat');
-INSERT INTO `ingredient` (`id`, `name`, `measurement_unit`, `brand`, `category`) VALUES (9, 'Honey', 'Tablespoon', '', 'Sugar');
-INSERT INTO `ingredient` (`id`, `name`, `measurement_unit`, `brand`, `category`) VALUES (10, 'Bacon', 'Ounce', '', 'Meat');
-INSERT INTO `ingredient` (`id`, `name`, `measurement_unit`, `brand`, `category`) VALUES (11, 'Egg', 'Unit', '', 'Dairy');
-INSERT INTO `ingredient` (`id`, `name`, `measurement_unit`, `brand`, `category`) VALUES (12, 'Lemon Juice', 'Cup', '', 'Fruit');
-INSERT INTO `ingredient` (`id`, `name`, `measurement_unit`, `brand`, `category`) VALUES (13, 'Suger', 'Tablespoon', '', 'Sweets');
-INSERT INTO `ingredient` (`id`, `name`, `measurement_unit`, `brand`, `category`) VALUES (14, 'Water', 'Cup', '', 'Liquid');
-INSERT INTO `ingredient` (`id`, `name`, `measurement_unit`, `brand`, `category`) VALUES (15, 'Lemon juice', 'Cup', '', 'Liquid');
-INSERT INTO `ingredient` (`id`, `name`, `measurement_unit`, `brand`, `category`) VALUES (16, 'Yogurt', 'Cup', '', 'Dairy');
-INSERT INTO `ingredient` (`id`, `name`, `measurement_unit`, `brand`, `category`) VALUES (17, 'Olive Oil', 'Tablespoon', '', 'Oils');
-INSERT INTO `ingredient` (`id`, `name`, `measurement_unit`, `brand`, `category`) VALUES (18, 'Red Pepper Flakes', 'Teaspoon', '', 'Seasoning');
-INSERT INTO `ingredient` (`id`, `name`, `measurement_unit`, `brand`, `category`) VALUES (19, 'Salt', 'Teaspoon', '', 'Seasoning');
-INSERT INTO `ingredient` (`id`, `name`, `measurement_unit`, `brand`, `category`) VALUES (20, 'Crushed Tomatoes', 'Ounce', '', 'Vegetables');
-INSERT INTO `ingredient` (`id`, `name`, `measurement_unit`, `brand`, `category`) VALUES (21, 'Marinara Sauce', 'Ounce', '', 'Sauce');
-INSERT INTO `ingredient` (`id`, `name`, `measurement_unit`, `brand`, `category`) VALUES (22, 'Spaghetti', 'Ounce', '', 'Pasta');
-INSERT INTO `ingredient` (`id`, `name`, `measurement_unit`, `brand`, `category`) VALUES (23, 'Flaky Pie Crust', 'Unit', '', 'Pie Crust');
-INSERT INTO `ingredient` (`id`, `name`, `measurement_unit`, `brand`, `category`) VALUES (26, 'Heavy Cream', 'Cup', '', 'Dairy');
-INSERT INTO `ingredient` (`id`, `name`, `measurement_unit`, `brand`, `category`) VALUES (27, 'Pepper', 'Teaspoon', '', 'Seasoning');
-INSERT INTO `ingredient` (`id`, `name`, `measurement_unit`, `brand`, `category`) VALUES (28, 'Feta Cheese', 'Cup', '', 'Dairy');
-INSERT INTO `ingredient` (`id`, `name`, `measurement_unit`, `brand`, `category`) VALUES (29, 'Salmon', 'Ounce', '', 'Fish');
-INSERT INTO `ingredient` (`id`, `name`, `measurement_unit`, `brand`, `category`) VALUES (30, 'Smoked Paprika', 'Teaspoon', '', 'Seasoning');
-INSERT INTO `ingredient` (`id`, `name`, `measurement_unit`, `brand`, `category`) VALUES (31, 'Blackening Seasoning', 'Teaspoon', '', 'Seasoning');
-INSERT INTO `ingredient` (`id`, `name`, `measurement_unit`, `brand`, `category`) VALUES (32, 'Soy Sauce', 'Tablespoon', '', 'Sauce');
-INSERT INTO `ingredient` (`id`, `name`, `measurement_unit`, `brand`, `category`) VALUES (33, 'Sriracha Sauce', 'Tablespoon', '', 'Sauce');
+INSERT INTO `ingredient` (`id`, `name`, `measurement_unit`, `brand`, `category`) VALUES (9, 'Honey', 'Tablespoons', '', 'Sugar');
+INSERT INTO `ingredient` (`id`, `name`, `measurement_unit`, `brand`, `category`) VALUES (10, 'Bacon', 'Slices', '', 'Meat');
+INSERT INTO `ingredient` (`id`, `name`, `measurement_unit`, `brand`, `category`) VALUES (11, 'Egg', '', '', 'Dairy');
+INSERT INTO `ingredient` (`id`, `name`, `measurement_unit`, `brand`, `category`) VALUES (12, 'Lemon Juice', 'Cups', '', 'Fruit');
+INSERT INTO `ingredient` (`id`, `name`, `measurement_unit`, `brand`, `category`) VALUES (13, 'Suger', 'Tablespoons', '', 'Sweets');
+INSERT INTO `ingredient` (`id`, `name`, `measurement_unit`, `brand`, `category`) VALUES (14, 'Water', 'Cups', '', 'Liquid');
+INSERT INTO `ingredient` (`id`, `name`, `measurement_unit`, `brand`, `category`) VALUES (15, 'Lemon juice', 'Cups', '', 'Liquid');
+INSERT INTO `ingredient` (`id`, `name`, `measurement_unit`, `brand`, `category`) VALUES (16, 'Yogurt', 'Cups', '', 'Dairy');
+INSERT INTO `ingredient` (`id`, `name`, `measurement_unit`, `brand`, `category`) VALUES (17, 'Olive Oil', 'Tablespoons', '', 'Oils');
+INSERT INTO `ingredient` (`id`, `name`, `measurement_unit`, `brand`, `category`) VALUES (18, 'Red Pepper Flakes', 'Teaspoons', '', 'Seasoning');
+INSERT INTO `ingredient` (`id`, `name`, `measurement_unit`, `brand`, `category`) VALUES (19, 'Salt', 'Teaspoons', '', 'Seasoning');
+INSERT INTO `ingredient` (`id`, `name`, `measurement_unit`, `brand`, `category`) VALUES (20, 'Crushed Tomatoes', 'Ounces', '', 'Vegetables');
+INSERT INTO `ingredient` (`id`, `name`, `measurement_unit`, `brand`, `category`) VALUES (21, 'Marinara Sauce', 'Ounces', '', 'Sauce');
+INSERT INTO `ingredient` (`id`, `name`, `measurement_unit`, `brand`, `category`) VALUES (22, 'Spaghetti', 'Ounces', '', 'Pasta');
+INSERT INTO `ingredient` (`id`, `name`, `measurement_unit`, `brand`, `category`) VALUES (23, 'Flaky Pie Crust', '', '', 'Pie Crust');
+INSERT INTO `ingredient` (`id`, `name`, `measurement_unit`, `brand`, `category`) VALUES (26, 'Heavy Cream', 'Cups', '', 'Dairy');
+INSERT INTO `ingredient` (`id`, `name`, `measurement_unit`, `brand`, `category`) VALUES (27, 'Pepper', 'Teaspoons', '', 'Seasoning');
+INSERT INTO `ingredient` (`id`, `name`, `measurement_unit`, `brand`, `category`) VALUES (28, 'Feta Cheese', 'Cups', '', 'Dairy');
+INSERT INTO `ingredient` (`id`, `name`, `measurement_unit`, `brand`, `category`) VALUES (29, 'Salmon', 'Ounces', '', 'Fish');
+INSERT INTO `ingredient` (`id`, `name`, `measurement_unit`, `brand`, `category`) VALUES (30, 'Smoked Paprika', 'Teaspoons', '', 'Seasoning');
+INSERT INTO `ingredient` (`id`, `name`, `measurement_unit`, `brand`, `category`) VALUES (31, 'Blackening Seasoning', 'Teaspoons', '', 'Seasoning');
+INSERT INTO `ingredient` (`id`, `name`, `measurement_unit`, `brand`, `category`) VALUES (32, 'Soy Sauce', 'Tablespoons', '', 'Sauce');
+INSERT INTO `ingredient` (`id`, `name`, `measurement_unit`, `brand`, `category`) VALUES (33, 'Sriracha Sauce', 'Tablespoons', '', 'Sauce');
 INSERT INTO `ingredient` (`id`, `name`, `measurement_unit`, `brand`, `category`) VALUES (34, 'Beef Chuck', 'Pounds', '', 'Meat');
-INSERT INTO `ingredient` (`id`, `name`, `measurement_unit`, `brand`, `category`) VALUES (35, 'Onion', 'Cup', '', 'Vegetables');
-INSERT INTO `ingredient` (`id`, `name`, `measurement_unit`, `brand`, `category`) VALUES (36, 'Carrot', 'Cup', '', 'Vegetables');
-INSERT INTO `ingredient` (`id`, `name`, `measurement_unit`, `brand`, `category`) VALUES (37, 'Celery', 'Cup', '', 'Vegetables');
-INSERT INTO `ingredient` (`id`, `name`, `measurement_unit`, `brand`, `category`) VALUES (39, 'Tomato Paste', 'Tablespoon', '', 'Vegetables');
-INSERT INTO `ingredient` (`id`, `name`, `measurement_unit`, `brand`, `category`) VALUES (40, 'Beef Bouillon', 'Tablespoon', '', 'Seasoning');
-INSERT INTO `ingredient` (`id`, `name`, `measurement_unit`, `brand`, `category`) VALUES (41, 'Red Wine', 'Cup', '', 'Liquid');
+INSERT INTO `ingredient` (`id`, `name`, `measurement_unit`, `brand`, `category`) VALUES (35, 'Onion', 'Cups', '', 'Vegetables');
+INSERT INTO `ingredient` (`id`, `name`, `measurement_unit`, `brand`, `category`) VALUES (36, 'Carrot', 'Cups', '', 'Vegetables');
+INSERT INTO `ingredient` (`id`, `name`, `measurement_unit`, `brand`, `category`) VALUES (37, 'Celery', 'Cups', '', 'Vegetables');
+INSERT INTO `ingredient` (`id`, `name`, `measurement_unit`, `brand`, `category`) VALUES (39, 'Tomato Paste', 'Tablespoons', '', 'Vegetables');
+INSERT INTO `ingredient` (`id`, `name`, `measurement_unit`, `brand`, `category`) VALUES (40, 'Beef Bouillon', 'Tablespoons', '', 'Seasoning');
+INSERT INTO `ingredient` (`id`, `name`, `measurement_unit`, `brand`, `category`) VALUES (41, 'Red Wine', 'Cups', '', 'Liquid');
 INSERT INTO `ingredient` (`id`, `name`, `measurement_unit`, `brand`, `category`) VALUES (42, 'Fresh Time', 'Sprigs', '', 'Seasoning');
 INSERT INTO `ingredient` (`id`, `name`, `measurement_unit`, `brand`, `category`) VALUES (43, 'Bay Leaves', 'Leaves', '', 'Seasoning');
 INSERT INTO `ingredient` (`id`, `name`, `measurement_unit`, `brand`, `category`) VALUES (44, 'Pappardelle', 'Ounces', '', 'Pasta');
-INSERT INTO `ingredient` (`id`, `name`, `measurement_unit`, `brand`, `category`) VALUES (45, 'Parmesan', 'Cup', '', 'Dairy');
-INSERT INTO `ingredient` (`id`, `name`, `measurement_unit`, `brand`, `category`) VALUES (46, 'Vegetable Oil', 'Tablespoon', '', 'Oils');
-INSERT INTO `ingredient` (`id`, `name`, `measurement_unit`, `brand`, `category`) VALUES (47, 'Cornstarch', 'Tablespoon', '', 'Seasoning');
-INSERT INTO `ingredient` (`id`, `name`, `measurement_unit`, `brand`, `category`) VALUES (48, 'Flour', 'Tablespoon', '', 'Seasoning');
-INSERT INTO `ingredient` (`id`, `name`, `measurement_unit`, `brand`, `category`) VALUES (49, 'Garlic Salt', 'Tablespoon', '', 'Seasoning');
-INSERT INTO `ingredient` (`id`, `name`, `measurement_unit`, `brand`, `category`) VALUES (50, 'Paprika', 'Tablespoon', '', 'Seasoning');
+INSERT INTO `ingredient` (`id`, `name`, `measurement_unit`, `brand`, `category`) VALUES (45, 'Parmesan', 'Cups', '', 'Dairy');
+INSERT INTO `ingredient` (`id`, `name`, `measurement_unit`, `brand`, `category`) VALUES (46, 'Vegetable Oil', 'Tablespoons', '', 'Oils');
+INSERT INTO `ingredient` (`id`, `name`, `measurement_unit`, `brand`, `category`) VALUES (47, 'Cornstarch', 'Tablespoons', '', 'Seasoning');
+INSERT INTO `ingredient` (`id`, `name`, `measurement_unit`, `brand`, `category`) VALUES (48, 'Flour', 'Tablespoons', '', 'Seasoning');
+INSERT INTO `ingredient` (`id`, `name`, `measurement_unit`, `brand`, `category`) VALUES (49, 'Garlic Salt', 'Tablespoons', '', 'Seasoning');
+INSERT INTO `ingredient` (`id`, `name`, `measurement_unit`, `brand`, `category`) VALUES (50, 'Paprika', 'Tablespoons', '', 'Seasoning');
 INSERT INTO `ingredient` (`id`, `name`, `measurement_unit`, `brand`, `category`) VALUES (51, 'Chicken Breast', 'Pounds', '', 'Meat');
-INSERT INTO `ingredient` (`id`, `name`, `measurement_unit`, `brand`, `category`) VALUES (52, 'Sesame Oil', 'Tablespoon', '', 'Oils');
-INSERT INTO `ingredient` (`id`, `name`, `measurement_unit`, `brand`, `category`) VALUES (53, 'Rice Vinegar', 'Tablespoon', '', 'Liquid');
-INSERT INTO `ingredient` (`id`, `name`, `measurement_unit`, `brand`, `category`) VALUES (54, 'Sweet Chili Sauce', 'Tablespoon', '', 'Sauce');
-INSERT INTO `ingredient` (`id`, `name`, `measurement_unit`, `brand`, `category`) VALUES (55, 'Ketchup', 'Tablespoon', '', 'Sauce');
-INSERT INTO `ingredient` (`id`, `name`, `measurement_unit`, `brand`, `category`) VALUES (56, 'Brown Sugar', 'Tablespoon', '', 'Seasoning');
-INSERT INTO `ingredient` (`id`, `name`, `measurement_unit`, `brand`, `category`) VALUES (57, 'Rice Noodles', 'Ounce', '', 'Pasta');
-INSERT INTO `ingredient` (`id`, `name`, `measurement_unit`, `brand`, `category`) VALUES (58, 'Shrimp', 'Ounce', '', 'Fish');
-INSERT INTO `ingredient` (`id`, `name`, `measurement_unit`, `brand`, `category`) VALUES (59, 'Bean Sprouts', 'Cup', '', 'Vegetables');
-INSERT INTO `ingredient` (`id`, `name`, `measurement_unit`, `brand`, `category`) VALUES (60, 'Red Bell Pepper', 'Cup', '', 'Vegetables');
-INSERT INTO `ingredient` (`id`, `name`, `measurement_unit`, `brand`, `category`) VALUES (61, 'Green Onions', 'Cup', '', 'Vegetables');
-INSERT INTO `ingredient` (`id`, `name`, `measurement_unit`, `brand`, `category`) VALUES (62, 'Peanuts', 'Cup', '', 'Legume');
-INSERT INTO `ingredient` (`id`, `name`, `measurement_unit`, `brand`, `category`) VALUES (63, 'Lime Juice', 'Cup', '', 'Liquid');
-INSERT INTO `ingredient` (`id`, `name`, `measurement_unit`, `brand`, `category`) VALUES (64, 'Ciltantro', 'Cup', '', 'Vegetables');
-INSERT INTO `ingredient` (`id`, `name`, `measurement_unit`, `brand`, `category`) VALUES (65, 'Fish Sauce', 'Tablespoon', '', 'Sauce');
-INSERT INTO `ingredient` (`id`, `name`, `measurement_unit`, `brand`, `category`) VALUES (66, 'Peanut Butter', 'Tablespoon', '', 'Sauce');
-INSERT INTO `ingredient` (`id`, `name`, `measurement_unit`, `brand`, `category`) VALUES (67, 'Granulated Sugar', 'Teaspoon', '', 'Seasoning');
-INSERT INTO `ingredient` (`id`, `name`, `measurement_unit`, `brand`, `category`) VALUES (68, 'Vanilla Extract', 'Tablespoon', '', 'Seasoning');
-INSERT INTO `ingredient` (`id`, `name`, `measurement_unit`, `brand`, `category`) VALUES (69, 'Lemon Zest', 'Tablespoon', '', 'Seasoning');
-INSERT INTO `ingredient` (`id`, `name`, `measurement_unit`, `brand`, `category`) VALUES (70, 'Potatoes', 'Pound', '', 'Vegetables');
-INSERT INTO `ingredient` (`id`, `name`, `measurement_unit`, `brand`, `category`) VALUES (71, 'Ground Beef', 'Ounce', '', 'Meat');
-INSERT INTO `ingredient` (`id`, `name`, `measurement_unit`, `brand`, `category`) VALUES (72, 'Ground Pork', 'Ounce', '', 'Meat');
-INSERT INTO `ingredient` (`id`, `name`, `measurement_unit`, `brand`, `category`) VALUES (73, 'Passata', 'Ounce', '', 'Sauce');
-INSERT INTO `ingredient` (`id`, `name`, `measurement_unit`, `brand`, `category`) VALUES (74, 'Vegetable Bouillon Cubes', 'Tablepoon', '', 'Seasoning');
-INSERT INTO `ingredient` (`id`, `name`, `measurement_unit`, `brand`, `category`) VALUES (75, 'Dried Oregano', 'Tablepoon', '', 'Seasoning');
-INSERT INTO `ingredient` (`id`, `name`, `measurement_unit`, `brand`, `category`) VALUES (76, 'Dried Basil', 'Tablepoon', '', 'Seasoning');
-INSERT INTO `ingredient` (`id`, `name`, `measurement_unit`, `brand`, `category`) VALUES (77, 'Flower', 'Cup', '', 'Seasoning');
-INSERT INTO `ingredient` (`id`, `name`, `measurement_unit`, `brand`, `category`) VALUES (78, 'Lasagna Sheets', 'Ounce', '', 'Noodle');
-INSERT INTO `ingredient` (`id`, `name`, `measurement_unit`, `brand`, `category`) VALUES (79, 'Fresh Mozzarella Cheese', 'Cup', '', 'Dairy');
-INSERT INTO `ingredient` (`id`, `name`, `measurement_unit`, `brand`, `category`) VALUES (80, 'Whole Milk', 'Cup', '', 'Dairy');
+INSERT INTO `ingredient` (`id`, `name`, `measurement_unit`, `brand`, `category`) VALUES (52, 'Sesame Oil', 'Tablespoons', '', 'Oils');
+INSERT INTO `ingredient` (`id`, `name`, `measurement_unit`, `brand`, `category`) VALUES (53, 'Rice Vinegar', 'Tablespoons', '', 'Liquid');
+INSERT INTO `ingredient` (`id`, `name`, `measurement_unit`, `brand`, `category`) VALUES (54, 'Sweet Chili Sauce', 'Tablespoons', '', 'Sauce');
+INSERT INTO `ingredient` (`id`, `name`, `measurement_unit`, `brand`, `category`) VALUES (55, 'Ketchup', 'Tablespoons', '', 'Sauce');
+INSERT INTO `ingredient` (`id`, `name`, `measurement_unit`, `brand`, `category`) VALUES (56, 'Brown Sugar', 'Tablespoons', '', 'Seasoning');
+INSERT INTO `ingredient` (`id`, `name`, `measurement_unit`, `brand`, `category`) VALUES (57, 'Rice Noodles', 'Ounces', '', 'Pasta');
+INSERT INTO `ingredient` (`id`, `name`, `measurement_unit`, `brand`, `category`) VALUES (58, 'Shrimp', 'Ounces', '', 'Fish');
+INSERT INTO `ingredient` (`id`, `name`, `measurement_unit`, `brand`, `category`) VALUES (59, 'Bean Sprouts', 'Cups', '', 'Vegetables');
+INSERT INTO `ingredient` (`id`, `name`, `measurement_unit`, `brand`, `category`) VALUES (60, 'Red Bell Pepper', 'Cups', '', 'Vegetables');
+INSERT INTO `ingredient` (`id`, `name`, `measurement_unit`, `brand`, `category`) VALUES (61, 'Green Onions', 'Cups', '', 'Vegetables');
+INSERT INTO `ingredient` (`id`, `name`, `measurement_unit`, `brand`, `category`) VALUES (62, 'Peanuts', 'Cups', '', 'Legume');
+INSERT INTO `ingredient` (`id`, `name`, `measurement_unit`, `brand`, `category`) VALUES (63, 'Lime Juice', 'Cups', '', 'Liquid');
+INSERT INTO `ingredient` (`id`, `name`, `measurement_unit`, `brand`, `category`) VALUES (64, 'Ciltantro', 'Cups', '', 'Vegetables');
+INSERT INTO `ingredient` (`id`, `name`, `measurement_unit`, `brand`, `category`) VALUES (65, 'Fish Sauce', 'Tablespoons', '', 'Sauce');
+INSERT INTO `ingredient` (`id`, `name`, `measurement_unit`, `brand`, `category`) VALUES (66, 'Peanut Butter', 'Tablespoons', '', 'Sauce');
+INSERT INTO `ingredient` (`id`, `name`, `measurement_unit`, `brand`, `category`) VALUES (67, 'Granulated Sugar', 'Teaspoons', '', 'Seasoning');
+INSERT INTO `ingredient` (`id`, `name`, `measurement_unit`, `brand`, `category`) VALUES (68, 'Vanilla Extract', 'Tablespoons', '', 'Seasoning');
+INSERT INTO `ingredient` (`id`, `name`, `measurement_unit`, `brand`, `category`) VALUES (69, 'Lemon Zest', 'Tablespoons', '', 'Seasoning');
+INSERT INTO `ingredient` (`id`, `name`, `measurement_unit`, `brand`, `category`) VALUES (70, 'Potatoes', 'Pounds', '', 'Vegetables');
+INSERT INTO `ingredient` (`id`, `name`, `measurement_unit`, `brand`, `category`) VALUES (71, 'Ground Beef', 'Ounces', '', 'Meat');
+INSERT INTO `ingredient` (`id`, `name`, `measurement_unit`, `brand`, `category`) VALUES (72, 'Ground Pork', 'Ounces', '', 'Meat');
+INSERT INTO `ingredient` (`id`, `name`, `measurement_unit`, `brand`, `category`) VALUES (73, 'Passata', 'Ounces', '', 'Sauce');
+INSERT INTO `ingredient` (`id`, `name`, `measurement_unit`, `brand`, `category`) VALUES (74, 'Vegetable Bouillon Cubes', 'Tablespoons', '', 'Seasoning');
+INSERT INTO `ingredient` (`id`, `name`, `measurement_unit`, `brand`, `category`) VALUES (75, 'Dried Oregano', 'Tablespoons', '', 'Seasoning');
+INSERT INTO `ingredient` (`id`, `name`, `measurement_unit`, `brand`, `category`) VALUES (76, 'Dried Basil', 'Tablespoons', '', 'Seasoning');
+INSERT INTO `ingredient` (`id`, `name`, `measurement_unit`, `brand`, `category`) VALUES (77, 'Flower', 'Cups', '', 'Seasoning');
+INSERT INTO `ingredient` (`id`, `name`, `measurement_unit`, `brand`, `category`) VALUES (78, 'Lasagna Sheets', 'Ounces', '', 'Noodle');
+INSERT INTO `ingredient` (`id`, `name`, `measurement_unit`, `brand`, `category`) VALUES (79, 'Fresh Mozzarella Cheese', 'Cups', '', 'Dairy');
+INSERT INTO `ingredient` (`id`, `name`, `measurement_unit`, `brand`, `category`) VALUES (80, 'Whole Milk', 'Cups', '', 'Dairy');
 
 COMMIT;
 
@@ -482,7 +482,7 @@ INSERT INTO `recipe` (`id`, `name`, `date_created`, `active`, `creator_id`, `is_
 INSERT INTO `recipe` (`id`, `name`, `date_created`, `active`, `creator_id`, `is_public`, `prep_time`, `cook_time`, `description`, `instructions`, `notes`, `photo_link`, `web_link`) VALUES (5, 'Lemon Sorbet', '2022-01-15 00:00:00', 1, 2, 1, '45m', '5h', '', 'In a small saucepan, bring sugar and the water to boiling, stirring to dissolve sugar. Stir in the 1 tablespoon lemon zest and the lemon juice. Pour lemon mixture into the bowl of a 1-quart ice cream maker. Freeze according to ice cream maker\'s instructions (approximately 25-30 minutes). Transfer to a container; ripen in freezer for 4 hours. Let stand at room temperature for 5 minutes before serving', '', 'https://www.simplyrecipes.com/thmb/GtZyMvsn0XUu-8A9omEh0RXKs24=/735x0/__opt__aboutcom__coeus__resources__content_migration__simply_recipes__uploads__2007__01__meyer-lemon-sorbet-vertical-a-1300-1350fefc9ca544adaa9dbf6cea4370d7.jpg', '');
 INSERT INTO `recipe` (`id`, `name`, `date_created`, `active`, `creator_id`, `is_public`, `prep_time`, `cook_time`, `description`, `instructions`, `notes`, `photo_link`, `web_link`) VALUES (6, 'Easy Baked Spaghetti', '2022-01-01 00:00:00', 1, 1, 1, '10m', '1h', '', 'Noodles:\nPreheat oven to 350˚.\nCook noodles according to package instructions, stopping a minute or two before al dente.\nDrain the noodles and mix with the spaghetti sauce and a cup of cheese.\nPlace into a 9×13 baking dish and top with the remaining cup of cheese.\nBake for 20 minutes, or until cheese is golden and bubbly.\nSauce:\nIn a medium sauce pan, combine the olive oil, garlic, and red pepper flakes and sauté over medium-high heat until the garlic sizzles.\nStir in the tomatoes and simmer for 5-10 minutes, until the sauce starts to thicken.\nRemove from heat and stir in lemon juice and salt.', '', 'https://myfridgefood.com/media/7428/bakedspaghetti.jpg', '');
 INSERT INTO `recipe` (`id`, `name`, `date_created`, `active`, `creator_id`, `is_public`, `prep_time`, `cook_time`, `description`, `instructions`, `notes`, `photo_link`, `web_link`) VALUES (7, 'Honey Glazed Salmon', '2022-01-01 00:00:00', 1, 1, 1, '8m', '10m', 'Sticky sweet and garlicky, this glazed salmon recipe comes together in just 20 minutes', 'Pat salmon dry, then season with salt, pepper, paprika and blackening seasoning (if using). Set aside. Adjust oven rack to middle position, then preheat broiler. Add butter and oil to a large, oven-safe skillet over MED-HIGH heat. Once butter is melted, add garlic, water, soy sauce, sriracha, honey and lemon juice and cook 30 seconds or so, until sauce is heated through. Add salmon, skin side down (if using salmon with skin), and cook 3 minutes. While salmon cooks, baste frequently with sauce from the pan by spooning it over the top of the salmon. Broil salmon for 5-6 minutes, basting with sauce once during the broil, until salmon is caramelized and cooked to desired doneness. Garnish with minced parsley if desired.', 'If you\'d prefer, season salmon as directed, then pan sear in the pan.  Flip over and sear on the other side, then remove to a plate.  Add sauce ingredients to pan and cook until warmed through.  Add salmon back to pan and spoon sauce over the salmon.\n', 'https://www.thechunkychef.com/wp-content/uploads/2020/01/Honey-Garlic-Salmon-fork-320x320.jpg', '');
-INSERT INTO `recipe` (`id`, `name`, `date_created`, `active`, `creator_id`, `is_public`, `prep_time`, `cook_time`, `description`, `instructions`, `notes`, `photo_link`, `web_link`) VALUES (8, 'Quiche', '2022-01-01 00:00:00', 1, 1, 1, '30m', '1h', 'This is a perfect base quiche recipe and it’s all baked in a super flaky homemade pie crust. Use a combination of milk and heavy cream for the richest, creamiest filling and add your favorites such as bacon, feta cheese, ham, white cheddar cheese, crab meat or spinach.', 'Prepare pie crust: I like to make sure my pie dough is prepared before I begin the quiche. Make pie dough the night before because it needs to chill in the refrigerator for at least 2 hours before rolling out and blind baking (next step).\nRoll out the chilled pie dough: On a floured work surface, roll out one of the disks of chilled dough (use the 2nd pie crust for another recipe). Turn the dough about a quarter turn after every few rolls until you have a circle 12 inches in diameter. Carefully place the dough into a 9-inch pie dish. Tuck it in with your fingers, making sure it is completely smooth. To make a lovely edge, I do not trim excess dough around the edges. Instead, fold the excess dough back over the edge and use your hands to mold the edge into a rim around the pie. Crimp the edges with a fork or use your fingers to flute the edges. Chill the pie crust in the refrigerator for at least 30 minutes and up to 5 days. Cover the pie crust with plastic wrap if chilling for longer than 30 minutes. While the crust is chilling, preheat oven to 375°F (190°C). Partially blind bake: Line the chilled pie crust with parchment paper. Fill with pie weights or dried beans. Make sure the weights are evenly distributed around the pie dish. Bake until the edges of the crust are starting to brown, about 15-16 minutes. Remove pie from the oven and carefully lift the parchment paper (with the weights) out of the pie. Prick holes all around the bottom crust with a fork. Return the pie crust to the oven. Bake until the bottom crust is just beginning to brown, about 7-8 minutes. Remove from the oven and set aside. (Crust can still be warm when you pour in the filling. You can partially pre-bake the crust up to 3 days ahead of time. Cover cooled crust tightly and refrigerate until ready to fill.)\nReduce oven temperature to 350°F (177°C).\nIn a large bowl with a handheld or stand mixer fitted with a whisk attachment, beat the eggs, whole milk, heavy cream, salt, and pepper together on high speed until completely combined, about 1 minute. Whisk in add-ins and then pour into crust.\nBake the quiche until the center is just about set, about 45-55 minutes. Don’t over-bake. Use a pie crust shield to prevent the pie crust edges from over-browning. Allow to cool for 15 minutes. Top with optional toppings before slicing and serving, if desired. Or you can cool the quiche completely before serving– it’s fantastic at room temperature!\nThis quiche makes great leftovers! Cover tightly and store in the refrigerator for up to 4 days.', 'Make Ahead & Freezing Instructions: The pie dough can be prepared ahead of time and stored in the refrigerator for up to 5 days or in the freezer for up to 3 months. You can pre-bake the crust ahead of time too. See end of step 2. To freeze, cool baked quiche completely, then cover tightly with a couple sheets of aluminum foil and freeze for up to 3 months. Thaw in the refrigerator or on the counter, then bake at 350°F (177°C) for 20-25 minutes.', 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.wellplated.com%2Fspring-vegetable-quiche-puff-pastry%2F&psig=AOvVaw2qi5xFUTRO1Oh4clg84Ld_&ust=1643569825511000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCLD0tPDU1_UCFQAAAAAdAAAAABAD', '');
+INSERT INTO `recipe` (`id`, `name`, `date_created`, `active`, `creator_id`, `is_public`, `prep_time`, `cook_time`, `description`, `instructions`, `notes`, `photo_link`, `web_link`) VALUES (8, 'Quiche', '2022-01-01 00:00:00', 1, 1, 1, '30m', '1h', 'This is a perfect base quiche recipe and it’s all baked in a super flaky homemade pie crust. Use a combination of milk and heavy cream for the richest, creamiest filling and add your favorites such as bacon, feta cheese, ham, white cheddar cheese, crab meat or spinach.', 'Prepare pie crust: I like to make sure my pie dough is prepared before I begin the quiche. Make pie dough the night before because it needs to chill in the refrigerator for at least 2 hours before rolling out and blind baking (next step).\nRoll out the chilled pie dough: On a floured work surface, roll out one of the disks of chilled dough (use the 2nd pie crust for another recipe). Turn the dough about a quarter turn after every few rolls until you have a circle 12 inches in diameter. Carefully place the dough into a 9-inch pie dish. Tuck it in with your fingers, making sure it is completely smooth. To make a lovely edge, I do not trim excess dough around the edges. Instead, fold the excess dough back over the edge and use your hands to mold the edge into a rim around the pie. Crimp the edges with a fork or use your fingers to flute the edges. Chill the pie crust in the refrigerator for at least 30 minutes and up to 5 days. Cover the pie crust with plastic wrap if chilling for longer than 30 minutes. While the crust is chilling, preheat oven to 375°F (190°C). Partially blind bake: Line the chilled pie crust with parchment paper. Fill with pie weights or dried beans. Make sure the weights are evenly distributed around the pie dish. Bake until the edges of the crust are starting to brown, about 15-16 minutes. Remove pie from the oven and carefully lift the parchment paper (with the weights) out of the pie. Prick holes all around the bottom crust with a fork. Return the pie crust to the oven. Bake until the bottom crust is just beginning to brown, about 7-8 minutes. Remove from the oven and set aside. (Crust can still be warm when you pour in the filling. You can partially pre-bake the crust up to 3 days ahead of time. Cover cooled crust tightly and refrigerate until ready to fill.)\nReduce oven temperature to 350°F (177°C).\nIn a large bowl with a handheld or stand mixer fitted with a whisk attachment, beat the eggs, whole milk, heavy cream, salt, and pepper together on high speed until completely combined, about 1 minute. Whisk in add-ins and then pour into crust.\nBake the quiche until the center is just about set, about 45-55 minutes. Don’t over-bake. Use a pie crust shield to prevent the pie crust edges from over-browning. Allow to cool for 15 minutes. Top with optional toppings before slicing and serving, if desired. Or you can cool the quiche completely before serving– it’s fantastic at room temperature!\nThis quiche makes great leftovers! Cover tightly and store in the refrigerator for up to 4 days.', 'Make Ahead & Freezing Instructions: The pie dough can be prepared ahead of time and stored in the refrigerator for up to 5 days or in the freezer for up to 3 months. You can pre-bake the crust ahead of time too. See end of step 2. To freeze, cool baked quiche completely, then cover tightly with a couple sheets of aluminum foil and freeze for up to 3 months. Thaw in the refrigerator or on the counter, then bake at 350°F (177°C) for 20-25 minutes.', 'https://www.simplyrecipes.com/thmb/vHEVTTrlMUOgml0ZHnHxRUWWoYc=/648x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/Simply-Recipes-Quiche-Lorraine-LEAD-3-da75914b2ec04bcaa6034c50ba4adf8f.jpg', '');
 INSERT INTO `recipe` (`id`, `name`, `date_created`, `active`, `creator_id`, `is_public`, `prep_time`, `cook_time`, `description`, `instructions`, `notes`, `photo_link`, `web_link`) VALUES (9, 'Slow Cooked Shredded Beef Ragu Pasta', '2022-01-01 00:00:00', 1, 2, 1, '20m', '2h 30m', 'Ragu is one of those recipes that really showcases the beauty of Italian cooking - everyday ingredients, fast prep, leave it to cook long and slow and you end up with a luscious dish that tastes like a million bucks. This recipe makes enough sauce to serve 8 and freezes great.', 'Pat beef dry and sprinkle with salt and pepper Sear Beef: Heat 1 tbsp olive oil over high heat in a heavy based pot. Add beef and sear each piece aggressively on all sides until very browned (3 - 5 minutes in total), then remove onto a plate. Turn stove down to medium low and add remaining 2 tbsp of olive oil. Soffrito: Add garlic and onion and sauté for 2 minutes. Then add the carrots and celery and sauté slowly for 5 minutes. Add remaining Ragu ingredients and return the beef to the pot (including pooled juices). Turn the stove up and bring it to a simmer, then turn it down to low so it\'s bubbling very very gently. (Note 7) Slow cook: Cover the pot and let it cook for 2 hours or until beef is tender enough to shred. (Note 5 for slow cooker and pressure cooker). Shred: Remove beef then coarsely shred with 2 forks. Return beef to the pot. Simmer for 30 minutes until sauce is reduced and thickened - beef will soften slightly more during this step. Final season: Do a taste test and adjust the seasoning to your taste with salt and pepper. ALSO, add 1/2 tsp sugar if sauce is a bit sour for your taste (Note 6). Place the lid on and set aside until ready to serve (it\'s even better the next day and freezes well for months!).', 'Beef - Cut the beef into 4 pieces that are around the size of a baseball. The cook time of this recipe assumes you do this. \nCelery and carrots sautéed with the onions and garlic is called \"soffritto\" in Italian cooking. It is a very traditional base for many Italian dishes. Cooking them slowly over low heat releases their flavour and adds an extra dimension to this dish. But it\'s not a deal killer if you skip these ingredients.\nBeef stock - You could use liquid beef stock instead of water + stock cubes.', 'https://www.recipetineats.com/wp-content/uploads/2017/07/Beef-Ragu-11a.jpg', '');
 INSERT INTO `recipe` (`id`, `name`, `date_created`, `active`, `creator_id`, `is_public`, `prep_time`, `cook_time`, `description`, `instructions`, `notes`, `photo_link`, `web_link`) VALUES (10, 'Crispy Sesame Chicken with a Sticky Asian Sauce\n', '2022-01-01 00:00:00', 1, 2, 1, '15m', '15m', 'Crispy Sesame Chicken with a Sticky Asian Sauce - tastier then that naughty takeaway and super simple to make. Sweet, salty, crispy, sticky and a little bit spicy - it covers all the bases for one of these meals that everyone polishes off. Its a real family favorite!', 'Heat the oil in a wok or large frying pan until very hot. Whilst the oil is heating, place the egg in one shallow bowl and the cornflour in another shallow bowl. Add the flour, salt, pepper, garlic salt and paprika to another shallow bowl and mix together. Dredge the chicken in the cornflour, then dip in the egg (make sure all of the chicken is covered in egg wash), and finally dredge it in the seasoned flour. Add to the wok and cook on a high heat for 6-7 minutes, turning two or three times during cooking, until well browned. You may need to cook in two batches (I find I can do it in one batch so long as it\'s no more than 3 chicken breasts). Remove from the pan and place in a bowl lined with kitchen towels. Add all of the sauce ingredients to the hot wok, stir and bubble on a high heat until the sauce reduces by about a third (should take 2-3 minutes). Add the chicken back in and toss in the sauce to coat. Cook for 1-2 minutes. Turn off the heat and divide between four bowls. Serve with boiled rice and top with sesame seeds and spring onions.', 'Double these ingredients if you want extra sauce, rather than just coating the chicken.', 'https://www.kitchensanctuary.com/wp-content/uploads/2016/06/Crispy-Sesame-Chicken-square-FS-300x300.jpg', '');
 INSERT INTO `recipe` (`id`, `name`, `date_created`, `active`, `creator_id`, `is_public`, `prep_time`, `cook_time`, `description`, `instructions`, `notes`, `photo_link`, `web_link`) VALUES (11, 'Pad Thai\n\n', '2022-01-01 00:00:00', 1, 2, 1, '15m', '15m', 'This amazing Pad Thai recipe is easy, approachable and can be made in under 30 minutes, fresh ingredients and a delicious homemade pad thai sauce.', 'Cook noodles according to package instructions, just until tender.  Rinse under cold water. Mix the sauce ingredients together. Set aside. Heat 1½ tablespoons of oil in a large saucepan or wok over medium-high heat. Add the shrimp, chicken or tofu, garlic and bell pepper. The shrimp will cook quickly, about 1-2 minutes on each side, or until pink. If using chicken, cook until just cooked through, about 3-4 minutes, flipping only once. Push everything to the side of the pan. Add a little more oil and add the beaten eggs. Scramble the eggs, breaking them into small pieces with a spatula as they cook. Add noodles, sauce, bean sprouts and peanuts to the pan (reserving some peanuts for topping at the end). Toss everything to combine. Top with green onions, extra peanuts, cilantro and lime wedges. Serve immediately!', 'To use tamarind paste in the sauce, substitute 2 Tablespoons in place of the vinegar.', 'https://tastesbetterfromscratch.com/wp-content/uploads/2018/07/Pad-Thai-8-500x500.jpg', '');
@@ -578,8 +578,8 @@ INSERT INTO `recipe_ingredient` (`ingredient_id`, `recipe_id`, `quantity`, `rema
 INSERT INTO `recipe_ingredient` (`ingredient_id`, `recipe_id`, `quantity`, `remarks`) VALUES (3, 3, 1, 'Minced');
 INSERT INTO `recipe_ingredient` (`ingredient_id`, `recipe_id`, `quantity`, `remarks`) VALUES (4, 3, 4, 'Sliced');
 INSERT INTO `recipe_ingredient` (`ingredient_id`, `recipe_id`, `quantity`, `remarks`) VALUES (5, 3, 2, 'Sliced');
-INSERT INTO `recipe_ingredient` (`ingredient_id`, `recipe_id`, `quantity`, `remarks`) VALUES (6, 3, 4, 'Slices');
-INSERT INTO `recipe_ingredient` (`ingredient_id`, `recipe_id`, `quantity`, `remarks`) VALUES (7, 2, 1, 'Whole Wheat\nSliced');
+INSERT INTO `recipe_ingredient` (`ingredient_id`, `recipe_id`, `quantity`, `remarks`) VALUES (6, 3, 4, 'Whole Wheat\n');
+INSERT INTO `recipe_ingredient` (`ingredient_id`, `recipe_id`, `quantity`, `remarks`) VALUES (7, 2, 1, '');
 INSERT INTO `recipe_ingredient` (`ingredient_id`, `recipe_id`, `quantity`, `remarks`) VALUES (8, 2, 4, '');
 INSERT INTO `recipe_ingredient` (`ingredient_id`, `recipe_id`, `quantity`, `remarks`) VALUES (9, 2, 1, '');
 INSERT INTO `recipe_ingredient` (`ingredient_id`, `recipe_id`, `quantity`, `remarks`) VALUES (10, 2, 8, '');
@@ -591,9 +591,9 @@ INSERT INTO `recipe_ingredient` (`ingredient_id`, `recipe_id`, `quantity`, `rema
 INSERT INTO `recipe_ingredient` (`ingredient_id`, `recipe_id`, `quantity`, `remarks`) VALUES (17, 6, 1, '');
 INSERT INTO `recipe_ingredient` (`ingredient_id`, `recipe_id`, `quantity`, `remarks`) VALUES (18, 6, 2, '');
 INSERT INTO `recipe_ingredient` (`ingredient_id`, `recipe_id`, `quantity`, `remarks`) VALUES (19, 6, 1, '');
-INSERT INTO `recipe_ingredient` (`ingredient_id`, `recipe_id`, `quantity`, `remarks`) VALUES (20, 6, 1, '');
-INSERT INTO `recipe_ingredient` (`ingredient_id`, `recipe_id`, `quantity`, `remarks`) VALUES (21, 6, 1, '');
-INSERT INTO `recipe_ingredient` (`ingredient_id`, `recipe_id`, `quantity`, `remarks`) VALUES (22, 6, 1, '');
+INSERT INTO `recipe_ingredient` (`ingredient_id`, `recipe_id`, `quantity`, `remarks`) VALUES (20, 6, 28, '');
+INSERT INTO `recipe_ingredient` (`ingredient_id`, `recipe_id`, `quantity`, `remarks`) VALUES (21, 6, 28, '');
+INSERT INTO `recipe_ingredient` (`ingredient_id`, `recipe_id`, `quantity`, `remarks`) VALUES (22, 6, 16, '');
 INSERT INTO `recipe_ingredient` (`ingredient_id`, `recipe_id`, `quantity`, `remarks`) VALUES (17, 1, 1, '');
 INSERT INTO `recipe_ingredient` (`ingredient_id`, `recipe_id`, `quantity`, `remarks`) VALUES (35, 1, 1, '');
 INSERT INTO `recipe_ingredient` (`ingredient_id`, `recipe_id`, `quantity`, `remarks`) VALUES (36, 1, 1, '');
@@ -626,6 +626,21 @@ COMMIT;
 START TRANSACTION;
 USE `recipe`;
 INSERT INTO `favorite_recipe` (`user_id`, `recipe_id`, `comment`, `date_last_made`, `created_at`) VALUES (1, 1, 'Wolfgang love\'s this lasangna and want\'s to favorite it!', '2022-01-01 00:00:00', '2022-01-01 00:00:00');
+INSERT INTO `favorite_recipe` (`user_id`, `recipe_id`, `comment`, `date_last_made`, `created_at`) VALUES (1, 13, '', '2022-01-01 00:00:00', '2022-01-01 00:00:00');
+INSERT INTO `favorite_recipe` (`user_id`, `recipe_id`, `comment`, `date_last_made`, `created_at`) VALUES (1, 5, '', '2022-01-01 00:00:00', '2022-01-01 00:00:00');
+INSERT INTO `favorite_recipe` (`user_id`, `recipe_id`, `comment`, `date_last_made`, `created_at`) VALUES (1, 6, '', '2022-01-01 00:00:00', '2022-01-01 00:00:00');
+INSERT INTO `favorite_recipe` (`user_id`, `recipe_id`, `comment`, `date_last_made`, `created_at`) VALUES (1, 8, '', '2022-01-01 00:00:00', '2022-01-01 00:00:00');
+INSERT INTO `favorite_recipe` (`user_id`, `recipe_id`, `comment`, `date_last_made`, `created_at`) VALUES (1, 10, '', '2022-01-01 00:00:00', '2022-01-01 00:00:00');
+INSERT INTO `favorite_recipe` (`user_id`, `recipe_id`, `comment`, `date_last_made`, `created_at`) VALUES (2, 1, '', '2022-01-01 00:00:00', '2022-01-01 00:00:00');
+INSERT INTO `favorite_recipe` (`user_id`, `recipe_id`, `comment`, `date_last_made`, `created_at`) VALUES (2, 2, '', '2022-01-01 00:00:00', '2022-01-01 00:00:00');
+INSERT INTO `favorite_recipe` (`user_id`, `recipe_id`, `comment`, `date_last_made`, `created_at`) VALUES (2, 9, '', '2022-01-01 00:00:00', '2022-01-01 00:00:00');
+INSERT INTO `favorite_recipe` (`user_id`, `recipe_id`, `comment`, `date_last_made`, `created_at`) VALUES (2, 11, '', '2022-01-01 00:00:00', '2022-01-01 00:00:00');
+INSERT INTO `favorite_recipe` (`user_id`, `recipe_id`, `comment`, `date_last_made`, `created_at`) VALUES (2, 13, '', '2022-01-01 00:00:00', '2022-01-01 00:00:00');
+INSERT INTO `favorite_recipe` (`user_id`, `recipe_id`, `comment`, `date_last_made`, `created_at`) VALUES (3, 6, '', '2022-01-01 00:00:00', '2022-01-01 00:00:00');
+INSERT INTO `favorite_recipe` (`user_id`, `recipe_id`, `comment`, `date_last_made`, `created_at`) VALUES (3, 4, '', '2022-01-01 00:00:00', '2022-01-01 00:00:00');
+INSERT INTO `favorite_recipe` (`user_id`, `recipe_id`, `comment`, `date_last_made`, `created_at`) VALUES (3, 3, '', '2022-01-01 00:00:00', '2022-01-01 00:00:00');
+INSERT INTO `favorite_recipe` (`user_id`, `recipe_id`, `comment`, `date_last_made`, `created_at`) VALUES (3, 9, '', '2022-01-01 00:00:00', '2022-01-01 00:00:00');
+INSERT INTO `favorite_recipe` (`user_id`, `recipe_id`, `comment`, `date_last_made`, `created_at`) VALUES (3, 11, '', '2022-01-01 00:00:00', '2022-01-01 00:00:00');
 
 COMMIT;
 
@@ -786,6 +801,35 @@ COMMIT;
 START TRANSACTION;
 USE `recipe`;
 INSERT INTO `recipe_has_category` (`recipe_id`, `category_id`) VALUES (1, 1);
+INSERT INTO `recipe_has_category` (`recipe_id`, `category_id`) VALUES (1, 58);
+INSERT INTO `recipe_has_category` (`recipe_id`, `category_id`) VALUES (1, 62);
+INSERT INTO `recipe_has_category` (`recipe_id`, `category_id`) VALUES (2, 37);
+INSERT INTO `recipe_has_category` (`recipe_id`, `category_id`) VALUES (2, 61);
+INSERT INTO `recipe_has_category` (`recipe_id`, `category_id`) VALUES (2, 56);
+INSERT INTO `recipe_has_category` (`recipe_id`, `category_id`) VALUES (2, 58);
+INSERT INTO `recipe_has_category` (`recipe_id`, `category_id`) VALUES (2, 77);
+INSERT INTO `recipe_has_category` (`recipe_id`, `category_id`) VALUES (3, 37);
+INSERT INTO `recipe_has_category` (`recipe_id`, `category_id`) VALUES (3, 58);
+INSERT INTO `recipe_has_category` (`recipe_id`, `category_id`) VALUES (4, 24);
+INSERT INTO `recipe_has_category` (`recipe_id`, `category_id`) VALUES (4, 58);
+INSERT INTO `recipe_has_category` (`recipe_id`, `category_id`) VALUES (5, 37);
+INSERT INTO `recipe_has_category` (`recipe_id`, `category_id`) VALUES (5, 56);
+INSERT INTO `recipe_has_category` (`recipe_id`, `category_id`) VALUES (6, 1);
+INSERT INTO `recipe_has_category` (`recipe_id`, `category_id`) VALUES (7, 52);
+INSERT INTO `recipe_has_category` (`recipe_id`, `category_id`) VALUES (7, 57);
+INSERT INTO `recipe_has_category` (`recipe_id`, `category_id`) VALUES (7, 74);
+INSERT INTO `recipe_has_category` (`recipe_id`, `category_id`) VALUES (7, 77);
+INSERT INTO `recipe_has_category` (`recipe_id`, `category_id`) VALUES (8, 24);
+INSERT INTO `recipe_has_category` (`recipe_id`, `category_id`) VALUES (9, 1);
+INSERT INTO `recipe_has_category` (`recipe_id`, `category_id`) VALUES (10, 11);
+INSERT INTO `recipe_has_category` (`recipe_id`, `category_id`) VALUES (11, 52);
+INSERT INTO `recipe_has_category` (`recipe_id`, `category_id`) VALUES (11, 56);
+INSERT INTO `recipe_has_category` (`recipe_id`, `category_id`) VALUES (12, 37);
+INSERT INTO `recipe_has_category` (`recipe_id`, `category_id`) VALUES (12, 56);
+INSERT INTO `recipe_has_category` (`recipe_id`, `category_id`) VALUES (12, 62);
+INSERT INTO `recipe_has_category` (`recipe_id`, `category_id`) VALUES (13, 37);
+INSERT INTO `recipe_has_category` (`recipe_id`, `category_id`) VALUES (13, 56);
+INSERT INTO `recipe_has_category` (`recipe_id`, `category_id`) VALUES (13, 62);
 
 COMMIT;
 
@@ -806,6 +850,44 @@ COMMIT;
 START TRANSACTION;
 USE `recipe`;
 INSERT INTO `recipe_rating` (`user_id`, `recipe_id`, `rating`, `created_on`) VALUES (1, 1, 5, '2022-01-01 00:00:00');
+INSERT INTO `recipe_rating` (`user_id`, `recipe_id`, `rating`, `created_on`) VALUES (1, 2, 3, '2022-01-01 00:00:00');
+INSERT INTO `recipe_rating` (`user_id`, `recipe_id`, `rating`, `created_on`) VALUES (1, 3, 4, '2022-01-01 00:00:00');
+INSERT INTO `recipe_rating` (`user_id`, `recipe_id`, `rating`, `created_on`) VALUES (1, 4, 5, '2022-01-01 00:00:00');
+INSERT INTO `recipe_rating` (`user_id`, `recipe_id`, `rating`, `created_on`) VALUES (1, 5, 3, '2022-01-01 00:00:00');
+INSERT INTO `recipe_rating` (`user_id`, `recipe_id`, `rating`, `created_on`) VALUES (1, 6, 5, '2022-01-01 00:00:00');
+INSERT INTO `recipe_rating` (`user_id`, `recipe_id`, `rating`, `created_on`) VALUES (1, 7, 4, '2022-01-01 00:00:00');
+INSERT INTO `recipe_rating` (`user_id`, `recipe_id`, `rating`, `created_on`) VALUES (1, 8, 3, '2022-01-01 00:00:00');
+INSERT INTO `recipe_rating` (`user_id`, `recipe_id`, `rating`, `created_on`) VALUES (1, 9, 2, '2022-01-01 00:00:00');
+INSERT INTO `recipe_rating` (`user_id`, `recipe_id`, `rating`, `created_on`) VALUES (1, 10, 4, '2022-01-01 00:00:00');
+INSERT INTO `recipe_rating` (`user_id`, `recipe_id`, `rating`, `created_on`) VALUES (1, 11, 5, '2022-01-01 00:00:00');
+INSERT INTO `recipe_rating` (`user_id`, `recipe_id`, `rating`, `created_on`) VALUES (1, 12, 3, '2022-01-01 00:00:00');
+INSERT INTO `recipe_rating` (`user_id`, `recipe_id`, `rating`, `created_on`) VALUES (1, 13, 4, '2022-01-01 00:00:00');
+INSERT INTO `recipe_rating` (`user_id`, `recipe_id`, `rating`, `created_on`) VALUES (2, 1, 5, '2022-01-01 00:00:00');
+INSERT INTO `recipe_rating` (`user_id`, `recipe_id`, `rating`, `created_on`) VALUES (2, 2, 3, '2022-01-01 00:00:00');
+INSERT INTO `recipe_rating` (`user_id`, `recipe_id`, `rating`, `created_on`) VALUES (2, 3, 5, '2022-01-01 00:00:00');
+INSERT INTO `recipe_rating` (`user_id`, `recipe_id`, `rating`, `created_on`) VALUES (2, 4, 3, '2022-01-01 00:00:00');
+INSERT INTO `recipe_rating` (`user_id`, `recipe_id`, `rating`, `created_on`) VALUES (2, 5, 5, '2022-01-01 00:00:00');
+INSERT INTO `recipe_rating` (`user_id`, `recipe_id`, `rating`, `created_on`) VALUES (2, 6, 4, '2022-01-01 00:00:00');
+INSERT INTO `recipe_rating` (`user_id`, `recipe_id`, `rating`, `created_on`) VALUES (2, 7, 2, '2022-01-01 00:00:00');
+INSERT INTO `recipe_rating` (`user_id`, `recipe_id`, `rating`, `created_on`) VALUES (2, 8, 5, '2022-01-01 00:00:00');
+INSERT INTO `recipe_rating` (`user_id`, `recipe_id`, `rating`, `created_on`) VALUES (2, 9, 1, '2022-01-01 00:00:00');
+INSERT INTO `recipe_rating` (`user_id`, `recipe_id`, `rating`, `created_on`) VALUES (2, 10, 5, '2022-01-01 00:00:00');
+INSERT INTO `recipe_rating` (`user_id`, `recipe_id`, `rating`, `created_on`) VALUES (2, 11, 4, '2022-01-01 00:00:00');
+INSERT INTO `recipe_rating` (`user_id`, `recipe_id`, `rating`, `created_on`) VALUES (2, 12, 3, '2022-01-01 00:00:00');
+INSERT INTO `recipe_rating` (`user_id`, `recipe_id`, `rating`, `created_on`) VALUES (2, 13, 4, '2022-01-01 00:00:00');
+INSERT INTO `recipe_rating` (`user_id`, `recipe_id`, `rating`, `created_on`) VALUES (3, 1, 3, '2022-01-01 00:00:00');
+INSERT INTO `recipe_rating` (`user_id`, `recipe_id`, `rating`, `created_on`) VALUES (3, 2, 4, '2022-01-01 00:00:00');
+INSERT INTO `recipe_rating` (`user_id`, `recipe_id`, `rating`, `created_on`) VALUES (3, 3, 5, '2022-01-01 00:00:00');
+INSERT INTO `recipe_rating` (`user_id`, `recipe_id`, `rating`, `created_on`) VALUES (3, 4, 3, '2022-01-01 00:00:00');
+INSERT INTO `recipe_rating` (`user_id`, `recipe_id`, `rating`, `created_on`) VALUES (3, 5, 5, '2022-01-01 00:00:00');
+INSERT INTO `recipe_rating` (`user_id`, `recipe_id`, `rating`, `created_on`) VALUES (3, 6, 4, '2022-01-01 00:00:00');
+INSERT INTO `recipe_rating` (`user_id`, `recipe_id`, `rating`, `created_on`) VALUES (3, 7, 8, '2022-01-01 00:00:00');
+INSERT INTO `recipe_rating` (`user_id`, `recipe_id`, `rating`, `created_on`) VALUES (3, 8, 3, '2022-01-01 00:00:00');
+INSERT INTO `recipe_rating` (`user_id`, `recipe_id`, `rating`, `created_on`) VALUES (3, 9, 4, '2022-01-01 00:00:00');
+INSERT INTO `recipe_rating` (`user_id`, `recipe_id`, `rating`, `created_on`) VALUES (3, 10, 5, '2022-01-01 00:00:00');
+INSERT INTO `recipe_rating` (`user_id`, `recipe_id`, `rating`, `created_on`) VALUES (3, 11, 5, '2022-01-01 00:00:00');
+INSERT INTO `recipe_rating` (`user_id`, `recipe_id`, `rating`, `created_on`) VALUES (3, 12, 5, '2022-01-01 00:00:00');
+INSERT INTO `recipe_rating` (`user_id`, `recipe_id`, `rating`, `created_on`) VALUES (3, 13, 4, '2022-01-01 00:00:00');
 
 COMMIT;
 
@@ -815,7 +897,45 @@ COMMIT;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `recipe`;
-INSERT INTO `recipe_review` (`user_id`, `recipe_id`, `created_on`, `comment`, `active`) VALUES (1, 1, '2022-01-01 00:00:00', 'I absolutely love this, so yummmy!!!', 1);
+INSERT INTO `recipe_review` (`user_id`, `recipe_id`, `created_on`, `comment`, `active`) VALUES (1, 1, '2022-01-01 00:00:00', 'Italian food is all about ingredients and it\'s not fussy and it\'s not fancy.', 1);
+INSERT INTO `recipe_review` (`user_id`, `recipe_id`, `created_on`, `comment`, `active`) VALUES (1, 2, '2022-01-01 00:00:00', 'I absolutely love this, so yummmy!!!', 1);
+INSERT INTO `recipe_review` (`user_id`, `recipe_id`, `created_on`, `comment`, `active`) VALUES (1, 3, '2022-01-01 00:00:00', 'This is an all-time favorite of mine!', 1);
+INSERT INTO `recipe_review` (`user_id`, `recipe_id`, `created_on`, `comment`, `active`) VALUES (1, 4, '2022-01-01 00:00:00', 'This is an all-time favorite of mine!', 1);
+INSERT INTO `recipe_review` (`user_id`, `recipe_id`, `created_on`, `comment`, `active`) VALUES (1, 5, '2022-01-01 00:00:00', 'This is an all-time favorite of mine!', 1);
+INSERT INTO `recipe_review` (`user_id`, `recipe_id`, `created_on`, `comment`, `active`) VALUES (1, 6, '2022-01-01 00:00:00', 'This is an all-time favorite of mine!', 1);
+INSERT INTO `recipe_review` (`user_id`, `recipe_id`, `created_on`, `comment`, `active`) VALUES (1, 7, '2022-01-01 00:00:00', 'I absolutely love this, so yummmy!!!', 1);
+INSERT INTO `recipe_review` (`user_id`, `recipe_id`, `created_on`, `comment`, `active`) VALUES (1, 8, '2022-01-01 00:00:00', 'This is an all-time favorite of mine!', 1);
+INSERT INTO `recipe_review` (`user_id`, `recipe_id`, `created_on`, `comment`, `active`) VALUES (1, 9, '2022-01-01 00:00:00', 'This is an all-time favorite of mine!', 1);
+INSERT INTO `recipe_review` (`user_id`, `recipe_id`, `created_on`, `comment`, `active`) VALUES (1, 10, '2022-01-01 00:00:00', 'This is an all-time favorite of mine!', 1);
+INSERT INTO `recipe_review` (`user_id`, `recipe_id`, `created_on`, `comment`, `active`) VALUES (1, 11, '2022-01-01 00:00:00', 'I absolutely love this, so yummmy!!!', 1);
+INSERT INTO `recipe_review` (`user_id`, `recipe_id`, `created_on`, `comment`, `active`) VALUES (1, 12, '2022-01-01 00:00:00', 'This is an all-time favorite of mine!', 1);
+INSERT INTO `recipe_review` (`user_id`, `recipe_id`, `created_on`, `comment`, `active`) VALUES (1, 13, '2022-01-01 00:00:00', 'I absolutely love this, so yummmy!!!', 1);
+INSERT INTO `recipe_review` (`user_id`, `recipe_id`, `created_on`, `comment`, `active`) VALUES (2, 1, '2022-01-01 00:00:00', 'Martha just loves this, so great!', 1);
+INSERT INTO `recipe_review` (`user_id`, `recipe_id`, `created_on`, `comment`, `active`) VALUES (2, 2, '2022-01-01 00:00:00', 'When I was in jail, I missed this the most, have it once a week!', 1);
+INSERT INTO `recipe_review` (`user_id`, `recipe_id`, `created_on`, `comment`, `active`) VALUES (2, 3, '2022-01-01 00:00:00', 'When I was in jail, I missed this the most, have it once a week!', 1);
+INSERT INTO `recipe_review` (`user_id`, `recipe_id`, `created_on`, `comment`, `active`) VALUES (2, 4, '2022-01-01 00:00:00', 'When I was in jail, I missed this the most, have it once a week!', 1);
+INSERT INTO `recipe_review` (`user_id`, `recipe_id`, `created_on`, `comment`, `active`) VALUES (2, 5, '2022-01-01 00:00:00', 'When I was in jail, I missed this the most, have it once a week!', 1);
+INSERT INTO `recipe_review` (`user_id`, `recipe_id`, `created_on`, `comment`, `active`) VALUES (2, 6, '2022-01-01 00:00:00', 'When I was in jail, I missed this the most, have it once a week!', 1);
+INSERT INTO `recipe_review` (`user_id`, `recipe_id`, `created_on`, `comment`, `active`) VALUES (2, 7, '2022-01-01 00:00:00', 'When I was in jail, I missed this the most, have it once a week!', 1);
+INSERT INTO `recipe_review` (`user_id`, `recipe_id`, `created_on`, `comment`, `active`) VALUES (2, 8, '2022-01-01 00:00:00', 'When I was in jail, I missed this the most, have it once a week!', 1);
+INSERT INTO `recipe_review` (`user_id`, `recipe_id`, `created_on`, `comment`, `active`) VALUES (2, 9, '2022-01-01 00:00:00', 'Just love it, so gooooooood!', 1);
+INSERT INTO `recipe_review` (`user_id`, `recipe_id`, `created_on`, `comment`, `active`) VALUES (2, 10, '2022-01-01 00:00:00', 'Just love it, so gooooooood!', 1);
+INSERT INTO `recipe_review` (`user_id`, `recipe_id`, `created_on`, `comment`, `active`) VALUES (2, 11, '2022-01-01 00:00:00', 'Just love it, so gooooooood!', 1);
+INSERT INTO `recipe_review` (`user_id`, `recipe_id`, `created_on`, `comment`, `active`) VALUES (2, 12, '2022-01-01 00:00:00', 'Just love it, so gooooooood!', 1);
+INSERT INTO `recipe_review` (`user_id`, `recipe_id`, `created_on`, `comment`, `active`) VALUES (2, 13, '2022-01-01 00:00:00', 'Just love it, so gooooooood!', 1);
+INSERT INTO `recipe_review` (`user_id`, `recipe_id`, `created_on`, `comment`, `active`) VALUES (3, 1, '2022-01-01 00:00:00', '“This is the shizzzzznet dogg, you gotta try it!”', 1);
+INSERT INTO `recipe_review` (`user_id`, `recipe_id`, `created_on`, `comment`, `active`) VALUES (3, 2, '2022-01-01 00:00:00', '“This is the shizzzzznet dogg, you gotta try it!”', 1);
+INSERT INTO `recipe_review` (`user_id`, `recipe_id`, `created_on`, `comment`, `active`) VALUES (3, 3, '2022-01-01 00:00:00', '“This is the shizzzzznet dogg, you gotta try it!”', 1);
+INSERT INTO `recipe_review` (`user_id`, `recipe_id`, `created_on`, `comment`, `active`) VALUES (3, 4, '2022-01-01 00:00:00', '“This is the shizzzzznet dogg, you gotta try it!”', 1);
+INSERT INTO `recipe_review` (`user_id`, `recipe_id`, `created_on`, `comment`, `active`) VALUES (3, 5, '2022-01-01 00:00:00', '“This is the shizzzzznet dogg, you gotta try it!”', 1);
+INSERT INTO `recipe_review` (`user_id`, `recipe_id`, `created_on`, `comment`, `active`) VALUES (3, 6, '2022-01-01 00:00:00', '“This is the shizzzzznet dogg, you gotta try it!”', 1);
+INSERT INTO `recipe_review` (`user_id`, `recipe_id`, `created_on`, `comment`, `active`) VALUES (3, 7, '2022-01-01 00:00:00', '“This is the shizzzzznet dogg, you gotta try it!”', 1);
+INSERT INTO `recipe_review` (`user_id`, `recipe_id`, `created_on`, `comment`, `active`) VALUES (3, 8, '2022-01-01 00:00:00', '“This is the shizzzzznet dogg, you gotta try it!”', 1);
+INSERT INTO `recipe_review` (`user_id`, `recipe_id`, `created_on`, `comment`, `active`) VALUES (3, 9, '2022-01-01 00:00:00', '“This is the shizzzzznet dogg, you gotta try it!”', 1);
+INSERT INTO `recipe_review` (`user_id`, `recipe_id`, `created_on`, `comment`, `active`) VALUES (3, 10, '2022-01-01 00:00:00', '“This is the shizzzzznet dogg, you gotta try it!”', 1);
+INSERT INTO `recipe_review` (`user_id`, `recipe_id`, `created_on`, `comment`, `active`) VALUES (3, 11, '2022-01-01 00:00:00', '“This is the shizzzzznet dogg, you gotta try it!”', 1);
+INSERT INTO `recipe_review` (`user_id`, `recipe_id`, `created_on`, `comment`, `active`) VALUES (3, 12, '2022-01-01 00:00:00', '“This is the shizzzzznet dogg, you gotta try it!”', 1);
+INSERT INTO `recipe_review` (`user_id`, `recipe_id`, `created_on`, `comment`, `active`) VALUES (3, 13, '2022-01-01 00:00:00', '“This is the shizzzzznet dogg, you gotta try it!”', 1);
 
 COMMIT;
 
