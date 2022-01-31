@@ -14,6 +14,8 @@ export class RecipeDetailsComponent implements OnInit {
     name: '',
     prepTime: '',
     cookTime: '',
+    ingredients: [],
+    categories: [],
   };
 
 
