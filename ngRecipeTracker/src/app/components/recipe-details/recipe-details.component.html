@@ -1,32 +1,38 @@
 <div id="recipeDetailHeader">
   <h1>{{ recipe.name }}</h1>
 </div>
+<br />
+
 <div class="container">
   <div class="row">
-      <div class="col-6">
-      <p>Rating: </p>
+    <div class="col-3" id="time">
+      <!-- <p>Rating: </p> -->
+      <p>Prep Time: <br>{{ recipe.prepTime }}</p>
     </div>
-    <div class="col-6">
-<p>Prep Time: {{recipe.prepTime}}</p>
-<p>Prep Time: {{recipe.cookTime}}</p>
+    <div class="col-3" id="time">
+      <p>Cook Time: <br>{{ recipe.cookTime }}</p>
     </div>
-  </div>
+  </div><br>
+
   <div class="row">
     <div class="col-6 col-md-4">
-      <img [src]="recipe.imageURL" class="ratio ratio-1x1"><br><br>
-      <p>Ingredients</p>
+      <img [src]="recipe.imageURL" class="ratio ratio-1x1" /><br /><br />
 
-      <ul>
-        <li *ngFor="let recipeIngredient of recipeIngredients">{{ingredients.name}}</li>
-      </ul>
-
+      <div id="ingredientsBox">
+        <p id="ingredientsHeader">Ingredients:</p>
+        <ul>
+          <li *ngFor="let ingredient of recipe.ingredients">
+            {{ ingredient.quantity }}
+            {{ ingredient.ingredient.measurementUnit }}
+            {{ ingredient.ingredient.name }}
+          </li>
+        </ul>
+      </div>
     </div>
 
-    <div class="col-6">
-      <p>Instructions</p>
-      <p>{{recipe.instructions}}</p>
-
+    <div class="col-6" id="instructionsBox">
+      <p id="instructionsHEADER">Instructions:</p>
+      <p>{{ recipe.instructions }}</p>
     </div>
-
   </div>
-  </div>
+</div>

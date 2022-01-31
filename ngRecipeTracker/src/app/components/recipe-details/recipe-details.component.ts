@@ -20,18 +20,18 @@ export class RecipeDetailsComponent implements OnInit {
 
 
 
-  id: RecipeIngredientId ={
-    ingredientId: 0
-  }
+  // id: RecipeIngredientId ={
+  //   ingredientId: 0
+  // }
 
-  ingredients: RecipeIngredient = {
-    id: this.id,
-    quantity: 0,
-    remarks: '',
-    name: ''
-  };
+  // ingredients: RecipeIngredient = {
+  //   id: this.id,
+  //   quantity: 0,
+  //   remarks: '',
+  //   name: ''
+  // };
 
-recipeIngredients: RecipeIngredient[] = [];
+ingredients: RecipeIngredient[] = [];
 
 
   constructor(

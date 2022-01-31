@@ -1,3 +1,4 @@
+import { Ingredient } from "./ingredient";
 
 
 
