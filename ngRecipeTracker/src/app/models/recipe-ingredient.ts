@@ -1,4 +1,4 @@
-import { Ingredient } from "./ingredient";
+
 
 
 export interface RecipeIngredientId {
@@ -10,5 +10,5 @@ export interface RecipeIngredient {
     id: RecipeIngredientId;
     quantity: number;
     remarks: string;
-    name: Ingredient;
+    name: string;
 }
