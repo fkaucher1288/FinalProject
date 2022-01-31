@@ -79,8 +79,9 @@ img{
 }
 
 #time{
-  background-color:rgba(105, 184, 133, 0.5);
+  background-color:rgba(143, 216, 168, 0.507);
   border-radius: 5%;
+  border: solid rgb(0, 0, 0, .2);
    text-align: center;
    padding: 10px 0px 0px 0px;
    font-weight: bold;
