@@ -7,14 +7,12 @@
 <div id="recipeList">
   <table class="table table-borderless">
     <tbody *ngFor="let recipe of recipes">
-      <tr>
-        <td [routerLink]="['/recipedetail', recipe.id]"><img [src]="recipe.imageURL" class="ratio ratio-1x1" style="width: 150px; height: 150px; object-fit: cover" /></td>
-        <div id="rr">
-          <td [routerLink]="['/recipedetail', recipe.id]" id="tableRecipeName">{{ recipe.name }}</td>
-        </div>
-        <!-- <div id="rd">
-          <td [routerLink]="['/recipedetail', recipe.id]" id="tableRecipeName">{{ recipe.description }}</td>
-        </div> -->
+      <tr id="tableRow">
+        <td colspan="2" [routerLink]="['/recipedetail', recipe.id]"><img [src]="recipe.imageURL" class="ratio ratio-1x1" style="width: 150px; height: 150px; object-fit: cover"></td>
+        <td id="tableRecipeName" [routerLink]="['/recipedetail', recipe.id]">{{ recipe.name }}</td>
+        <td id="tableRecipeDescription" [routerLink]="['/recipedetail', recipe.id]">{{ recipe.description }}</td>
+
+
       </tr>
     </tbody>
   </table>
