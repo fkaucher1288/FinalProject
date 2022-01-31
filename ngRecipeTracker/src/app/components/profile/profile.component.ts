@@ -2,6 +2,7 @@ import { Component, OnInit, TemplateRef, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Recipe } from 'src/app/models/recipe';
+import { User } from 'src/app/models/user';
 import { AuthService } from 'src/app/services/auth.service';
 import { CategoryService } from 'src/app/services/category.service';
 import { CookbookService } from 'src/app/services/cookbook.service';
@@ -20,13 +21,15 @@ export class ProfileComponent implements OnInit {
 
   addRecipe: boolean = false;
 
+  user?: User;
+
   recipe: Recipe = {
 
     id: 0,
     name: '',
     imageURL: '',
     active: true,
-    creatorId: 0,
+    creatorId: 1,
     isPublic: true,
     prepTime: '',
     cookTime: '',
@@ -39,9 +42,15 @@ export class ProfileComponent implements OnInit {
 
   }
 
-  constructor(private recipeService: RecipeService, private cookbookService: CookbookService, private ingredientService: IngredientService, private categoryService: CategoryService, private modal: NgbModal, private router: Router) { }
+  constructor(private recipeService: RecipeService, private cookbookService: CookbookService, private ingredientService: IngredientService, private categoryService: CategoryService, private authService: AuthService, private modal: NgbModal, private router: Router) { }
 
   ngOnInit(): void {
+    this.authService.getUserByUserName(localStorage.getItem('username')!).subscribe(
+      (result) => {
+        this.user = result;
+
+      }
+    )
   }
 
   onClickAddRecipe() {

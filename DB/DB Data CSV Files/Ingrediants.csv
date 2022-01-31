@@ -1,78 +1,78 @@
-Id,name,Brand,Amount,Category
-1,Garlic,Clove,,Vegetables
-2,Butter,Tablespoon,,Diary
-3,Garlic Salt,Tablespoon,,Seasoning
-4,Cheddar Cheese,Cup,,Dairy
-5,Parsley,Tablespoon,,Vegetables
-6,Bread,Slice,,Grain
-7,Apples,Ounce,,Fruit
+id,name,measurement_unit,brand,category
+1,Garlic,Cloves,,Vegetables
+2,Butter,Tablespoons,,Diary
+3,Garlic Salt,Tablespoons,,Seasoning
+4,Cheddar Cheese,Cups,,Dairy
+5,Parsley,Tablespoons,,Vegetables
+6,Bread,Slices,,Grain
+7,Apples,Ounces,,Fruit
 8,Chicken Thighs,Pounds,,Meat
-9,Honey,Tablespoon,,Sugar
-10,Bacon,Ounce,,Meat
-11,Egg,Unit,,Dairy
-12,Lemon Juice,Cup,,Fruit
-13,Suger,Tablespoon,,Sweets
-14,Water,Cup,,Liquid
-15,Lemon juice,Cup,,Liquid
-16,Yogurt,Cup,,Dairy
-17,Olive Oil,Tablespoon,,Oils
-18,Red Pepper Flakes,Teaspoon,,Seasoning
-19,Salt,Teaspoon,,Seasoning
-20,Crushed Tomatoes,Ounce,,Vegetables
-21,Marinara Sauce,Ounce,,Sauce
-22,Spaghetti,Ounce,,Pasta
-23,Flaky Pie Crust,Unit,,Pie Crust
-26,Heavy Cream,Cup,,Dairy
-27,Pepper,Teaspoon,,Seasoning
-28,Feta Cheese,Cup,,Dairy
-29,Salmon,Ounce,,Fish
-30,Smoked Paprika,Teaspoon,,Seasoning
-31,Blackening Seasoning,Teaspoon,,Seasoning
-32,Soy Sauce,Tablespoon,,Sauce
-33,Sriracha Sauce,Tablespoon,,Sauce
+9,Honey,Tablespoons,,Sugar
+10,Bacon,Slices,,Meat
+11,Egg,,,Dairy
+12,Lemon Juice,Cups,,Fruit
+13,Suger,Tablespoons,,Sweets
+14,Water,Cups,,Liquid
+15,Lemon juice,Cups,,Liquid
+16,Yogurt,Cups,,Dairy
+17,Olive Oil,Tablespoons,,Oils
+18,Red Pepper Flakes,Teaspoons,,Seasoning
+19,Salt,Teaspoons,,Seasoning
+20,Crushed Tomatoes,Ounces,,Vegetables
+21,Marinara Sauce,Ounces,,Sauce
+22,Spaghetti,Ounces,,Pasta
+23,Flaky Pie Crust,,,Pie Crust
+26,Heavy Cream,Cups,,Dairy
+27,Pepper,Teaspoons,,Seasoning
+28,Feta Cheese,Cups,,Dairy
+29,Salmon,Ounces,,Fish
+30,Smoked Paprika,Teaspoons,,Seasoning
+31,Blackening Seasoning,Teaspoons,,Seasoning
+32,Soy Sauce,Tablespoons,,Sauce
+33,Sriracha Sauce,Tablespoons,,Sauce
 34,Beef Chuck,Pounds,,Meat
-35,Onion,Cup,,Vegetables
-36,Carrot,Cup,,Vegetables
-37,Celery,Cup,,Vegetables
-39,Tomato Paste,Tablespoon,,Vegetables
-40,Beef Bouillon,Tablespoon,,Seasoning
-41,Red Wine,Cup,,Liquid
+35,Onion,Cups,,Vegetables
+36,Carrot,Cups,,Vegetables
+37,Celery,Cups,,Vegetables
+39,Tomato Paste,Tablespoons,,Vegetables
+40,Beef Bouillon,Tablespoons,,Seasoning
+41,Red Wine,Cups,,Liquid
 42,Fresh Time,Sprigs,,Seasoning
 43,Bay Leaves,Leaves,,Seasoning
 44,Pappardelle,Ounces,,Pasta
-45,Parmesan,Cup,,Dairy
-46,Vegetable Oil,Tablespoon,,Oils
-47,Cornstarch,Tablespoon,,Seasoning
-48,Flour,Tablespoon,,Seasoning
-49,Garlic Salt,Tablespoon,,Seasoning
-50,Paprika,Tablespoon,,Seasoning
+45,Parmesan,Cups,,Dairy
+46,Vegetable Oil,Tablespoons,,Oils
+47,Cornstarch,Tablespoons,,Seasoning
+48,Flour,Tablespoons,,Seasoning
+49,Garlic Salt,Tablespoons,,Seasoning
+50,Paprika,Tablespoons,,Seasoning
 51,Chicken Breast,Pounds,,Meat
-52,Sesame Oil,Tablespoon,,Oils
-53,Rice Vinegar,Tablespoon,,Liquid
-54,Sweet Chili Sauce,Tablespoon,,Sauce
-55,Ketchup,Tablespoon,,Sauce
-56,Brown Sugar,Tablespoon,,Seasoning
-57,Rice Noodles,Ounce,,Pasta
-58,Shrimp,Ounce,,Fish
-59,Bean Sprouts,Cup,,Vegetables
-60,Red Bell Pepper,Cup,,Vegetables
-61,Green Onions,Cup,,Vegetables
-62,Peanuts,Cup,,Legume
-63,Lime Juice,Cup,,Liquid
-64,Ciltantro,Cup,,Vegetables
-65,Fish Sauce,Tablespoon,,Sauce
-66,Peanut Butter,Tablespoon,,Sauce
-67,Granulated Sugar,Teaspoon,,Seasoning
-68,Vanilla Extract,Tablespoon,,Seasoning
-69,Lemon Zest,Tablespoon,,Seasoning
-70,Potatoes,Pound,,Vegetables
-71,Ground Beef,Ounce,,Meat
-72,Ground Pork,Ounce,,Meat
-73,Passata,Ounce,,Sauce
-74,Vegetable Bouillon Cubes,Tablepoon,,Seasoning
-75,Dried Oregano,Tablepoon,,Seasoning
-76,Dried Basil,Tablepoon,,Seasoning
-77,Flower,Cup,,Seasoning
-78,Lasagna Sheets,Ounce,,Noodle
-79,Fresh Mozzarella Cheese,Cup,,Dairy
-80,Whole Milk,Cup,,Dairy
+52,Sesame Oil,Tablespoons,,Oils
+53,Rice Vinegar,Tablespoons,,Liquid
+54,Sweet Chili Sauce,Tablespoons,,Sauce
+55,Ketchup,Tablespoons,,Sauce
+56,Brown Sugar,Tablespoons,,Seasoning
+57,Rice Noodles,Ounces,,Pasta
+58,Shrimp,Ounces,,Fish
+59,Bean Sprouts,Cups,,Vegetables
+60,Red Bell Pepper,Cups,,Vegetables
+61,Green Onions,Cups,,Vegetables
+62,Peanuts,Cups,,Legume
+63,Lime Juice,Cups,,Liquid
+64,Ciltantro,Cups,,Vegetables
+65,Fish Sauce,Tablespoons,,Sauce
+66,Peanut Butter,Tablespoons,,Sauce
+67,Granulated Sugar,Teaspoons,,Seasoning
+68,Vanilla Extract,Tablespoons,,Seasoning
+69,Lemon Zest,Tablespoons,,Seasoning
+70,Potatoes,Pounds,,Vegetables
+71,Ground Beef,Ounces,,Meat
+72,Ground Pork,Ounces,,Meat
+73,Passata,Ounces,,Sauce
+74,Vegetable Bouillon Cubes,Tablespoons,,Seasoning
+75,Dried Oregano,Tablespoons,,Seasoning
+76,Dried Basil,Tablespoons,,Seasoning
+77,Flower,Cups,,Seasoning
+78,Lasagna Sheets,Ounces,,Noodle
+79,Fresh Mozzarella Cheese,Cups,,Dairy
+80,Whole Milk,Cups,,Dairy
