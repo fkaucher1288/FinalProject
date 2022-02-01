@@ -32,7 +32,7 @@ public class Category implements Serializable {
 	private CategoryType type;
 	@JsonIgnore
 	@ManyToMany
-	@JoinTable(name = "recipe_has_category", joinColumns = @JoinColumn(name = "recipe_id"), inverseJoinColumns = @JoinColumn(name = "category_id"))
+	@JoinTable(name = "recipe_has_category", joinColumns = @JoinColumn(name = "category_id"), inverseJoinColumns = @JoinColumn(name = "recipe_id"))
 	private List<Recipe> recipes;
 
 	public Category() {
