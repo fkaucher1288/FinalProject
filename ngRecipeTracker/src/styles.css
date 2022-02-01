@@ -99,3 +99,11 @@ img{
    font-size: 15px;
 }
 
+#logo{
+  max-width: 100%;
+  height: auto;
+  width: 500px;
+  height: 500px;
+  border: none !important;
+  border-radius: 0 !important;
+  }

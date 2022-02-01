@@ -32,7 +32,7 @@ export class RecipeDetailsComponent implements OnInit {
   // };
 
 ingredients: RecipeIngredient[] = [];
-
+  rating: number = 5;
 
   constructor(
     private recipeService: RecipeService,
@@ -45,4 +45,14 @@ ingredients: RecipeIngredient[] = [];
         next:(recipe)=> {this.recipe = recipe}
       })
   }
+
+  onRatingClick(event: MouseEvent){
+    let target = event.target as HTMLElement;
+    let f = event.offsetX/target.clientWidth;
+    this.rating = Math.round(f*5);
+    console.log(this.rating);
+  }
+
+
+
 }

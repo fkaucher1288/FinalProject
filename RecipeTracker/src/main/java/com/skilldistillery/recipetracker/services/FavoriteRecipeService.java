@@ -10,5 +10,5 @@ public interface FavoriteRecipeService {
 	
 	FavoriteRecipe updateRecipeFavorite(FavoriteRecipe fr);
 
-	List<FavoriteRecipe> getAllRecipeFavorites();
+	List<FavoriteRecipe> getAllByUserId(int userId);
 }

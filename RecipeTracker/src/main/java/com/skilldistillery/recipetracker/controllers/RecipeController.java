@@ -156,7 +156,7 @@ public class RecipeController {
 	@GetMapping("recipes/favorites/{userId}")
 	public List<FavoriteRecipe> getFavoriteRecipes(@PathVariable int userId) {
 		
-		return favSvc.getAllRecipeFavorites();
+		return favSvc.getAllByUserId(userId);
 	}
 	@GetMapping("recipes/userrecipes/{userId}")
 	public List<Recipe> getUserRecipes(@PathVariable int userId){
