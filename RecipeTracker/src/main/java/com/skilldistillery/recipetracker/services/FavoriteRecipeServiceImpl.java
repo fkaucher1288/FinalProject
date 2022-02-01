@@ -23,9 +23,10 @@ public class FavoriteRecipeServiceImpl implements FavoriteRecipeService {
 		return frRepo.saveAndFlush(fr);
 	}
 
+
 	@Override
-	public List<FavoriteRecipe> getAllRecipeFavorites() {
-		return frRepo.findAll();
+	public List<FavoriteRecipe> getAllByUserId(int userId) {		
+		return frRepo.getAllByUserId(userId);
 	}
 
 }
