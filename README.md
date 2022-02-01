@@ -7,7 +7,7 @@
 Built by:
 
 -   [Ben Allegrezza](https://github.com/bengrezza)
--   [Dan Somdahl](https://github.com/thedaneeffect)
+-   [Dane Somdahl](https://github.com/thedaneeffect)
 -   [Jordan Paynter](https://github.com/Panthro22)
 -   [Jordan Talbot](https://github.com/jordantlbt)
 -   [Rick Kaucher](https://github.com/fkaucher1288)
@@ -52,6 +52,10 @@ Admin Account:
 - Username: wolfgangPuck
 - Password: wolfgangPuck
 
+### Database Schema Design:
+
+![Image of MySQL Database Schema](https://github.com/fkaucher1288/FinalProject/blob/main/DB/recipedb.png)
+
 ### Technologies used:
 
 Java 1.8 / EE, Java Persistence API (JPA), REST API, Spring Boot, Spring Security, JUnit, Gradle, Hibernate, JSON, TypeScript, Angular, Visual Studio Code, HTML5, CSS, Bootstrap, XML, MySQL Workbench, Postman, Apache Tomcat, Amazon Web Services (AWS), Atom, Git, GitHub, Trello, and Slack.
@@ -81,3 +85,30 @@ This project helped us better grasp the capabilities of Dynamic Web Applications
 -   Use the Angular to generate HTML.
 -   Build a Dynamic Web Applications using Spring Boot RESTful API endpoints.
 -   CCS, Material, and Bootstrap to make it web and mobile-friendly.
+
+### Public REST API Routes
+
+| Return Type  | Route           | Functionality      |
+| ------------ | --------------- | ------------------ |
+| `List<Recipe>` | `GET api/recipes` | Get all recipe items |
+
+### Secure REST API Routes
+
+| Return Type                | Route                                                                               | Functionality                        |
+| -------------------------- | ----------------------------------------------------------------------------------- | ------------------------------------ |
+| `User`                     | `POST register`                                                                     | Register as a new user               |
+| `User`                     | `GET authenticate`                                                                  | Authenticate a user                  |
+| `User`                     | `PUT api/users/{id}`                                                                | Update a user by id                  |
+| `User`                     | `PUT api/users/admin`                                                               | Update a user by enabled or disabled |
+| `User`                     | `GET api/users/{id}`                                                                | Get a user by id                     |
+| `User`                     | `GET api/users/{username}`                                                          | Get a user by username               |
+| `List<User>`               | `GET api/users`                                                                     | Get all users                        |
+| `List<Recipe>`               | `GET api/recipes/users`                                                               | Get list of a user's recipes            |
+| `Recipe`                     | `DELETE api/recipes/{recipeId}`                                                         | Deactivate recipe by id                |
+| `Recipe`                     | `POST api/recipes/users`                                                              | Create recipe item                     |
+| `Recipe`                     | `PUT api/recipes/users/{recipeId}`                                                      | Update recipe item by id               |
+| `AverageRecipeRating`       | `GET api/users/{userId}/rating`                                        | Get average recipe ratings by user id      |
+| `List<Category>`           | `GET api/categories`                                                                | Get all categories                   |
+| `List<FavoriteRecipes>` | `GET api/users{userId}/favorites`                             | Get favorite recipes by username             |
+| `FavoriteRecipes`       | `POST api/users{userId}/favorites`            | Favorite a Recipe by username                  |
+| `FavoriteRecipes`       | `PUT api/users{userId}/favorites`  | Update a favorite recipes by user id                       |
