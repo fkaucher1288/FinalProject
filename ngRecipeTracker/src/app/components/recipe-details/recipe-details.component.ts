@@ -50,6 +50,18 @@ ingredients: RecipeIngredient[] = [];
     let target = event.target as HTMLElement;
     let f = event.offsetX/target.clientWidth;
     this.rating = Math.round(f*5);
+    this.recipeService.addRecipeRating(
+      {
+        id: {recipeId: this.recipe.id!},
+        rating: this.rating
+      }
+    ).subscribe({
+      next: () => console.log('ok'),
+      error: (err) => console.log(err)
+
+
+
+    })
     console.log(this.rating);
   }
 

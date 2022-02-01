@@ -85,4 +85,26 @@ export class ProfileComponent implements OnInit {
       }
     });
   }
+
+  @ViewChild('editPageModalTemplate', { read: TemplateRef })
+  editPageModalTemplate!: TemplateRef<any>;
+
+  onClickEditPage() {
+    this.modal.open(this.editPageModalTemplate).result.then((result)=>  {
+
+      if(result == 'edit') {
+
+        this.authService.saveUser(this.user!).subscribe({
+          next: (result) => {
+            console.log('profile edited', result);
+          },
+          error: (error) => {
+            console.log('error editing profile', error);
+          },
+        })
+      }
+
+
+    })
+  }
 }

@@ -21,7 +21,7 @@ public class RecipeRatingServiceImpl implements RecipeRatingService {
 
 	@Override
 	public RecipeRating updateRecipeRating(RecipeRating rating) {
-		return rrRepo.saveAndFlush(null);
+		return rrRepo.saveAndFlush(rating);
 	}
 
 	@Override

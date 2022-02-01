@@ -105,4 +105,15 @@ export class AuthService {
       })
     )
   }
+
+  saveUser(user: User) {
+    return this.http.put<User>(this.url + 'api/users', user, {headers: this.getHeaders()}).pipe(
+      catchError((err: any) =>  {
+        console.log(err);
+        return throwError(() => {
+          'error editing user profile ' + err;
+        });
+      })
+    )
+  }
 }
