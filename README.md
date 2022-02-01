@@ -1,5 +1,6 @@
 ## Recipe Tree - Recipe Tracker
 
+![Logo](https://github.com/fkaucher1288/FinalProject/blob/main/TheRecipeTree.png)
 
 ## Angular and RESTful API Software Application
 
