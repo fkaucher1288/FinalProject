@@ -16,7 +16,7 @@ Built by:
 -   [Jordon Paynter](https://github.com/Panthro22)
 -   [Rick Kaucher](https://github.com/fkaucher1288)
 
-This was a one-week-long sprint use Agile Methodologies to exceed the minimum viable product for our final [assignment](https://github.com/SkillDistillery/SD31/blob/master/finalProject/README.md).
+This was a one-week-long sprint use Agile Methodologies to exceed the minimum viable product for our final assignment.
 
 ### Overview:
 
