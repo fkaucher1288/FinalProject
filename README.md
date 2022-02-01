@@ -1,5 +1,6 @@
 ## Recipe Tree - Recipe Tracker
 
+
 ## Angular and RESTful API Software Application
 
 ### Week 16 Final Project at Skill Distillery - February 2, 2022
@@ -12,7 +13,7 @@ Built by:
 -   [Jordan Talbot](https://github.com/jordantlbt)
 -   [Rick Kaucher](https://github.com/fkaucher1288)
 
-This was a two-week-long sprint use Agile Methodologies to exceed the minimum viable product for our final [assignment](https://github.com/SkillDistillery/SD31/blob/master/finalProject/README.md).
+This was a one-week-long sprint use Agile Methodologies to exceed the minimum viable product for our final [assignment](https://github.com/SkillDistillery/SD31/blob/master/finalProject/README.md).
 
 ### Overview:
 
