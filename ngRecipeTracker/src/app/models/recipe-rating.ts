@@ -4,7 +4,7 @@ let recRateId ={
 }
 
 export interface RecipeRatingId {
-    userId: number;
+    userId?: number;
     recipeId: number;
 }
 let recRate = {

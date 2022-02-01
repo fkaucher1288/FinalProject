@@ -1,11 +1,14 @@
 package com.skilldistillery.recipetracker.controllers;
 
+import java.io.IOException;
+import java.security.Principal;
 import java.util.List;
 import java.util.Set;
 
 import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -21,6 +24,8 @@ import com.skilldistillery.recipetracker.entities.Recipe;
 import com.skilldistillery.recipetracker.entities.RecipeIngredient;
 import com.skilldistillery.recipetracker.entities.RecipeRating;
 import com.skilldistillery.recipetracker.entities.RecipeReview;
+import com.skilldistillery.recipetracker.entities.User;
+import com.skilldistillery.recipetracker.services.AuthService;
 import com.skilldistillery.recipetracker.services.FavoriteRecipeService;
 import com.skilldistillery.recipetracker.services.RecipeIngredientService;
 import com.skilldistillery.recipetracker.services.RecipeRatingService;
@@ -46,6 +51,9 @@ public class RecipeController {
 	
 	@Autowired
 	private FavoriteRecipeService favSvc;
+	
+	@Autowired
+	private AuthService authSvc;
 	
 	@GetMapping("recipes")
 	public List<Recipe> allRecipes() {
@@ -78,7 +86,7 @@ public class RecipeController {
 	}
 
 	@PutMapping("recipes/{recipeId}")
-	public Recipe updateMovie(@RequestBody Recipe recipe, @PathVariable Integer recipeId, HttpServletResponse res) {
+	public Recipe updateRecipe(@RequestBody Recipe recipe, @PathVariable Integer recipeId, HttpServletResponse res) {
 		Recipe updatedRecipe = recipeServ.updateRecipe(recipe);
 		if(recipe == null) {
 			res.setStatus(404);
@@ -128,15 +136,16 @@ public class RecipeController {
 	
 	
 	@PostMapping("recipes/ratings")
-	public RecipeRating addNewRecipeRating(@RequestBody RecipeRating rating) {
+	public RecipeRating addNewRecipeRating(@RequestBody RecipeRating rating, Principal principal, HttpServletResponse res) throws IOException {
+		User user = authSvc.findUserByName(principal.getName());
+		if(user == null) {
+			res.sendError(HttpStatus.UNAUTHORIZED.value());
+			return null;
+		}
+		rating.getId().setUserId(user.getId());
 		return ratingServ.createRecipeRating(rating);
 	}
 	
-	
-	@PutMapping("recipes/ratings")
-	public RecipeRating updateRecipeRating(@RequestBody RecipeRating rating) {
-		return ratingServ.updateRecipeRating(rating);
-	}
 	
 	@GetMapping("recipes/ingredients")
 	public List<RecipeIngredient> indexRIngredients(@RequestBody RecipeIngredient ingredient) {
