@@ -51,6 +51,8 @@ ingredients: RecipeIngredient[] = [];
     let f = event.offsetX/target.clientWidth;
     this.rating = Math.round(f*5);
     console.log(this.rating);
+    //save recipe rating to user???????????
+
   }
 
 
