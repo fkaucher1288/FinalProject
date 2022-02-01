@@ -15,12 +15,13 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.skilldistillery.recipetracker.entities.FavoriteRecipe;
 import com.skilldistillery.recipetracker.entities.Ingredient;
 import com.skilldistillery.recipetracker.entities.Recipe;
 import com.skilldistillery.recipetracker.entities.RecipeIngredient;
 import com.skilldistillery.recipetracker.entities.RecipeRating;
 import com.skilldistillery.recipetracker.entities.RecipeReview;
-import com.skilldistillery.recipetracker.services.IngredientService;
+import com.skilldistillery.recipetracker.services.FavoriteRecipeService;
 import com.skilldistillery.recipetracker.services.RecipeIngredientService;
 import com.skilldistillery.recipetracker.services.RecipeRatingService;
 import com.skilldistillery.recipetracker.services.RecipeReviewService;
@@ -42,6 +43,9 @@ public class RecipeController {
 	
 	@Autowired
 	private RecipeIngredientService rIngredientSvc;
+	
+	@Autowired
+	private FavoriteRecipeService favSvc;
 	
 	@GetMapping("recipes")
 	public List<Recipe> allRecipes() {
@@ -149,6 +153,14 @@ public class RecipeController {
 		return rIngredientSvc.updateRecipeIngredient(ingredient);
 	}
 	
-
+	@GetMapping("recipes/favorites/{userId}")
+	public List<FavoriteRecipe> getFavoriteRecipes(@PathVariable int userId) {
+		
+		return favSvc.getAllRecipeFavorites();
+	}
+	@GetMapping("recipes/userrecipes/{userId}")
+	public List<Recipe> getUserRecipes(@PathVariable int userId){
+		return recipeServ.getUsersRecipes(userId);
+	}
 
 }

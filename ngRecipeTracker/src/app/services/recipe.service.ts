@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { catchError, Observable, throwError } from 'rxjs';
 import { environment } from 'src/environments/environment';
+import { FavoriteRecipe } from '../models/favorite-recipe';
 import { Recipe } from '../models/recipe';
 import { AuthService } from './auth.service';
 
@@ -15,7 +16,7 @@ private url = environment.baseUrl + 'api/recipes';
 
   constructor(
     private http: HttpClient,
-    private auth: AuthService
+    private auth: AuthService,
   ) { }
 
 
@@ -96,5 +97,29 @@ show(recipeId: number): Observable<Recipe>{
     })
   );
 }
+getFavoriteRecipes(userId: number): Observable<FavoriteRecipe[]>{
+    return this.http.get<FavoriteRecipe[]>(this.url + "/favorites/" + userId, this.getHttpOptions()).pipe(
+      catchError((err: any) => {
+        console.log(err);
+        return throwError(
+          () => new Error(
+            'RecipeService.getFavoriteRecipes(): error getting favorite recipes'
+          )
+        )
+      })
+    )
+}
 
+getUserRecipes(userId: number): Observable<Recipe[]>{
+  return this.http.get<Recipe[]>(this.url + "/userrecipes/" + userId, this.getHttpOptions()).pipe(
+    catchError((err: any) => {
+      console.log(err);
+      return throwError(
+        () => new Error(
+          'RecipeService.getFavoriteRecipes(): error getting favorite recipes'
+        )
+      )
+    })
+  )
+}
 }

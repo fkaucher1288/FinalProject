@@ -30,7 +30,7 @@ public class FavoriteRecipe {
 
 	@Column(name = "created_at")
 	private LocalDateTime createdAt;
-	@JsonIgnore
+	
 	@ManyToOne
 	@JoinColumn(name = "recipe_id")
 	@MapsId("recipeId")

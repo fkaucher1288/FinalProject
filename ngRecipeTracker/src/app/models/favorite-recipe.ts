@@ -1,3 +1,5 @@
+import { Recipe } from "./recipe"
+
 let favRecId = {
     recipeId: 0
 }
@@ -16,5 +18,6 @@ export interface FavoriteRecipe {
     comment: string;
     dateLastMade?: Date;
     createdAt?:Date;
+    recipe?: Recipe;
 
 }

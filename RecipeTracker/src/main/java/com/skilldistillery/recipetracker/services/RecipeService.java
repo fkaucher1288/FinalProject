@@ -26,5 +26,6 @@ public interface RecipeService {
 //	Recipe addRating(Recipe recipe, RecipeRating recipeRating);
 	List<RecipeRating> getAllRatings(Recipe recipe);
 	
+	List<Recipe> getUsersRecipes(int userId);
 
 }

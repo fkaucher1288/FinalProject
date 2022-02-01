@@ -1,46 +1,95 @@
-<header class="masthead">
-
-</header>
-<div class='container'>
-<div class='row'>
-  <div class='col'>
-    <div class='row'>
-     <h3>{{user?.username}}</h3>
-      <img [src]="user?.imageURL" style="width: 150px; height: 150px; object-fit: cover;">
-
+<header class="masthead"></header>
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <div class="row">
+        <h3>{{ user?.username }}</h3>
+        <img
+          [src]="user?.imageURL"
+          style="width: 150px; height: 150px; object-fit: cover"
+        />
+      </div>
+      <div class="row">
+        <h4>Average Rating: {{ rating }}</h4>
+        <div class="cookies">
+          <div id="rating" class="cookies-fg" [style.width.%]="50"></div>
+        </div>
+      </div>
+      <div class="row">
+        <button>Edit Page</button>
+      </div>
     </div>
-    <div class='row'>
-      <h4>Average Rating: {{rating}}</h4>
+    <div class="col-9">
+      <div class="row">
+        <h2>Users Added Recipes</h2>
+        <div class="card container p-3">
+          <div class="result-container">
+            <div
+              *ngIf="recipes.length === 0"
+              class="d-flex justify-content-center w-100 align-self-center"
+            >
+              <div class="spinner-border" role="status">
+                <span class="visually-hidden">Loading...</span>
+              </div>
+            </div>
+            <div
+              class="card d-flex flex-row p-1 m-1"
+              *ngFor="let recipe of recipes"
+            >
+              <div class="col-2">
+                <img class="recipe-image" src="{{ recipe.imageURL }}" />
+              </div>
+              <div class="col-10">
+                <h4>{{ recipe.name }}</h4>
+                <span>{{ recipe.description }}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <h2>Favorite Recipes</h2>
+        <div class="card container p-3">
+          <div class="result-container">
+            <div
+              *ngIf="favoriteRecipes.length === 0"
+              class="d-flex justify-content-center w-100 align-self-center"
+            >
+              <div class="spinner-border" role="status">
+                <span class="visually-hidden">Loading...</span>
+              </div>
+            </div>
+            <div
+              class="card d-flex flex-row p-1 m-1"
+              *ngFor="let favRecipe of favoriteRecipes"
+            >
+              <div class="col-2">
+                <img
+                  class="recipe-image"
+                  src="{{ favRecipe.recipe?.imageURL }}"
+                />
+              </div>
+              <div class="col-10">
+                <h4>{{ favRecipe.recipe?.name }}</h4>
+                <span>{{ favRecipe.recipe?.description }}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class='row'>
-      <button>Edit Page</button>
+    <div class="row">
+      <a class="btn btn-success js-scroll-trigger" (click)="onClickAddRecipe()"
+        >Add Recipe</a
+      >
     </div>
   </div>
-  <div class='col-8'>
-    <div class='row'>
-      Users Added Recipes
-    </div>
-    <div class='row'>
-      Users Favorite Recipes
-    </div>
-    <div class='row'>
-          <a class="btn btn-success js-scroll-trigger"
-            (click)="onClickAddRecipe()"
-            >Add Recipe</a>
-    </div>
-  </div>
-  <div class='col-1'>
-
-  </div>
-</div>
-
+  <div class="col-1"></div>
 </div>
 
 <ng-template #recipeModalTemplate let-modal>
   <div class="modal-header">
-    <h4 class="modal-title" id="modal-basic-title">
-      Add Recipe
-    </h4>
+    <h4 class="modal-title" id="modal-basic-title">Add Recipe</h4>
     <button
       type="button"
       class="close btn btn-danger"
@@ -103,7 +152,7 @@
           type="description"
         />
       </div>
-      <div class="form-group" >
+      <div class="form-group">
         <label for="instructions">Instructions:</label>
         <input
           class="form-control mb-3"
@@ -125,8 +174,10 @@
       </div>
 
       <div class="form-group d-flex">
-
-        <button class="btn btn-primary mx-auto" (click)="modal.close('add recipe')">
+        <button
+          class="btn btn-primary mx-auto"
+          (click)="modal.close('add recipe')"
+        >
           Add Recipe
         </button>
       </div>
