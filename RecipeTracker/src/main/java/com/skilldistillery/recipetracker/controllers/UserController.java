@@ -45,7 +45,7 @@ public class UserController {
 	
 	@GetMapping("/users/{id}/favorites")
 	public List<FavoriteRecipe> getFavoriteRecipes(@PathVariable int userId, HttpServletResponse response) {
-		List<FavoriteRecipe> favoriteReps = favorSvc.getAllRecipeFavorites();
+		List<FavoriteRecipe> favoriteReps = favorSvc.getAllByUserId(userId);
 		if(favoriteReps == null) {
 			response.setStatus(404);
 		}
