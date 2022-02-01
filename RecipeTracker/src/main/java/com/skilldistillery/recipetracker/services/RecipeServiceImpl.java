@@ -88,4 +88,10 @@ public class RecipeServiceImpl implements RecipeService {
 	public List<RecipeRating> getAllRatings(Recipe recipe) {
 		return recipe.getRatings();
 	}
+
+	@Override
+	public List<Recipe> getUsersRecipes(int userId) {
+		
+		return recipes.findByUser_Id(userId);
+	}
 }

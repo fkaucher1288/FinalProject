@@ -26,5 +26,6 @@ public interface RecipeRepository extends JpaRepository<Recipe, Integer> {
 			+ "SELECT ri FROM RecipeIngredient ri WHERE ri.ingredient IN :ingredients"
 			+ ") GROUP BY (i.recipe) HAVING COUNT(*) >= :min")
 	List<Recipe> findAllByIngredientsIn(@Param("ingredients") Set<Ingredient> ingredients, @Param("min") long minimum);
-
+	
+	List<Recipe> findByUser_Id(int userId);
 }
