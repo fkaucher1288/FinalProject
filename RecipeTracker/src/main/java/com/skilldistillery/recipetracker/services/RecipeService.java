@@ -23,7 +23,7 @@ public interface RecipeService {
 
 	List<Recipe> findAllByIngredientsIn(Set<Ingredient> ingredients);
 	
-//	Recipe addRating(Recipe recipe, RecipeRating recipeRating);
+
 	List<RecipeRating> getAllRatings(Recipe recipe);
 	
 	List<Recipe> getUsersRecipes(int userId);

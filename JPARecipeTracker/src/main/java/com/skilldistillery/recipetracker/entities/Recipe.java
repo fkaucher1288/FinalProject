@@ -67,7 +67,8 @@ public class Recipe {
 
 	@Column(name = "web_link")
 	private String webLink;
-	@JsonIgnore
+	
+	
 	@ManyToMany(mappedBy = "recipes")
 	private List<Category> categories;
 	@JsonIgnore

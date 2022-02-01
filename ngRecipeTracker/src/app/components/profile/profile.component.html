@@ -4,10 +4,7 @@
     <div class="col">
       <div class="row">
         <h3>{{ user?.username }}</h3>
-        <img
-          [src]="user?.imageURL"
-          style="width: 150px; height: 150px; object-fit: cover"
-        />
+        <img [src]="user?.imageURL" style="width: 150px; height: 150px; object-fit: cover"/>
       </div>
       <div class="row">
         <h4>Average Rating: {{ rating }}</h4>
@@ -19,7 +16,7 @@
         <button>Edit Page</button>
       </div>
     </div>
-    <div class="col-9">
+    <div class="col-12 col-md-12 col-lg-9">
       <div class="row">
         <h2>Users Added Recipes</h2>
         <div class="card container p-3">
@@ -37,9 +34,9 @@
               *ngFor="let recipe of recipes"
             >
               <div class="col-2">
-                <img class="recipe-image" src="{{ recipe.imageURL }}" />
+               <a [routerLink]="['/recipedetail', recipe.id]"><img class="recipe-image" src="{{ recipe.imageURL }}" /></a>
               </div>
-              <div class="col-10">
+              <div class="col-10" [routerLink]="['/recipedetail', recipe.id]">
                 <h4>{{ recipe.name }}</h4>
                 <span>{{ recipe.description }}</span>
               </div>
@@ -64,12 +61,12 @@
               *ngFor="let favRecipe of favoriteRecipes"
             >
               <div class="col-2">
-                <img
+                <a [routerLink]="['/recipedetail', favRecipe.recipe?.id]"><img
                   class="recipe-image"
                   src="{{ favRecipe.recipe?.imageURL }}"
-                />
+                /></a>
               </div>
-              <div class="col-10">
+              <div class="col-10" [routerLink]="['/recipedetail', favRecipe.recipe?.id]">
                 <h4>{{ favRecipe.recipe?.name }}</h4>
                 <span>{{ favRecipe.recipe?.description }}</span>
               </div>

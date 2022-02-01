@@ -17,6 +17,7 @@ export class RecipeFilterPipe implements PipeTransform {
       dummy: number;
     },
   ): Recipe[] {
+    console.log(args);
     let accepted: Recipe[] = [];
     let needed = 0
 
@@ -30,7 +31,7 @@ export class RecipeFilterPipe implements PipeTransform {
 
     for (let recipe of recipes) {
       let got = 0;
-
+console.log(recipe);
       if (args.ingredients.length > 0) {
         let ingredients = recipe.ingredients?.filter((i) => args.ingredients.filter((i2) => i2.id === i.ingredient.id)?.length > 0);
 
@@ -40,7 +41,14 @@ export class RecipeFilterPipe implements PipeTransform {
       }
 
       if (args.categories.length > 0) {
-        let categories = recipe.categories?.filter((c) => args.categories.filter((c2) => c2.id === c.id)?.length > 0);
+        let categories = recipe.categories?.filter((c) => {
+          for (const other of args.categories) {
+            if(other.id === c.id) {
+              return true;
+            }
+          } return false;
+        });
+
 
         if (categories?.length === args.categories.length) {
           got++;
@@ -52,5 +60,6 @@ export class RecipeFilterPipe implements PipeTransform {
       }
     }
     return accepted;
+
   }
 }
