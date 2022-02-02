@@ -35,7 +35,7 @@
   <a class="nav-item nav-link" [routerLink]="['/recipes']" style="color: white">All Recipes</a>
 </div>
 <div class="col-2">
-  <a class="nav-item nav-link" [routerLink]="['/profile']" style="color: white">Profile</a>
+  <a class="nav-item nav-link" *ngIf="auth.checkLogin()" [routerLink]="['/profile']" style="color: white">Profile</a>
 </div>
 </div><br>
 <!-- </div> -->

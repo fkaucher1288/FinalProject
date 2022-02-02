@@ -4,12 +4,16 @@ import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { NgForm } from '@angular/forms';
 import { Recipe } from 'src/app/models/recipe';
 import { RecipeIngredient } from 'src/app/models/recipe-ingredient';
+import { Router } from '@angular/router';
+import { RecipeService } from 'src/app/services/recipe.service';
+import { environment } from 'src/environments/environment';
 
 interface Credentials {
   username: string;
   password: string;
   passwordc: string;
   registering: boolean;
+
 }
 
 @Component({
@@ -22,6 +26,7 @@ export class HomeComponent implements OnInit {
   loginModalTemplate!: TemplateRef<any>;
   randomRecipe: Recipe[] = [];
   recipe = this.randomRecipe[Math.floor(Math.random() * this.randomRecipe.length)];
+  recipes: Recipe[] = [];
 
   creds: Credentials = {
     username: '',
@@ -30,7 +35,13 @@ export class HomeComponent implements OnInit {
     registering: false,
   };
 
-  constructor(private authService: AuthService, private modal: NgbModal) {}
+  constructor(
+    private authService: AuthService,
+    private modal: NgbModal,
+    private route: Router,
+    private recipeServ: RecipeService,
+
+    ) {}
 
   ngOnInit() {}
 
@@ -78,8 +89,8 @@ export class HomeComponent implements OnInit {
   }
 
   userLogInCheck() {
-    return false;
-    // return this.authService.getCredentials();
+
+    return this.authService.checkLogin();
   }
 
   onUserRegisterClick(modal: NgbModalRef) {
@@ -94,6 +105,11 @@ export class HomeComponent implements OnInit {
 
 
   getRandomRecipe(){
+      this.recipeServ.getCount().subscribe(recipeCount => {
+        let recipeId = Math.floor(Math.random() * recipeCount);
+        this.route.navigateByUrl(`recipedetail/${recipeId}`);
+      })
 
-  }
+    }
+
 }

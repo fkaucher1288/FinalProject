@@ -107,4 +107,9 @@ export class ProfileComponent implements OnInit {
 
     })
   }
+
+  onClickLogout(){
+    this.authService.logout();
+    this.router.navigateByUrl(`home`);
+  }
 }

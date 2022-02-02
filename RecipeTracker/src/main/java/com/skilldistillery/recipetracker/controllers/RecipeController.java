@@ -171,5 +171,10 @@ public class RecipeController {
 	public List<Recipe> getUserRecipes(@PathVariable int userId){
 		return recipeServ.getUsersRecipes(userId);
 	}
+	
+	@GetMapping("recipes/count")
+	public Long getCount() {
+		return recipeServ.getCount();
+	}
 
 }

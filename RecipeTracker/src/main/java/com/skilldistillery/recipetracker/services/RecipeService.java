@@ -27,5 +27,7 @@ public interface RecipeService {
 	List<RecipeRating> getAllRatings(Recipe recipe);
 	
 	List<Recipe> getUsersRecipes(int userId);
+	
+	Long getCount();
 
 }
