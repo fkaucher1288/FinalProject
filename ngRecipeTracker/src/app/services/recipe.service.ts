@@ -11,7 +11,7 @@ import { AuthService } from './auth.service';
   providedIn: 'root',
 })
 export class RecipeService {
-  private url = environment.baseUrl + 'api/recipes';
+    private url = environment.baseUrl + 'api/recipes';
 
   constructor(private http: HttpClient, private auth: AuthService) {}
 
@@ -137,6 +137,21 @@ export class RecipeService {
       })
     );
 
+  }
+
+  getCount(){
+    return this.http.get<number>(this.url + '/count', this.getHttpOptions()).pipe(
+      catchError((err:any) => {
+        console.log(err);
+        return throwError(
+          () =>
+          new Error(
+            'RecipeService.getCount(): error getting count'
+          )
+        );
+
+      })
+    );
   }
 
 

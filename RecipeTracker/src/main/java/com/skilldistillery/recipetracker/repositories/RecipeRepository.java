@@ -28,4 +28,6 @@ public interface RecipeRepository extends JpaRepository<Recipe, Integer> {
 	List<Recipe> findAllByIngredientsIn(@Param("ingredients") Set<Ingredient> ingredients, @Param("min") long minimum);
 	
 	List<Recipe> findByUser_Id(int userId);
+	
+	
 }

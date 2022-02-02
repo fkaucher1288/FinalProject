@@ -63,6 +63,8 @@ ingredients: RecipeIngredient[] = [];
 
     })
     console.log(this.rating);
+    //save recipe rating to user???????????
+
   }
 
 

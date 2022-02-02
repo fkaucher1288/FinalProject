@@ -94,4 +94,11 @@ public class RecipeServiceImpl implements RecipeService {
 		
 		return recipes.findByUser_Id(userId);
 	}
+
+	@Override
+	public Long getCount() {
+		return recipes.count();
+	}
+	
+	
 }
