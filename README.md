@@ -30,11 +30,6 @@ First, the user enters the index page. The user can choose to:
 - Login if already a user
 - Search recipes (logged in or not logged in)
 
-Demo Account:
-
-- Username: marthaStewart
-- Password: marthaStewart
-
 A logged in user can:
 
 - Update their profile
@@ -51,7 +46,7 @@ The admin user can:
 - Remove a review even if they did not create the review
 - Remove any recipe even if they did not create the recipe
 
-Admin Account:
+Admin and Demo Account:
 
 - Username: wolfgangPuck
 - Password: wolfgangPuck

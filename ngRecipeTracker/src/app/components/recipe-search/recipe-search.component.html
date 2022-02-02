@@ -63,7 +63,7 @@
             </div>
         </div>
         <div class="col-12 col-md">
-            <div class="col-12">Allergy (Includes)</div>
+            <div class="col-12">Allergy (Excludes)</div>
             <div class="col-12">
                 <div class="keyword-container">
                     <span class="badge rounded-pill bg-warning m-1" *ngFor="let category of categories| categoryFilter:{name:'allergies', filter:filter}" (click)="addFilter(category)">{{ category.name }}</span>
