@@ -8,13 +8,24 @@
                  we track your favorite recipes
             </h2>
             <br />
-            <a [routerLink]="['/recipes']" class="btn btn-success js-scroll-trigger">See all the recipes</a>
-            <br /><br />
-            <a class="btn btn-success js-scroll-trigger" *ngIf="!userLogInCheck()" (click)="onClickLogin()">Login</a>
-            <br /><br />
-            <a [routerLink]="['/register']" class="btn btn-success js-scroll-trigger" *ngIf="!userLogInCheck()" (click)="onClickLogin()">Register</a>
-            <br /><br />
-            <a class="btn btn-success js-scroll-trigger" (click)="getRandomRecipe()">Get Random Recipe</a>
+
+            <div class="links">
+              <div class="row-md-3" >
+                <a [routerLink]="['/recipes']" class="btn btn-success js-scroll-trigger">See all the recipes</a>
+              </div>
+              <div class="row-md-3" style="margin-top: 8px">
+                <a class="btn btn-success js-scroll-trigger" *ngIf="!userLogInCheck()" (click)="onClickLogin()">Login</a>
+              </div>
+              <div class="row-md-3" style="margin-top: 8px">
+                <a [routerLink]="['/register']" class="btn btn-success js-scroll-trigger" *ngIf="!userLogInCheck()" (click)="onClickLogin()">Register</a>
+              </div>
+              <div class="row-md-3" style="margin-top: 8px">
+                <a class="btn btn-success js-scroll-trigger" (click)="getRandomRecipe()">Get Random Recipe</a>
+              </div>
+            </div>
+
+
+
         </div>
     </div>
 </header>
