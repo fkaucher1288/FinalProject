@@ -14,10 +14,15 @@
       </div>
       <div class="row">
         <div class="col-12">
-          <button class="btn btn-primary"  (click)="onClickEditPage()">Edit Page</button>
-          <button class="btn btn-primary"  (click)="onClickLogout()">Logout</button>
+          <button class="btn btn-success"  (click)="onClickEditPage()" style="margin-right: 8px">Edit Page</button>
+          <button class="btn btn-success"  (click)="onClickLogout()">Logout</button>
         </div>
       </div>
+      <div class="row" style="margin: 8px 0px 0px 19px">
+        <div class="col-12">
+        <a class="btn btn-success js-scroll-trigger" (click)="onClickAddRecipe()">Add Recipe</a>
+      </div>
+    </div>
     </div>
     <div class="col-12 col-md-12 col-lg-9">
       <div class="row">
@@ -78,11 +83,7 @@
         </div>
       </div>
     </div>
-    <div class="row">
-      <a class="btn btn-success js-scroll-trigger" (click)="onClickAddRecipe()"
-        >Add Recipe</a
-      >
-    </div>
+
   </div>
   <div class="col-1"></div>
 </div>
