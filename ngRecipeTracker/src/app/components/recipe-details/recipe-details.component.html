@@ -10,8 +10,8 @@
 
 <div class="container">
     <div class="row">
-        <div class="col-3 d-flex align-content-center justify-content-center " id="time">
-            <div class="cookies">
+        <div class="col-3 d-flex align-content-center justify-content-center " id="time" style="margin-right: 8px">
+            <div class="cookies" >
 
                 <div  id="rating" class="cookies-fg" [style.width.%]="(rating/5)*100">
 
@@ -19,7 +19,7 @@
                 <div class="cookies-input" (click)="onRatingClick($event)"></div>
             </div>
         </div>
-        <div class="col-3" id="time">
+        <div class="col-3" id="time" style="margin-right: 8px">
             <p>Prep Time: <br>{{ recipe.prepTime }}</p>
         </div>
         <div class="col-3" id="time">

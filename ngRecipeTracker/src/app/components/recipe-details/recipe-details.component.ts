@@ -19,18 +19,6 @@ export class RecipeDetailsComponent implements OnInit {
   };
 
 
-
-  // id: RecipeIngredientId ={
-  //   ingredientId: 0
-  // }
-
-  // ingredients: RecipeIngredient = {
-  //   id: this.id,
-  //   quantity: 0,
-  //   remarks: '',
-  //   name: ''
-  // };
-
 ingredients: RecipeIngredient[] = [];
   rating: number = 5;
 
@@ -63,7 +51,7 @@ ingredients: RecipeIngredient[] = [];
 
     })
     console.log(this.rating);
-    //save recipe rating to user???????????
+
 
   }
 
